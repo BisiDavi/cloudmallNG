@@ -1,11 +1,11 @@
 import Head from "next/head";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import { useForm } from "react-hook-form";
-import {TextField} from '@material-ui/core';
+import { TextField } from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import style from "../styles/Location.module.css";
 
-const Location = (props) => {
+const Location = props => {
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = data => console.log(data);
   return (

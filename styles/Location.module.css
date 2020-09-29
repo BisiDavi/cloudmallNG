@@ -1,0 +1,18 @@
+.header{
+  display: flex;
+  position: relative;
+}
+
+.arrow{
+  position: absolute;
+  left: 20px;
+  top: 10px;
+}
+
+.mapContainer{
+  height: 100px !important;
+}
+
+.formAddress{
+  width: 100%;
+}

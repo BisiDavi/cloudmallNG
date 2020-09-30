@@ -57,11 +57,11 @@ export default function Home() {
         >
           <Modal.Header closeButton>
             <Modal.Title className={styles.modaltitle}>
-              Please, help us with your location to serve you better
+              😉 Hello - Welcome
             </Modal.Title>
           </Modal.Header>
           <Modal.Body className={styles.modalbody}>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit</p>
+            <p>Please, help us with your location to serve you better</p>
           </Modal.Body>
           <Modal.Footer className={styles.modalButton}>
             <Link href="/home">

@@ -1,11 +1,14 @@
 import Head from "next/head";
 
 const Store = () => {
-  <div className="store">
-    <Head>
-      <title>CloudMallNG 🛒- Store</title>
-    </Head>
-  </div>;
+  return (
+    <div className="store">
+      <Head>
+        <title>CloudMallNG 🛒- Store</title>
+      </Head>
+      <h1>I am the Store page</h1>
+    </div>
+  );
 };
 
 export default Store;

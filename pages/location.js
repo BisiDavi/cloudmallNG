@@ -26,11 +26,15 @@ const Location = props => {
 
   const onSubmit = data => {
     setUserAddress({
-      location: data
+      ...userAddress,
+      location: data.locationAddress
     });
     const linkHref = (router.pathname = "/home");
+    console.log("users data", data.locationAddress);
     router.push(linkHref);
   };
+
+  console.log("users location", userAddress);
 
   const onMarkerClick = (props, marker, e) => {
     return setMap({

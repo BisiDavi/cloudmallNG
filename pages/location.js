@@ -34,7 +34,7 @@ const Location = props => {
     router.push(linkHref);
   };
 
-  console.log("users location", userAddress);
+  console.log("users location", userAddress.location);
 
   const onMarkerClick = (props, marker, e) => {
     return setMap({

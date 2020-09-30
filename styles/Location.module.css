@@ -5,7 +5,6 @@
   align-items: center;
   justify-content: space-evenly;
   position: relative;
-  border-bottom: 2px solid #ccc;
 }
 
 .arrow {
@@ -20,7 +19,7 @@
   width: 100%;
   padding: 10px 20px;
 }
-.map{
+.map {
   height: 450px !important;
   width: 100%;
   padding: 10px 20px;
@@ -28,4 +27,20 @@
 
 .formAddress {
   width: 100%;
+  margin: auto !important;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px !important;
+}
+
+.formAddress form {
+  margin: auto !important;
+  flex-direction: column;
+  width: 80%;
+  display: flex;
+}
+
+.formAddress form button {
+  color: white;
+  background: #f29100;
 }

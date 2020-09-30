@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import { Layout } from "../imports";
 import { useForm } from "react-hook-form";
-import { TextField } from "@material-ui/core";
+import { Form, Button } from "react-bootstrap";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import style from "../styles/Location.module.css";
 import homeStyle from "../styles/Home.module.css";
@@ -88,21 +88,25 @@ const Location = props => {
           </div>
         </div>
         <div className={style.formAddress}>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            {/* <label>Enter Preferred Email Address</label> */}
-            <TextField
-              name="emailAddress"
-              variant="outlined"
-              className="my-2"
-              id="outlined-size-normal"
-              label="Enter Preferred Email Address"
-              inputRef={register({ required: true })}
-            />
-            {errors.emailAddress && <span>Your Email is required</span>}
-            <button type="submit" className="btn btn-primary pb-2 text-white">
-              Confirm Address
-            </button>
-          </form>
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            <Form.Group controlId="userEmail">
+              <Form.Label>Enter Preferred Email Address</Form.Label>
+              <Form.Control
+                name="emailAddress"
+                type="email"
+                className={style.inputField}
+                placeholder="Email Address"
+                ref={register({ required: true })}
+              />
+              {errors.emailAddress && <span>Your Email is required</span>}
+              <Button
+                type="submit"
+                className="btn btn-primary p-2 mt-2 mb-2 m-auto text-white"
+              >
+                Confirm Address
+              </Button>
+            </Form.Group>
+          </Form>
         </div>
       </div>
     </Layout>

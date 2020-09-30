@@ -41,6 +41,19 @@
 }
 
 .formAddress form button {
-  color: white;
   background: #f29100;
+  margin-top: 20px !important;
+  border: none;
+  display: flex;
+  width: 260px !important;
+  justify-content: center;
+  margin: 10px auto !important;
+}
+
+.inputField {
+  background: #ffffff;
+  border: 1px solid #f29100;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 0px 20px !important;
 }

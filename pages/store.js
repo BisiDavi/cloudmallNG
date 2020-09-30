@@ -1,13 +1,12 @@
-import Head from "next/head";
+import { Layout } from "../imports";
 
 const Store = () => {
   return (
-    <div className="store">
-      <Head>
-        <title>CloudMallNG 🛒- Store</title>
-      </Head>
-      <h1>I am the Store page</h1>
-    </div>
+    <Layout headerTitle="Store">
+      <div className="store">
+        <h1>I am the Store page</h1>
+      </div>
+    </Layout>
   );
 };
 

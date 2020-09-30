@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Head from "next/head";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import { Layout } from "../imports";
 import { useForm } from "react-hook-form";
@@ -95,6 +94,7 @@ const Location = props => {
               name="emailAddress"
               variant="outlined"
               className="my-2"
+              id="outlined-size-normal"
               label="Enter Preferred Email Address"
               inputRef={register({ required: true })}
             />

@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import { useRouter } from "next/router";
 import { Layout } from "../imports";
 import { useForm } from "react-hook-form";
+import Link from "next/link";
 import { Form, Button } from "react-bootstrap";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import style from "../styles/Location.module.css";
@@ -13,8 +15,22 @@ const Location = props => {
     activeMarker: {},
     selectedPlace: {}
   });
+
+  const [userAddress, setUserAddress] = useState({
+    location: ""
+  });
+
   const { register, handleSubmit, watch, errors } = useForm();
-  const onSubmit = data => console.log(data);
+
+  const router = useRouter();
+
+  const onSubmit = data => {
+    setUserAddress({
+      location: data
+    });
+    const linkHref = (router.pathname = "/home");
+    router.push(linkHref);
+  };
 
   const onMarkerClick = (props, marker, e) => {
     return setMap({
@@ -34,71 +50,87 @@ const Location = props => {
     }
   };
 
-  if (!props.google) {
-    return (
-      <div className={homeStyle.ldsSpinner}>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    );
-  }
+  const googleMap = () => (
+    <Map
+      style={{
+        height: "450px",
+        width: "100%",
+        padding: "10px",
+        margin: "auto"
+      }}
+      google={props.google}
+      onClick={onMapClicked}
+      className={style.map}
+      initialCenter={{
+        lat: 6.5244,
+        lng: 3.3792
+      }}
+      zoom={14}
+    >
+      <Marker onClick={onMarkerClick} name={"Current location"} />
+      <InfoWindow marker={map.activeMarker} visible={map.showingInfoWindow}>
+        <div>
+          <h1>{map.selectedPlace.name}</h1>
+        </div>
+      </InfoWindow>
+    </Map>
+  );
+
+  const spinner = () => (
+    <div className={homeStyle.ldsSpinner}>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  );
 
   return (
     <Layout headerTitle="Enter your Address">
       <div className="location">
         <div className={style.header}>
           <div className={style.arrow}>
-            <ArrowBackIcon />
+            <Link href="/">
+              <a>
+                <ArrowBackIcon />
+              </a>
+            </Link>
           </div>
           <h3>Select Address</h3>
         </div>
         <hr />
+
         <div className={style.mapContainer}>
           <div style={{ height: "450px" }}>
-            <Map
-              style={{ height: "450px" }}
-              google={props.google}
-              onClick={onMapClicked}
-              initialCenter={{
-                lat: 6.5244,
-                lng: 3.3792
-              }}
-              zoom={14}
-            >
-              <Marker onClick={onMarkerClick} name={"Current location"} />
-              <InfoWindow
-                marker={map.activeMarker}
-                visible={map.showingInfoWindow}
-              >
-                <div>
-                  <h1>{map.selectedPlace.name}</h1>
-                </div>
-              </InfoWindow>
-            </Map>
+            {props.google ? googleMap() : spinner()}
           </div>
         </div>
+
         <div className={style.formAddress}>
           <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group controlId="userEmail">
-              <Form.Label>Enter Preferred Email Address</Form.Label>
+              <Form.Label>Enter Preferred Address</Form.Label>
               <Form.Control
-                name="emailAddress"
-                type="email"
+                name="locationAddress"
+                type="text"
+                defaultValue={userAddress.location}
                 className={style.inputField}
-                placeholder="Email Address"
+                placeholder="Your Location"
                 ref={register({ required: true })}
               />
-              {errors.emailAddress && <span>Your Email is required</span>}
+              {errors.locationAddress && (
+                <span className="font-weight-bold text-danger">
+                  Your Address is required
+                </span>
+              )}
               <Button
                 type="submit"
                 className="btn btn-primary p-2 mt-2 mb-2 m-auto text-white"

@@ -1,12 +1,16 @@
 import Head from "next/head";
-import { Layout } from "../imports";
+import { Layout,HomepageSlider } from "../imports";
 
 const Homepage = () => {
   return (
-    <Layout headerTitle="Home">
+    <Layout 
+    headerTitle="Home" 
+    showHeader={true} 
+    sliderStyle={true}
+    showFooter={true}>
       <div className="Homepage">
         <div className="homepage">
-          <h1>Welcome Home</h1>
+          <HomepageSlider />
         </div>
       </div>
     </Layout>

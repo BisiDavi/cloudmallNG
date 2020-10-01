@@ -1,0 +1,11 @@
+.footer img {
+  width: 50%;
+  margin: auto !important;
+  height: 80%;
+  display: flex;
+}
+
+.footer p {
+  text-align: center;
+  font-weight: bold;
+}

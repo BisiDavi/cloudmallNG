@@ -1,0 +1,147 @@
+{
+  "products": [
+    {
+      "featured_deals": [
+        {
+          "id": 1,
+          "name": "Oranges",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/Orange.png",
+          "status": "open"
+        },
+        {
+          "id": 2,
+          "name": "Oranges",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/Orange.png",
+          "status": "open"
+        },
+        {
+          "id": 3,
+          "name": "Oranges",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/Orange.png",
+          "status": "open"
+        },
+        {
+          "id": 4,
+          "name": "Oranges",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/Orange.png",
+          "status": "open"
+        },
+        {
+          "id": 5,
+          "name": "Oranges",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/Orange.png",
+          "status": "open"
+        }
+      ],
+      "fast_deliveries": [
+        {
+          "id": 1,
+          "name": "Jollof Rice",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/ordinary-Jollof-rice.png",
+          "status": "open"
+        },
+        {
+          "id": 2,
+          "name": "Jollof Rice",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/ordinary-Jollof-rice.png",
+          "status": "open"
+        },
+        {
+          "id": 3,
+          "name": "Jollof Rice",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/ordinary-Jollof-rice.png",
+          "status": "open"
+        },
+        {
+          "id": 4,
+          "name": "Jollof Rice",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/ordinary-Jollof-rice.png",
+          "status": "open"
+        },
+        {
+          "id": 5,
+          "name": "Jollof Rice",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/ordinary-Jollof-rice.png",
+          "status": "open"
+        }
+      ],
+      "fresh_offers": [
+        {
+          "id": 1,
+          "name": "Jollof Rice Chicken",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/jollof-rice-chicken.png",
+          "status": "open"
+        },
+        {
+          "id": 2,
+          "name": "Jollof Rice Chicken",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/jollof-rice-chicken.png",
+          "status": "open"
+        },
+        {
+          "id": 3,
+          "name": "Jollof Rice Chicken",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/jollof-rice-chicken.png",
+          "status": "open"
+        },
+        {
+          "id": 4,
+          "name": "Jollof Rice Chicken",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/jollof-rice-chicken.png",
+          "status": "open"
+        },
+        {
+          "id": 5,
+          "name": "Jollof Rice Chicken",
+          "price": "500",
+          "vendor": "Gmart",
+          "rating": "4.5(200)",
+          "image": "./static/images/jollof-rice-chicken.png",
+          "status": "open"
+        }
+      ]
+    }
+  ]
+}

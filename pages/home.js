@@ -2,18 +2,15 @@ import {
   Layout,
   HomepageSlider,
   Searchbar,
-  FetchProductAsync,
-  Category
+  Category,
+  CategoryTitle
 } from "../imports";
-import { useEffect } from "react";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { wrapper } from "../redux/store/store";
+import { featuredDeals } from "../components/temp";
 
 const Homepage = props => {
-  useEffect(() => {
-    props.fetchProduct();
-  });
+  const FeaturedDeals = () => {
+    return <Category deals={featuredDeals} />;
+  };
 
   return (
     <Layout
@@ -26,23 +23,28 @@ const Homepage = props => {
         <div className="homepage">
           <HomepageSlider />
           <Searchbar />
-          <Category categoryName="Featured Deals" />
-          <Category categoryName="Fast Deliveries" />
-          <Category categoryName="Fresh Offers" />
+          <div className="categories">
+            <CategoryTitle title="Featured Deals" />
+            {FeaturedDeals()}
+          </div>
+          <div className="categories">
+            <CategoryTitle title="Fast Deliveries" />
+            {FeaturedDeals()}
+          </div>
+          <div className="categories">
+            <CategoryTitle title="Fresh Offers" />
+            {FeaturedDeals()}
+          </div>
         </div>
       </div>
+      <style jsx>
+        {`
+          .categories {
+            margin: 15px 10px !important;
+          }
+        `}
+      </style>
     </Layout>
   );
 };
-
-/* export const getStaticProps = wrapper.getStaticProps(async ({ store }) => {
-  store.dispatch(FetchProductAsync());
-}); */
-
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchProduct: bindActionCreators(FetchProductAsync, dispatch)
-  };
-};
-
-export default connect(null, mapDispatchToProps)(Homepage);
+export default Homepage;

@@ -1,11 +1,29 @@
 .product {
-  color: black;
+  width: 350px !important;
+  height: 170px !important;
+  border: 1px solid #eee;
+  position: relative;
+  margin: 10px 10px !important;
+  -webkit-box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.15);
 }
 .duration {
   color: black;
+  width: 60px;
+  position: absolute;
+  left: 0px;
+  font-weight: bold;
+  font-size: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.details h5 {
+  font-size: 15px;
+  margin-left: 10px !important;
+  font-weight: bold;
 }
 .details {
-  color: black;
+  font-size: 13px !important;
 }
 .eyeicon img {
   width: 20px;
@@ -14,7 +32,15 @@
   float: right;
 }
 .productImage {
-  color: black;
+  width: 170px;
+  height: 100px;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.details img {
+  width: 20px !important;
+  margin: 2px 5px !important;
 }
 
 .arrowIcon img {
@@ -31,4 +57,17 @@
   padding-right: 15px !important;
   margin-right: auto !important;
   margin-left: auto !important;
+}
+
+.overflowWrapper svg {
+  top: 45% !important;
+  width: 30px !important;
+  background: black;
+  border-radius: 50%;
+  height: 30px !important;
+}
+
+.details button {
+  width: 100%;
+  border-radius: 0px;
 }

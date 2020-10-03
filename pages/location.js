@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import { useRouter } from "next/router";
-import { Layout } from "../imports";
+import { Layout, Spinner } from "../imports";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { Form, Button } from "react-bootstrap";
@@ -80,23 +80,6 @@ const Location = props => {
     </Map>
   );
 
-  const spinner = () => (
-    <div className={homeStyle.ldsSpinner}>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  );
-
   return (
     <Layout headerTitle="Enter your Address">
       <div className="location">
@@ -114,7 +97,7 @@ const Location = props => {
 
         <div className={style.mapContainer}>
           <div style={{ height: "450px" }}>
-            {props.google ? googleMap() : spinner()}
+            {props.google ? googleMap() : <Spinner />}
           </div>
         </div>
 

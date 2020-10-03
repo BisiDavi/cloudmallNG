@@ -14,8 +14,6 @@ const Searchbar = () => {
 
   const onSubmit = data => console.log(data);
 
-  console.log(watch("search"));
-
   return (
     <Container className="Home mx-auto">
       <Row>

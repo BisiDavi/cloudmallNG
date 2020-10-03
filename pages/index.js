@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Modal } from "react-bootstrap";
-import { logo, pattern,Layout } from "../imports";
-import styles from "../styles/Home.module.css";
+import { logo, pattern, Layout, Spinner } from "../imports";
+import style from "../styles/Home.module.css";
 
 export default function Home() {
   const [modal, setModal] = useState(false);
@@ -14,7 +14,7 @@ export default function Home() {
   const handleOpen = () => {
     return setTimeout(() => {
       setModal(true);
-    }, 3000);
+    }, 1000);
   };
 
   const handleClose = () => {
@@ -23,40 +23,24 @@ export default function Home() {
 
   return (
     <Layout headerTitle="Welcome">
-      <div className={styles.container}>
+      <div className={style.container}>
         <div className="splashtop"></div>
-        {modal ? null : (
-          <div className={styles.ldsSpinner}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        )}
-
+        {modal ? null : <Spinner />}
         <div className="locationModal">
           <Modal
             show={modal}
-            className={styles.locationmodal}
+            className={style.locationmodal}
             onHide={handleClose}
           >
             <Modal.Header closeButton>
-              <Modal.Title className={styles.modaltitle}>
+              <Modal.Title className={style.modaltitle}>
                 😉 Hello - Welcome
               </Modal.Title>
             </Modal.Header>
-            <Modal.Body className={styles.modalbody}>
+            <Modal.Body className={style.modalbody}>
               <p>Please, help us with your location to serve you better</p>
             </Modal.Body>
-            <Modal.Footer className={styles.modalButton}>
+            <Modal.Footer className={style.modalButton}>
               <Link href="/home">
                 <a className="text-danger font-weight-bold">Cancel</a>
               </Link>
@@ -66,7 +50,7 @@ export default function Home() {
             </Modal.Footer>
           </Modal>
         </div>
-        <div className={styles.logo}>
+        <div className={style.logo}>
           <img src={logo} alt="cloudmall logo" />
         </div>
         <div className="splashfooter"></div>

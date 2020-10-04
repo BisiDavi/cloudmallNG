@@ -1,50 +1,51 @@
-import { Container, Row, Col } from "react-bootstrap";
-import { home, shop, list, cart } from "../imports";
+import React from "react";
+import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
 import Link from "next/link";
+import HomeIcon from "@material-ui/icons/Home";
+import StoreIcon from "@material-ui/icons/Store";
+import LocalGroceryStoreIcon from "@material-ui/icons/LocalGroceryStore";
+import { list } from "../imports";
 import style from "../styles/Footer.module.css";
 
-const Footer = () => {
-  return (
-    <Container
-      className={`${style.footer} mb-2 footer d-flex fixed-bottom px-3`}
-      fluid
-    >
-      <Row>
-        <Col xs={3} className="homeicon">
-          <Link href="/home">
-            <a>
-              <img src={home} alt="home icon" />
-              <p>Home</p>
-            </a>
-          </Link>
-        </Col>
-        <Col xs={3} className="storeicon">
-          <Link href="/stores">
-            <a>
-              <img src={shop} alt="shop icon" />
-              <p>Stores</p>
-            </a>
-          </Link>
-        </Col>
-        <Col xs={3} className="carticon">
-          <Link href="/cart">
-            <a>
-              <img src={cart} alt="home icon" />
-              <p>Cart</p>
-            </a>
-          </Link>
-        </Col>
-        <Col xs={3} className="ordericon">
-          <Link href="/orders">
-            <a>
-              <img src={list} alt="order icon" />
-              <p>Orders</p>
-            </a>
-          </Link>
-        </Col>
-      </Row>
-    </Container>
-  );
-};
+export default function SimpleBottomNavigation() {
+  const [value, setValue] = React.useState(0);
 
-export default Footer;
+  return (
+    <BottomNavigation
+      value={value}
+      onChange={(event, newValue) => {
+        setValue(newValue);
+      }}
+      showLabels
+      className={style.BottomNav}
+    >
+      <Link href="/home">
+        <a>
+          <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+        </a>
+      </Link>
+      <Link href="/stores">
+        <a>
+          <BottomNavigationAction label="Stores" icon={<StoreIcon />} />
+        </a>
+      </Link>
+      <Link href="/cart">
+        <a>
+          <BottomNavigationAction
+            label="Cart"
+            icon={<LocalGroceryStoreIcon />}
+          />
+        </a>
+      </Link>
+      <Link href="/orders">
+        <a>
+          <BottomNavigationAction
+            label="Orders"
+            showLabel
+            icon={<img src={list} className={style.orders} alt="order icon" />}
+          />
+        </a>
+      </Link>
+    </BottomNavigation>
+  );
+}

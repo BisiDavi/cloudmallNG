@@ -8,9 +8,10 @@ import {
 } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { searchIcon, filterIcon } from "../imports";
+import style from "../styles/Searchbar.module.css";
 
 const Searchbar = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = data => console.log(data);
 
@@ -18,7 +19,10 @@ const Searchbar = () => {
     <Container className="Home mx-auto">
       <Row>
         <Col className="mr-2" xs={9}>
-          <Form className="m-auto" onSubmit={handleSubmit(onSubmit)}>
+          <Form
+            className={`${style.searchform} m-auto`}
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <InputGroup className="searchbar">
               <FormControl
                 ref={register}
@@ -30,7 +34,7 @@ const Searchbar = () => {
               <InputGroup.Append>
                 <InputGroup.Text id="user-search">
                   <img
-                    className="searchIcon"
+                    className={style.searchIcon}
                     src={searchIcon}
                     alt="search products"
                   />
@@ -43,23 +47,11 @@ const Searchbar = () => {
         <Col xs={2}>
           <img
             src={filterIcon}
-            className="filterIcon"
+            className={style.filterIcon}
             alt="filter our products"
           />
         </Col>
       </Row>
-      <style jsx>
-        {`
-          .searchIcon {
-            width: 30px;
-            height: 30px;
-          }
-          .filterIcon {
-            width: 30px;
-            height: 30px;
-          }
-        `}
-      </style>
     </Container>
   );
 };

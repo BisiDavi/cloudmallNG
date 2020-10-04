@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Footer, Header } from "../imports";
-import  MFooter  from "./mfooter";
+
 
 const Layout = props => {
   const { showFooter, showHeader, sliderStyle } = props;
@@ -15,8 +15,7 @@ const Layout = props => {
       </Head>
       {showHeader ? <Header /> : null}
       {props.children}
-      {/* {showFooter ? <Footer /> : null} */}
-      {showFooter ? <MFooter /> : null}
+      {showFooter ? <Footer /> : null}
     </>
   );
 };

@@ -25,8 +25,8 @@ export { default as BeansDodo } from "../public/static/images/BeansDodo.png";
 
 /* Components */
 export { default as Layout } from "../components/layout";
-export { default as Footer } from "../components/footer";
 export { default as Header } from "../components/header";
+export { default as Footer } from "../components/footer";
 export { default as Searchbar } from "../components/searchbar";
 export { default as Category } from "../components/category";
 export { default as CategoryTitle } from "../components/categoryTitle";

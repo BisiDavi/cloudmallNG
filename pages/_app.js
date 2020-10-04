@@ -1,4 +1,6 @@
+import { CacheProvider } from "@emotion/core";
 import { useEffect } from "react";
+import { cache } from "emotion";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Head from "next/head";
 import Router from "next/router";
@@ -24,7 +26,7 @@ function MyApp({ Component, pageProps }) {
     }
   }, []);
   return (
-    <>
+    <CacheProvider value={cache}>
       <Head>
         <meta
           name="viewport"
@@ -33,7 +35,7 @@ function MyApp({ Component, pageProps }) {
         <CssBaseline />
       </Head>
       <Component {...pageProps} />
-    </>
+    </CacheProvider>
   );
 }
 export default MyApp;

@@ -1,11 +1,26 @@
-.footer img {
-  width: 50%;
-  margin: auto !important;
-  height: 80%;
-  display: flex;
+.BottomNav {
+  width: 100%;
+  border-top: 1px solid #eee;
+  padding-top: 10px !important;
+  padding-bottom: 0px !important;
 }
 
-.footer p {
-  text-align: center;
-  font-weight: bold;
+.BottomNav button {
+  height: 10px !important;
+  padding-top: 10px !important;
+  margin-bottom: -10px !important;
+  padding-bottom: 0px !important;
+}
+
+.orders {
+  width: 25px;
+}
+
+.BottomNav button:focus {
+  border: 0px;
+  outline: none;
+}
+
+.BottomNav a {
+  text-decoration: none;
 }

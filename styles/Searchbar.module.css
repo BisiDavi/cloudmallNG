@@ -1,0 +1,20 @@
+.searchform {
+  margin-left: 10% !important;
+  width: 100%;
+}
+.searchIcon {
+  width: 30px;
+  height: 30px;
+}
+.filterIcon {
+  width: 30px;
+  height: 30px;
+  margin-left: 20px !important;
+  margin-top: 5px !important;
+}
+
+.searchform input::placeholder {
+  padding-left: 10px !important;
+  font-style: italic;
+  font-weight: 400;
+}

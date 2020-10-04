@@ -1,0 +1,22 @@
+.storeheader {
+  height: 30px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+}
+
+.storeCategories {
+  margin: 20px 10px !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+}
+
+.description p {
+  font-size: 12px;
+}

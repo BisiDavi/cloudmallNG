@@ -21,18 +21,26 @@ export default function SimpleBottomNavigation() {
     >
       <Link href="/home">
         <a>
-          <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+          <BottomNavigationAction 
+          label="Home"
+           showLabel
+           icon={<HomeIcon />} />
         </a>
       </Link>
       <Link href="/stores">
         <a>
-          <BottomNavigationAction label="Stores" icon={<StoreIcon />} />
+          <BottomNavigationAction
+            label="Stores"
+            showLabel
+            icon={<StoreIcon />}
+          />
         </a>
       </Link>
       <Link href="/cart">
         <a>
           <BottomNavigationAction
             label="Cart"
+            showLabel
             icon={<LocalGroceryStoreIcon />}
           />
         </a>

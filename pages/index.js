@@ -11,15 +11,9 @@ export default function Home() {
     handleOpen();
   }, []);
 
-  const handleOpen = () => {
-    return setTimeout(() => {
-      setModal(true);
-    }, 1000);
-  };
+  const handleOpen = () => setModal(true);
 
-  const handleClose = () => {
-    setModal(false);
-  };
+  const handleClose = () => setModal(false);
 
   return (
     <Layout headerTitle="Welcome">
@@ -30,6 +24,8 @@ export default function Home() {
           <Modal
             show={modal}
             className={style.locationmodal}
+            backdrop="static"
+            keyboard={false}
             onHide={handleClose}
           >
             <Modal.Header closeButton>

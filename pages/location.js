@@ -57,7 +57,7 @@ const Location = props => {
   const googleMap = () => (
     <Map
       style={{
-        height: "450px",
+        height: "70vh !important",
         width: "100%",
         padding: "10px",
         margin: "auto"
@@ -96,7 +96,7 @@ const Location = props => {
         <hr />
 
         <div className={style.mapContainer}>
-          <div style={{ height: "450px" }}>
+          <div style={{ height: "70vh !important" }}>
             {props.google ? googleMap() : <Spinner />}
           </div>
         </div>

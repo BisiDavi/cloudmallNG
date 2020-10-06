@@ -20,3 +20,11 @@
 .description p {
   font-size: 12px;
 }
+
+.store {
+  margin-bottom: 80px !important;
+}
+
+.storeCategories a {
+  text-decoration: none;
+}

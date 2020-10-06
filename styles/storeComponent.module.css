@@ -1,0 +1,85 @@
+/* StoreHeader */
+.storeHeader {
+  border-bottom: 1px solid #ccc;
+  height: 45px !important;
+}
+
+.storeHeader a {
+  text-decoration: none;
+  margin-top: 10px !important;
+  margin-left: 10px !important;
+}
+
+/* StoreBanner */
+.banner h3 {
+  text-align: center;
+  padding-top: 45px !important;
+}
+
+.banner {
+  height: 150px !important;
+  background: darkgray;
+  margin: 10px 20px !important;
+}
+
+/* StoreAddress */
+.storeAddress.mx-auto.container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px !important;
+}
+
+.searchform img {
+  width: 30px;
+  height: 20px;
+}
+
+.searchform {
+  display: flex;
+  margin: auto !important;
+  width: 100%;
+  width: 91%;
+  margin-bottom: 10px !important;
+}
+
+.address {
+  display: flex;
+}
+
+.rating span {
+  margin-right: 10px !important;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchform input::placeholder {
+  font-style: italic;
+  padding-left: 20px !important;
+}
+
+.store_address {
+  flex-direction: column;
+}
+
+.offers {
+  display: grid;
+  padding: 10px !important;
+  grid-column-gap: 10px;
+  grid-row-gap: 20px;
+  margin: 0px !important;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.moreView {
+  float: right;
+  margin-right: 30px !important;
+  font-weight: 700;
+  color: red;
+}
+
+.offerWrapper {
+  margin-bottom: 100px !important;
+}

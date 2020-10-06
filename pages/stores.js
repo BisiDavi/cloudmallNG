@@ -1,5 +1,6 @@
 import { Layout } from "../imports";
 import style from "../styles/Store.module.css";
+import Link from "next/link";
 
 const storeCategories = [
   {
@@ -42,15 +43,24 @@ const storeCategories = [
 
 const Store = () => {
   const displayCategories = () =>
-    storeCategories.map(category => (
-      <div className={style.category} key={category.id}>
-        <img src={category.image} alt={`Cloudmall- ${category.name}`} />
-        <div className={style.description}>
-          <h6>{category.name}</h6>
-          <p>{category.description}</p>
-        </div>
-      </div>
-    ));
+    storeCategories.map(category => {
+      const linkName = category.name;
+      const replaceSpaces = linkName.replace(" ", "-");
+      const categoryLink = replaceSpaces.toLowerCase();
+      return (
+        <Link href={`/${categoryLink}`}>
+          <a>
+            <div className={style.category} key={category.id}>
+              <img src={category.image} alt={`Cloudmall- ${category.name}`} />
+              <div className={style.description}>
+                <h6>{category.name}</h6>
+                <p>{category.description}</p>
+              </div>
+            </div>
+          </a>
+        </Link>
+      );
+    });
 
   return (
     <Layout

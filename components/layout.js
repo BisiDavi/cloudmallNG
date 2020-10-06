@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { Footer, Header } from "../imports";
 
-
 const Layout = props => {
   const { showFooter, showHeader, sliderStyle } = props;
   return (
@@ -14,7 +13,9 @@ const Layout = props => {
         <title>🛒 CloudMallNG - {props.headerTitle}</title>
       </Head>
       {showHeader ? <Header /> : null}
-      {props.children}
+      <section style={{ marginBottom: "50px" }} className="content">
+        {props.children}
+      </section>
       {showFooter ? <Footer /> : null}
     </>
   );

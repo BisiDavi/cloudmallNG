@@ -19,7 +19,7 @@ export { default as slider_groceries } from "../public/static/images/slider_groc
 export { default as slider_rawfoods } from "../public/static/images/slider_rawfoods.jpg";
 export { default as Orange } from "../public/static/images/Orange.png";
 export { default as Jollofrice } from "../public/static/images/jollof-rice-chicken.png";
-export { default as Ordinaryjollof } from "../public/static/images/ordinaryJRice.png";
+export { default as Ordinaryjollof } from "../public/static/images/jRice.png";
 export { default as Rectangle } from "../public/static/images/Rectangle1.png";
 export { default as BeansDodo } from "../public/static/images/BeansDodo.png";
 

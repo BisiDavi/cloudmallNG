@@ -17,14 +17,11 @@ export default function SimpleBottomNavigation() {
         setValue(newValue);
       }}
       showLabels
-      className={style.BottomNav}
+      className={`${style.BottomNav} fixed-bottom`}
     >
       <Link href="/home">
         <a>
-          <BottomNavigationAction 
-          label="Home"
-           showLabel
-           icon={<HomeIcon />} />
+          <BottomNavigationAction label="Home" showLabel icon={<HomeIcon />} />
         </a>
       </Link>
       <Link href="/stores">

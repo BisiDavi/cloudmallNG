@@ -48,9 +48,9 @@ const Store = () => {
       const replaceSpaces = linkName.replace(" ", "-");
       const categoryLink = replaceSpaces.toLowerCase();
       return (
-        <Link href={`/${categoryLink}`}>
+        <Link key={category.id} href={`/${categoryLink}`}>
           <a>
-            <div className={style.category} key={category.id}>
+            <div className={style.category}>
               <img src={category.image} alt={`Cloudmall- ${category.name}`} />
               <div className={style.description}>
                 <h6>{category.name}</h6>

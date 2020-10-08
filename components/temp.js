@@ -67,6 +67,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   },
   {
@@ -74,6 +77,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   },
   {
@@ -81,6 +87,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   },
   {
@@ -88,6 +97,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   },
   {
@@ -95,6 +107,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   },
   {
@@ -102,6 +117,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   },
   {
@@ -109,6 +127,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   },
   {
@@ -116,6 +137,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   },
   {
@@ -123,6 +147,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   },
   {
@@ -130,6 +157,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   },
   {
@@ -137,6 +167,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   },
   {
@@ -144,6 +177,9 @@ export const RestaurantOffers = [
     name: "Jollof Rice and Turkey",
     price: "N900",
     duration: "30 - 40 min",
+    vendor: "Ongbona",
+    rating: "4.5(200)",
+    status: "open",
     image: "static/images/jollof-rice-chicken.png"
   }
 ];

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import style from "../styles/layout.module.css";
 import { Footer, Header } from "../imports";
 
 const Layout = props => {
@@ -13,9 +14,7 @@ const Layout = props => {
         <title>🛒 CloudMallNG - {props.headerTitle}</title>
       </Head>
       {showHeader ? <Header /> : null}
-      <section style={{ marginBottom: "50px" }} className="content">
-        {props.children}
-      </section>
+      <section className={style.content}>{props.children}</section>
       {showFooter ? <Footer /> : null}
     </>
   );

@@ -11,8 +11,11 @@ export default function Home() {
     handleOpen();
   }, []);
 
-  const handleOpen = () => setModal(true);
-
+  const handleOpen = () => {
+    setTimeout(() => {
+      setModal(true);
+    }, 1000);
+  };
   const handleClose = () => setModal(false);
 
   return (

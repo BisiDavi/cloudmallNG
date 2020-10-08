@@ -16,17 +16,16 @@ import StarOutlinedIcon from "@material-ui/icons/StarOutlined";
 import styles from "../styles/category.module.css";
 import Link from "next/link";
 import style from "../styles/storeComponent.module.css";
-import { useRouter } from "next/router";
 
 export const StoreHeader = props => {
   return (
-    <section className={`${style.storeHeader} d-flex`}>
+    <section className={`${style.storeHeader} d-flex w-100`}>
       <Link href="/stores">
         <a>
           <ArrowBackIcon />
         </a>
       </Link>
-      <h5 className="d-flex m-auto">{props.storeName}</h5>
+      <h5 className="m-auto">{props.storeName}</h5>
     </section>
   );
 };
@@ -99,48 +98,46 @@ export const StoreAddress = props => {
 export const DisplayOffers = ({ offers, linkName }) => {
   const fourOffers = offers.splice(0, 4);
   return (
-    <>
-      <div className={style.offers}>
-        {offers.length > 4
-          ? fourOffers.map(offer => (
-              <div key={offer.id} className={styles.productStore}>
-                <span className={styles.eyeicon}>
-                  <img src={eyeIcon} alt="product view" />
-                </span>
-                {(
-                  <img
-                    className={styles.productImage}
-                    src={offer.image}
-                    alt={offer.name}
-                  />
-                ) || <Skeleton duration={2} />}
+    <div className={style.offers}>
+      {offers.length > 4
+        ? fourOffers.map(offer => (
+            <div key={offer.id} className={styles.productStore}>
+              <span className={styles.eyeicon}>
+                <img src={eyeIcon} alt="product view" />
+              </span>
+              {(
+                <img
+                  className={styles.productImage}
+                  src={offer.image}
+                  alt={offer.name}
+                />
+              ) || <Skeleton duration={2} />}
 
-                <span className={styles.duration}>{offer.duration}</span>
-                <Container className={styles.details}>
-                  <Row>
-                    <Col xs={8}>
-                      <h5>{offer.name}</h5>
-                    </Col>
-                    <Col xs={4}>
-                      <strong>{offer.price}</strong>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={12}>
-                      <Button variant="outline-success">Order</Button>
-                    </Col>
-                  </Row>
-                </Container>
-              </div>
-            ))
-          : null}
-      </div>
+              <span className={styles.duration}>{offer.duration}</span>
+              <Container className={styles.details}>
+                <Row>
+                  <Col xs={8}>
+                    <h5>{offer.name}</h5>
+                  </Col>
+                  <Col xs={4}>
+                    <strong>{offer.price}</strong>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={12}>
+                    <Button variant="outline-success">Order</Button>
+                  </Col>
+                </Row>
+              </Container>
+            </div>
+          ))
+        : null}
       <div className={style.moreView}>
         <Link href={`/restaurant/${linkName}`}>
           <a>{offers.length - 4} more</a>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 
@@ -182,38 +179,37 @@ export const SeeMore = ({ moreOffers }) => {
 
 export const CategoryView = ({ availableSubscribers }) => {
   return (
-    <Container className="categoryview" fluid>
-      {availableSubscribers.map(subscriber => {
-        <Container className="view d-flex" fluid>
+    <Container className={style.categoryview} fluid>
+      {availableSubscribers.map(subscriber => (
+        <Container key={subscriber.id} className={style.view} fluid>
           <Row>
-            <div className="thumbnail img-thumbnail"></div>
-          </Row>
-          <Row className={`${style.store_address} d-flex`}>
-            <div>
-              <h3>{subscriber.name}</h3>
-            </div>
-            <div className={style.address}>
-              <span className="icon mr-2">
-                <RoomOutlinedIcon />
-              </span>
-              {props.address}
-            </div>
-            <div className={style.rating}>
-              <span className="icon mr-2">
-                <StarOutlinedIcon />
-                <p>4.5(200)</p>
-              </span>
-              <div className={style.subscriberStatus}>
-                <p>Open</p>
+            <Col xs={4} className="p-2">
+              <div className={`${style.thumbnail} img-thumbnail`}></div>
+            </Col>
+            <Col xs={8} className={`${style.store_address} d-flex p-2`}>
+              <div className={`${style.title} d-flex`}>
+                <h3>{subscriber.vendor}</h3>
+                <p className="mr-0">{subscriber.duration}</p>
               </div>
-            </div>
-            <div className={style.deliveryTime}>
-              <p className="float-left">Average Delivery Time</p>
-              <p className="float-right">40 to 60 mins.</p>
-            </div>
+              <div className={`${style.address} d-flex`}>
+                <span className="icon mr-2">
+                  <RoomOutlinedIcon />
+                </span>
+                <p>Behind Energy Filling station Ibadan Road.</p>
+              </div>
+              <div className={style.rating}>
+                <span className="icon mr-2 d-flex">
+                  <StarOutlinedIcon />
+                  <p>{subscriber.rating}</p>
+                </span>
+                <div className={style.subscriberStatus}>
+                  <p>{subscriber.status}</p>
+                </div>
+              </div>
+            </Col>
           </Row>
-        </Container>;
-      })}
+        </Container>
+      ))}
     </Container>
   );
 };

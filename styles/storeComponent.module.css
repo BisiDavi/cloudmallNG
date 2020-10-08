@@ -62,6 +62,7 @@
 
 .store_address {
   flex-direction: column;
+  padding-right: 15px !important;
 }
 
 .offers {
@@ -82,4 +83,41 @@
 
 .offerWrapper {
   margin-bottom: 100px !important;
+}
+
+/* Caegoryview */
+.categoryview {
+  border: 1px solid black;
+}
+.view {
+  border-bottom: 1px solid black;
+}
+.view:last-child {
+  border-bottom: none;
+}
+.thumbnail {
+  height: 90px;
+  width: 100px;
+  margin: 6px auto !important;
+  background: gray;
+}
+.title {
+  justify-content: space-between;
+}
+
+.subscriberStatus p {
+  background: gray;
+  font-weight: bold;
+  color: white;
+  border-radius: 15%;
+  padding: 1px 5px !important;
+}
+
+.rating {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title h3 {
+  font-size: 18px;
 }

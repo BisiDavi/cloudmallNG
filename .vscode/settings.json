@@ -1,0 +1,11 @@
+{
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "editor.wordWrapColumn": 120,
+  "editor.wrappingIndent": "none",
+  "debug.console.wordWrap": false,
+  "html.format.wrapLineLength": 0
+}

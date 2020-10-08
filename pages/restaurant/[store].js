@@ -1,21 +1,23 @@
-import { Layout } from "../imports";
+import { Layout } from "../../imports";
 import {
   StoreHeader,
   StoreBanner,
   StoreAddress,
   DisplayOffers
-} from "../components/storeComponents";
-import { RestaurantOffers, EnglishOffers } from "../components/temp";
-import style from "../styles/storeComponent.module.css";
+} from "../../components/storeComponents";
+import { RestaurantOffers, EnglishOffers } from "../../components/temp";
+import style from "../../styles/storeComponent.module.css";
+import { useRouter } from "next/router";
 
-
-const Spa = () => {
+const Store = () => {
+  const router = useRouter();
+  const { store } = router.query;
   return (
-    <Layout showHeader={false} showFooter={true} headerTitle="Spa">
+    <Layout showHeader={false} showFooter={true} headerTitle={`${store}`}>
       <section className={style.restaurant}>
-        <StoreHeader storeName="Spa" />
+        <StoreHeader storeName="Restaurant" />
         <div className="banner">
-          <StoreBanner bannerName="Spa" />
+          <StoreBanner bannerName={`${store}`} />
         </div>
 
         <div>
@@ -37,4 +39,4 @@ const Spa = () => {
   );
 };
 
-export default Spa;
+export default Store;

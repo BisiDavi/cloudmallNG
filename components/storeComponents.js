@@ -99,8 +99,8 @@ export const DisplayOffers = ({ offers, linkName }) => {
   const fourOffers = offers.splice(0, 4);
   return (
     <div className={style.offers}>
-      {offers.length > 4
-        ? fourOffers.map(offer => (
+      {/* offers.length > 4? fourOffers */}
+        {offers.map(offer => (
             <div key={offer.id} className={styles.productStore}>
               <span className={styles.eyeicon}>
                 <img src={eyeIcon} alt="product view" />
@@ -130,8 +130,8 @@ export const DisplayOffers = ({ offers, linkName }) => {
                 </Row>
               </Container>
             </div>
-          ))
-        : null}
+          ))}
+        {/* // : null} */}
       <div className={style.moreView}>
         <Link href={`/restaurant/${linkName}`}>
           <a>{offers.length - 4} more</a>
@@ -177,18 +177,20 @@ export const SeeMore = ({ moreOffers }) => {
   });
 };
 
-export const CategoryView = ({ availableSubscribers }) => {
+export const CategoryView = ({ availableSubscribers,storeLink, vendor }) => {
   return (
     <Container className={style.categoryview} fluid>
       {availableSubscribers.map(subscriber => (
-        <Container key={subscriber.id} className={style.view} fluid>
+        <Link key={subscriber.id} href={storeLink}>
+          <a>
+        <Container  className={style.view} fluid>
           <Row>
             <Col xs={4} className="p-2">
               <div className={`${style.thumbnail} img-thumbnail`}></div>
             </Col>
             <Col xs={8} className={`${style.store_address} d-flex p-2`}>
               <div className={`${style.title} d-flex`}>
-                <h3>{subscriber.vendor}</h3>
+                <h3>{vendor}</h3>
                 <p className="mr-0">{subscriber.duration}</p>
               </div>
               <div className={`${style.address} d-flex`}>
@@ -209,7 +211,10 @@ export const CategoryView = ({ availableSubscribers }) => {
             </Col>
           </Row>
         </Container>
-      ))}
+      </a>
+        </Link>
+      ))
+      }
     </Container>
   );
 };

@@ -1,20 +1,23 @@
-import { Layout } from "../imports";
+import { Layout } from "../../imports";
 import {
   StoreHeader,
   StoreBanner,
   StoreAddress,
   DisplayOffers
-} from "../components/storeComponents";
-import { RestaurantOffers, EnglishOffers } from "../components/temp";
-import style from "../styles/storeComponent.module.css";
+} from "../../components/storeComponents";
+import { RestaurantOffers, EnglishOffers } from "../../components/temp";
+import style from "../../styles/storeComponent.module.css";
+import { useRouter } from "next/router";
 
-const Bookshop = () => {
+const Store = () => {
+  const router = useRouter();
+  const { store } = router.query;
   return (
-    <Layout showHeader={false} showFooter={true} headerTitle="Bookshop">
+    <Layout showHeader={false} showFooter={true} headerTitle={`${store}`}>
       <section className={style.restaurant}>
-        <StoreHeader storeName="Bookshop" />
+        <StoreHeader storeName="Restaurant" />
         <div className="banner">
-          <StoreBanner bannerName="Bookshop" />
+          <StoreBanner bannerName={`${store}`} />
         </div>
 
         <div>
@@ -25,7 +28,7 @@ const Bookshop = () => {
           <h5 className="mr-2 ml-4">Offers</h5>
           <DisplayOffers offers={RestaurantOffers} />
 
-          <span className="d-flex ml-4 categoryEnglish">
+          <span className="d-flex ml-4">
             <h5 className="mr-2">English</h5>
             <p>(30 - 40 mins)</p>
           </span>
@@ -36,4 +39,4 @@ const Bookshop = () => {
   );
 };
 
-export default Bookshop;
+export default Store;

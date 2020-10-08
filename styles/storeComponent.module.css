@@ -87,13 +87,13 @@
 
 /* Caegoryview */
 .categoryview {
-  border: 1px solid black;
+  border: 1px solid black !important;
 }
 .view {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid black !important;
 }
 .view:last-child {
-  border-bottom: none;
+  border-bottom: none !important;
 }
 .thumbnail {
   height: 90px;
@@ -104,6 +104,11 @@
 .title {
   justify-content: space-between;
 }
+
+.categoryview a{
+  text-decoration: none;
+}
+
 
 .subscriberStatus p {
   background: gray;

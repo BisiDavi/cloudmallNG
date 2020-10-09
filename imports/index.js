@@ -18,7 +18,7 @@ export { default as slider_fastfood } from "../public/static/images/slider_fastf
 export { default as slider_groceries } from "../public/static/images/slider_groceries.jpg";
 export { default as slider_rawfoods } from "../public/static/images/slider_rawfoods.jpg";
 export { default as Orange } from "../public/static/images/Orange.png";
-export { default as Jollofrice } from "../public/static/images/jollof-rice-chicken.png";
+export { default as Jollofrice } from "../public/static/images/jollofricechicken.png";
 export { default as Ordinaryjollof } from "../public/static/images/jRice.png";
 export { default as Rectangle } from "../public/static/images/Rectangle1.png";
 export { default as BeansDodo } from "../public/static/images/BeansDodo.png";

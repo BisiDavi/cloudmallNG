@@ -1,0 +1,35 @@
+/* ordercomponent */
+.menu {
+  justify-content: space-around;
+}
+
+.counter {
+  border: 1px solid black;
+  padding: 3px 10px !important;
+}
+
+.orderMeal {
+  height: 45px;
+}
+
+.mealMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderPage {
+  margin-top: 40% !important;
+}
+
+.orderButton{
+  display: flex;
+}
+
+/* order */
+.header {
+  height: 30px;
+  border-bottom: 1px solid black;
+}
+
+/* .orders .container {
+} */

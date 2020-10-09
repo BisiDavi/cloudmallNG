@@ -1,0 +1,16 @@
+.cartView{
+  border: 1px solid black;
+  border-bottom: none !important;
+}
+
+.cartItem{
+  border-bottom: 1px solid black;
+}
+
+.details h3{
+  font-size: 16px;
+}
+
+.details h4{
+  font-size: 14px;
+}

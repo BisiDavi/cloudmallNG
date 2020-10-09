@@ -88,13 +88,13 @@
 /* Caegoryview */
 .categoryview {
   border: 1px solid black !important;
+  border-bottom: none !important;
 }
 .view {
   border-bottom: 1px solid black !important;
 }
-.view:last-child {
-  border-bottom: none !important;
-}
+
+
 .thumbnail {
   height: 90px;
   width: 100px;

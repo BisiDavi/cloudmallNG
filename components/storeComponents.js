@@ -99,39 +99,41 @@ export const DisplayOffers = ({ offers, linkName }) => {
   const fourOffers = offers.splice(0, 4);
   return (
     <div className={style.offers}>
-      {/* offers.length > 4? fourOffers */}
-        {offers.map(offer => (
-            <div key={offer.id} className={styles.productStore}>
-              <span className={styles.eyeicon}>
-                <img src={eyeIcon} alt="product view" />
-              </span>
-              {(
-                <img
-                  className={styles.productImage}
-                  src={offer.image}
-                  alt={offer.name}
-                />
-              ) || <Skeleton duration={2} />}
+      {offers.map(offer => (
+        <div key={offer.id} className={styles.productStore}>
+          <span className={styles.eyeicon}>
+            <img src={eyeIcon} alt="product view" />
+          </span>
+          {(
+            <img
+              className={styles.productImage}
+              src={offer.image}
+              alt={offer.name}
+            />
+          ) || <Skeleton duration={2} />}
 
-              <span className={styles.duration}>{offer.duration}</span>
-              <Container className={styles.details}>
-                <Row>
-                  <Col xs={8}>
-                    <h5>{offer.name}</h5>
-                  </Col>
-                  <Col xs={4}>
-                    <strong>{offer.price}</strong>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col xs={12}>
-                    <Button variant="outline-success">Order</Button>
-                  </Col>
-                </Row>
-              </Container>
-            </div>
-          ))}
-        {/* // : null} */}
+          <span className={styles.duration}>
+            {offer.duration}
+          </span>
+          <Container className={styles.details}>
+            <Row>
+              <Col xs={8}>
+                <h5>{offer.name}</h5>
+              </Col>
+              <Col xs={4}>
+                <strong>{offer.price}</strong>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12}>
+                <Button variant="outline-success">
+                  Order
+                </Button>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+        ))}
       <div className={style.moreView}>
         <Link href={`/restaurant/${linkName}`}>
           <a>{offers.length - 4} more</a>

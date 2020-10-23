@@ -1,16 +1,43 @@
-.cartView{
+.cartView {
   border: 1px solid black;
   border-bottom: none !important;
 }
 
-.cartItem{
+.cartItem {
   border-bottom: 1px solid black;
 }
 
-.details h3{
+.details h3 {
   font-size: 16px;
 }
 
-.details h4{
+.details h4 {
   font-size: 14px;
+}
+
+.totalcost {
+  position: absolute;
+  bottom: 55px;
+}
+
+.totalcost .d-flex {
+  border: 1px solid #eee;
+}
+
+.totalcost a {
+  text-decoration: none;
+  width: 90%;
+  margin: auto !important;
+}
+
+.totalcost button {
+  width: 100% !important;
+  margin: auto !important;
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+}
+
+.totalcost button:hover {
+  background: green;
 }

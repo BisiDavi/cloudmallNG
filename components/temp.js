@@ -271,16 +271,16 @@ export const EnglishOffers = [
 ];
 
 export const meals = [
-  { id: 1, meal: "Rice", price: 50 },
-  { id: 2, meal: "Beans", price: 50 },
-  { id: 3, meal: "Plantain", price: 50 },
-  { id: 4, meal: "Moin moin", price: 100 },
-  { id: 5, meal: "Beef", price: 100 },
-  { id: 6, meal: "Inu eran (intestine)", price: 100 },
-  { id: 7, meal: "Fish", price: 100 },
-  { id: 8, meal: "Ponmo", price: 50 },
-  { id: 9, meal: "Water", price: 50 },
-  { id: 10, meal: "Disposable pack*", price: 100 }
+  { id: 0, meal: "Rice", price: 50 },
+  { id: 1, meal: "Beans", price: 50 },
+  { id: 2, meal: "Plantain", price: 50 },
+  { id: 3, meal: "Moin moin", price: 100 },
+  { id: 4, meal: "Beef", price: 100 },
+  { id: 5, meal: "Inu eran (intestine)", price: 100 },
+  { id: 6, meal: "Fish", price: 100 },
+  { id: 7, meal: "Ponmo", price: 50 },
+  { id: 8, meal: "Water", price: 50 },
+  { id: 9, meal: "Disposable pack*", price: 100 }
 ];
 export const swallowPrices = [
   {

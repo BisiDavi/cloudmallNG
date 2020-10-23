@@ -14,45 +14,49 @@ const Delivery = () => {
           <tbody>
             <tr>
               <th scope="row">Address</th>
-              <td>
+              <td className="text-right">
                 <p>Current location</p>
                 <p>
                   {" "}
-                  <i className="fas fa-map-marked-alt"></i> 9 Omole Estate
+                  <i className="fas fa-map-marker-alt"></i> 9 Omole Estate
                   Mayfair
                 </p>
               </td>
             </tr>
-            <tr className="px-3">
+            <tr>
               <th scope="row">Delivery Time</th>
-              <td>Now (30 - 40 mins)</td>
+              <td className="text-right">Now (30 - 40 mins)</td>
             </tr>
             <tr>
               <th scope="row">Phone Number</th>
-              <td>+234707070707070</td>
+              <td className="text-right">+234707070707070</td>
             </tr>
             <tr>
               <th scope="row">Additional Note</th>
             </tr>
             <tr>
               <th scope="row">Promo Code</th>
-              <td></td>
+              <td>
+                <form className="form">
+                  <input type="text" placeholder="Enter promo code" />
+                </form>
+              </td>
             </tr>
             <tr>
               <th scope="row">Sub Total</th>
-              <td class="text-right">N3600</td>
+              <td className="text-right">N3600</td>
             </tr>
             <tr>
               <th scope="row">Delivery Fee </th>
-              <td class="text-right">N400</td>
+              <td className="text-right">N400</td>
             </tr>
             <tr>
               <th scope="row">Service Fee</th>
-              <td class="text-right">N61</td>
+              <td className="text-right">N61</td>
             </tr>
             <tr>
               <th scope="row">Total Amount</th>
-              <td class="text-right">N4061</td>
+              <td className="text-right">N4061</td>
             </tr>
           </tbody>
         </table>
@@ -63,9 +67,11 @@ const Delivery = () => {
           {`
             .table.table-borderless {
               height: 75vh !important;
+              width: 95vw !important;
+              margin: 10px !important;
             }
-            .text-right {
-              margin-right: 40px !important;
+            .form input {
+              float: right;
             }
           `}
         </style>

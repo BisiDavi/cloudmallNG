@@ -8,6 +8,7 @@ import {
 import { featuredDeals } from "../components/temp";
 
 const Homepage = props => {
+  
   const FeaturedDeals = () => {
     return <Category deals={featuredDeals} />;
   };

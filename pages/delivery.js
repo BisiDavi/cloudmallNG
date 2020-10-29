@@ -72,6 +72,8 @@ const Delivery = () => {
             }
             .form input {
               float: right;
+              border-radius: 5px;
+              text-align: center;
             }
           `}
         </style>

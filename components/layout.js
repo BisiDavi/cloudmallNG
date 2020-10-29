@@ -11,6 +11,10 @@ const Layout = props => {
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         />
+        <script
+          src="https://kit.fontawesome.com/83f2ab5e93.js"
+          crossorigin="anonymous"
+        ></script>
         <title>🛒 CloudMallNG - {props.headerTitle}</title>
       </Head>
       {showHeader ? <Header /> : null}

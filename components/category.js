@@ -1,14 +1,25 @@
+import React, { useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import OverflowWrapper from "react-overflow-wrapper";
-import { eyeIcon, starIcon } from "../imports";
+import { eyeIcon, OrderModal, starIcon } from "../imports";
 import style from "../styles/category.module.css";
 
-const Category = props => {
+const Category = ({ deals }) => {
+  const [modal, setModal] = useState(false);
+  const handleOpen = () => {
+    console.log("handleOpen, i was clicked");
+    return setModal(true);
+  };
+  const handleClose = () => {
+    console.log("handleClose, i was clicked");
+    return setModal(false);
+  };
+
   return (
     <section className={style.category}>
       <OverflowWrapper className={style.overflowWrapper}>
-        {props.deals.map(
+        {deals.map(
           deal =>
             (
               <div key={deal.id} className={style.product}>
@@ -45,7 +56,14 @@ const Category = props => {
                       <p>{deal.status}</p>
                     </Col>
                     <Col xs={12}>
-                      <Button variant="outline-success">Order</Button>
+                      <Button onClick={handleOpen} variant="outline-success">
+                        Order
+                      </Button>
+                      <OrderModal
+                        product={deal}
+                        modalState={modal}
+                        closeModal={handleClose}
+                      />
                     </Col>
                   </Row>
                 </Container>

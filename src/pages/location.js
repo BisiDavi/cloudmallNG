@@ -4,10 +4,9 @@ import { useRouter } from "next/router";
 import { Layout, Spinner } from "../imports";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import style from "../styles/Location.module.css";
-import homeStyle from "../styles/Home.module.css";
 
 const Location = props => {
   const [map, setMap] = useState({
@@ -82,52 +81,57 @@ const Location = props => {
 
   return (
     <Layout headerTitle="Enter your Address">
-      <div className="location">
-        <div className={style.header}>
-          <div className={style.arrow}>
-            <Link href="/">
-              <a>
-                <ArrowBackIcon />
-              </a>
-            </Link>
-          </div>
-          <h3>Select Address</h3>
-        </div>
+      <Container className="location" fluid>
+        <Row className={style.header}>
+          <Col>
+            <div className={style.arrow}>
+              <Link href="/">
+                <a>
+                  <ArrowBackIcon />
+                </a>
+              </Link>
+            </div>
+            <h3 className="text-center">Select Address</h3>
+          </Col>
+        </Row>
         <hr />
-
-        <div className={style.mapContainer}>
-          <div style={{ height: "70vh !important" }}>
-            {props.google ? googleMap() : <Spinner />}
-          </div>
-        </div>
-
-        <div className={style.formAddress}>
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <Form.Group controlId="userEmail">
-              <Form.Label>Enter Preferred Address</Form.Label>
-              <Form.Control
-                name="locationAddress"
-                type="text"
-                defaultValue={userAddress.location}
-                className={style.inputField}
-                placeholder="Your Location"
-                ref={register({ required: true })}
-              />
-              {errors.locationAddress && (
-                <span className="font-weight-bold text-danger">
-                  Your Address is required
-                </span>
-              )}
-              <Button
-                type="submit"
-                className="btn btn-primary p-2 mt-2 mb-2 m-auto text-white"
-              >
-                Confirm Address
-              </Button>
-            </Form.Group>
-          </Form>
-        </div>
-      </div>
+        <Row>
+          <Col lg={9} xs={12} className={`${style.mapContainer} 100vh`}>
+            <div style={{ height: "100vh !important" }}>
+              {props.google ? googleMap() : <Spinner />}
+            </div>
+          </Col>
+          <Col lg={3} xs={12} className={`${style.formAddress} 100vh`}>
+            <Form onSubmit={handleSubmit(onSubmit)}>
+              <Form.Group controlId="userEmail">
+                <Form.Label className={`${style.formText} mb-5`}>
+                  Enter Preferred Address
+                </Form.Label>
+                <Form.Control
+                  name="locationAddress"
+                  type="text"
+                  defaultValue={userAddress.location}
+                  className={style.inputField}
+                  placeholder="Your Location"
+                  ref={register({ required: true })}
+                />
+                {errors.locationAddress && (
+                  <span className="font-weight-bold text-danger">
+                    Your Address is required
+                  </span>
+                )}
+                <Button
+                  type="submit"
+                  className={`${style.formbutton}
+                  btn btn-primary p-2 mt-lg-5 mb-2 m-auto text-white`}
+                >
+                  Confirm Address
+                </Button>
+              </Form.Group>
+            </Form>
+          </Col>
+        </Row>
+      </Container>
     </Layout>
   );
 };
@@ -135,4 +139,3 @@ const Location = props => {
 export default GoogleApiWrapper({
   apiKey: "AIzaSyDjGviSQ3NuCZ1smhHroLRlK-bmBsf1R9c"
 })(Location);
-

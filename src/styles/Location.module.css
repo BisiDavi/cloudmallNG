@@ -68,3 +68,30 @@
   height: 70vh !important;
   padding: 0px 15px !important;
 }
+
+@media (min-width: 800px) {
+  .arrow {
+    top: -5px !important;
+  }
+  .map {
+    height: 93.5vh !important;
+  }
+  .formText {
+    margin: auto !important;
+    margin-bottom: 25px !important;
+    margin-left: 50px !important;
+    font-weight: 600;
+  }
+  .formbutton {
+    margin-top: 140px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    top: -5px;
+  }
+  .formText {
+    margin-bottom: 5px !important;
+  }
+}

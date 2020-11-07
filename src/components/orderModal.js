@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal } from "react-bootstrap";
+import Link from "next/link";
 import style from "../styles/Home.module.css";
 
 const OrderModal = ({ product, modalState, closeModal }) => {
@@ -8,8 +9,8 @@ const OrderModal = ({ product, modalState, closeModal }) => {
       <Modal
         show={modalState}
         className={style.locationmodal}
-        backdrop="static"
         onHide={closeModal}
+        backdropClassName={style.backdrop}
       >
         <Modal.Header closeButton>
           <Modal.Title className={style.modaltitle}>

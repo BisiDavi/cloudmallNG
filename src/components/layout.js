@@ -17,9 +17,11 @@ const Layout = props => {
         ></script>
         <title>🛒 CloudMallNG - {props.headerTitle}</title>
       </Head>
-      {showHeader ? <Header /> : null}
+      <header className={style.header}>
+        {showHeader ? <Header /> : null}
+        </header>
       <section className={style.content}>{props.children}</section>
-      {showFooter ? <Footer /> : null}
+      <footer className={style.footer}>{showFooter ? <Footer /> : null}</footer>
     </>
   );
 };

@@ -6,9 +6,11 @@ import {
   CategoryTitle
 } from "../imports";
 import { featuredDeals } from "../components/temp";
+import { AppNavbar } from "../components/homeComponents";
+import style from '../styles/Home.module.css'
 
-const Homepage = props => {
-  
+
+const Homepage = () => {
   const FeaturedDeals = () => {
     return <Category deals={featuredDeals} />;
   };
@@ -22,6 +24,9 @@ const Homepage = props => {
     >
       <div className="Homepage">
         <div className="homepage">
+          <nav className={style.nav}>
+          <AppNavbar />
+          </nav>
           <HomepageSlider />
           <Searchbar />
           <div className="categories">

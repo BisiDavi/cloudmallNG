@@ -1,13 +1,27 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { hamburger, man, heart } from "../imports";
+import { connect } from "react-redux";
 import Link from "next/link";
 import homeStyle from "../styles/Home.module.css";
 
-const Header = () => {
+const Header = ({ isLoggedIn }) => {
   const [openMenu, setOpenMenu] = useState(false);
 
   const handleMenu = () => setOpenMenu(true);
+
+  const isUserLoggedIn = () =>
+    isLoggedIn ? (
+      <img src={man} alt="user icon" />
+    ) : (
+      <Link href="/auth">
+        <a>
+          <span>
+            <i className="fa fa-sign-in-alt fa-2x mr-3"></i>
+          </span>
+        </a>
+      </Link>
+    );
 
   return (
     <section className="position-relative">
@@ -21,8 +35,8 @@ const Header = () => {
           <Col xs={7} className="d-block">
             <span>Now</span>
           </Col>
-          <Col xs={1} className="mr-2">
-            <img src={man} alt="user icon" />
+          <Col xs={1} className="mr-3">
+            {isUserLoggedIn()}
           </Col>
           <Col xs={1}>
             <img src={heart} alt="heart icon" />
@@ -45,4 +59,10 @@ const Header = () => {
   );
 };
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.isLoggedIn
+  };
+};
+
+export default connect(mapStateToProps)(Header);

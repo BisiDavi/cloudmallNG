@@ -5,6 +5,8 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Head from "next/head";
 import Router from "next/router";
 import NProgress from "nprogress";
+import { Provider } from "react-redux";
+import { store } from "../store/store";
 import "@fortawesome/fontawesome-free/js/fontawesome";
 import "@fortawesome/fontawesome-free/js/solid";
 import "@fortawesome/fontawesome-free/js/regular";
@@ -34,7 +36,9 @@ function MyApp({ Component, pageProps }) {
         />
         <CssBaseline />
       </Head>
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </CacheProvider>
   );
 }

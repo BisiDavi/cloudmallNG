@@ -20,41 +20,65 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(8),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
+    paddingTop: "15px"
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
+    width: "80% !important", // Fix IE 11 issue.
+    display: "flex",
+    flexDirection: "column",
+    margin: "auto !important",
+    marginTop: `${theme.spacing(3)}px !important`,
+    "& input": {
+      height: "40px !important",
+      paddingLeft: "15px !important"
+    },
+    "& .MuiFormControl-fullWidth": {
+      margin: "12px 0px !important"
+    },
+    "& .MuiInputLabel-formControl": {
+      marginTop: "-7px !important"
+    }
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
+    margin: `${theme.spacing(3, 0, 2)} !important`,
+    height: "35px  !important"
   },
   margin: {
     margin: theme.spacing(1)
   },
   textField: {
-    width: "25ch"
+    width: "100% !important",
+    margin: "12px 0px !important",
+    "& .MuiInputAdornment-positionEnd": {
+      marginRight: "12px !important"
+    }
   }
 }));
 
 const SignupEmail = () => {
   const classes = useStyles();
-   const [values, setValues] = React.useState({
-     password: "",
-     showPassword: false
-   });
+  const [values, setValues] = React.useState({
+    password: "",
+    password2: "",
+    showPassword1: false,
+    showPassword2: false
+  });
 
-   const handleChange = prop => event => {
-     setValues({ ...values, [prop]: event.target.value });
-   };
+  const handleChange = props => event => {
+    setValues({ ...values, [props]: event.target.value });
+  };
 
-   const handleClickShowPassword = () => {
-     setValues({ ...values, showPassword: !values.showPassword });
-   };
+  const handleClickShowPassword1 = () => {
+    setValues({ ...values, showPassword1: !values.showPassword1 });
+  };
+  const handleClickShowPassword2 = () => {
+    setValues({ ...values, showPassword2: !values.showPassword2 });
+  };
 
-   const handleMouseDownPassword = event => {
-     event.preventDefault();
-   };
+  const handleMouseDownPassword = event => {
+    event.preventDefault();
+  };
   return (
     <div className="signupemail">
       <AuthHeader title="Continue with Email" />
@@ -102,18 +126,22 @@ const SignupEmail = () => {
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-password"
-                type={values.showPassword ? "text" : "password"}
+                type={values.showPassword1 ? "text" : "password"}
                 value={values.password}
                 onChange={handleChange("password")}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
+                      onClick={handleClickShowPassword1}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                      {values.showPassword1 ? (
+                        <Visibility />
+                      ) : (
+                        <VisibilityOff />
+                      )}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -130,18 +158,22 @@ const SignupEmail = () => {
               </InputLabel>
               <OutlinedInput
                 id="outlined-adornment-password"
-                type={values.showPassword ? "text" : "password"}
-                value={values.password}
-                onChange={handleChange("password")}
+                type={values.showPassword2 ? "text" : "password"}
+                value={values.password2}
+                onChange={handleChange("password2")}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
+                      onClick={handleClickShowPassword2}
                       onMouseDown={handleMouseDownPassword}
                       edge="end"
                     >
-                      {values.showPassword ? <Visibility /> : <VisibilityOff />}
+                      {values.showPassword2 ? (
+                        <Visibility />
+                      ) : (
+                        <VisibilityOff />
+                      )}
                     </IconButton>
                   </InputAdornment>
                 }

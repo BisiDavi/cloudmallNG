@@ -1,19 +1,41 @@
+import { Container, Row, Col, Button } from "react-bootstrap";
+import Link from "next/link";
 import AuthHeader from "./authHeader";
-import { Container, Row, Button } from "react-bootstrap";
 
 const Auth = () => {
   return (
     <Container className="authpage">
       <AuthHeader title="Sign Up or Login" />
       <Row>
-        <Button className="signup btn btn-danger">Sign Up</Button>
+        <Col xs={12} className="mt-4 d-flex flex-column">
+          <Link href="/auth/signup">
+            <a className="mx-auto w-75">
+              <Button
+                variant="secondary"
+                className="p-2 w-75 mx-auto justify-content-center d-flex font-weight-bold"
+              >
+                Sign Up
+              </Button>
+            </a>
+          </Link>
+          <p className="text-center m-3"> Or</p>
+        </Col>
+        <Col xs={12} className="d-flex flex-column">
+          <Link href="/auth/login">
+            <a className="mx-auto w-75">
+              <Button
+                variant="secondary"
+                className="p-2 w-75 mx-auto justify-content-center d-flex font-weight-bold"
+              >
+                Login
+              </Button>
+            </a>
+          </Link>
+          <p className="text-mute text-center m-5">
+            Signup or Login to complete your transaction
+          </p>
+        </Col>
       </Row>
-      <p> Or</p>
-
-      <Row>
-        <Button className="login btn btn-danger">Login</Button>
-      </Row>
-      <p className="text-mute">Signup or Login to complete your transaction</p>
     </Container>
   );
 };

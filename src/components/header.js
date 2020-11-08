@@ -27,7 +27,7 @@ const Header = ({ isLoggedIn }) => {
     <section className="position-relative">
       <Container className={`${homeStyle.header} py-2 px-1 m-auto`} fluid>
         <Row>
-          <Col xs={1} className="ml-4 mr-3">
+          <Col xs={1} className="ml-3 mr-3">
             <div onClick={handleMenu} className="menu-hamburger">
               <img src={hamburger} alt="menu bar icon" />
             </div>
@@ -38,7 +38,7 @@ const Header = ({ isLoggedIn }) => {
           <Col xs={1} className="mr-3">
             {isUserLoggedIn()}
           </Col>
-          <Col xs={1}>
+          <Col xs={1} className="mr-1 heart">
             <img src={heart} alt="heart icon" />
           </Col>
         </Row>
@@ -51,6 +51,9 @@ const Header = ({ isLoggedIn }) => {
       <style jsx>
         {`
           .menu-hamburger {
+            cursor: pointer;
+          }
+          .heart {
             cursor: pointer;
           }
         `}

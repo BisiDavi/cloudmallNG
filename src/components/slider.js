@@ -12,22 +12,22 @@ const HomepageSlider = () => {
       <Carousel className={style.carouselmain} infiniteLoop useKeyboardArrows showThumbs={false} autoPlay>
         <div>
           <img src={slider_books} />
-          <p className="legend">Awesome Books, get one now!</p>
+          <p className={style.legend}>Awesome Books, get one now!</p>
         </div>
         <div>
           <img src={slider_fastfood} />
-          <p className="legend">  
+          <p className={style.legend}>  
             You need food right <strong>now </strong>? Order{" "}
             <strong>now</strong>
           </p>
         </div>
         <div>
           <img src={slider_groceries} />
-          <p className="legend">Order Groceries from nearby stores</p>
+          <p className={style.legend}>Order Groceries from nearby stores</p>
         </div>
         <div>
           <img src={slider_rawfoods} />
-          <p className="legend">Is it rawfoods? we got you 😉</p>
+          <p className={style.legend}>Is it rawfoods? we got you 😉</p>
         </div>
       </Carousel>
   );

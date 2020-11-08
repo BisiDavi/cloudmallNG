@@ -66,4 +66,11 @@
   .nav {
     display: none;
   }
+  .typewriter {
+    margin-top: -10px !important;
+    margin-bottom: 20px !important;
+    font-weight: bold;
+    color: red;
+    font-style: italics;
+  }
 }

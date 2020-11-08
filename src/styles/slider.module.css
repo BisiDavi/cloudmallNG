@@ -1,3 +1,10 @@
-.carouselmain{
-  padding: 20px !important;
+.carouselmain {
+  padding-bottom: 20px !important;
+}
+
+.legend {
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+  left: 5% !important;
 }

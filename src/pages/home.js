@@ -6,9 +6,9 @@ import {
   CategoryTitle
 } from "../imports";
 import { featuredDeals } from "../components/temp";
+import Typewriter from "typewriter-effect";
 import { AppNavbar } from "../components/homeComponents";
-import style from '../styles/Home.module.css'
-
+import style from "../styles/Home.module.css";
 
 const Homepage = () => {
   const FeaturedDeals = () => {
@@ -25,9 +25,21 @@ const Homepage = () => {
       <div className="Homepage">
         <div className="homepage">
           <nav className={style.nav}>
-          <AppNavbar />
+            <AppNavbar />
           </nav>
           <HomepageSlider />
+          <div className={`${style.typewriter} text-center`}>
+            <Typewriter
+              options={{
+                strings: [
+                  `Do you need Groceries,Pastries or Raw Foods?`,
+                  "We have you covered, with our reliable delivery services"
+                ],
+                autoStart: true,
+                loop: true
+              }}
+            />
+          </div>
           <Searchbar />
           <div className="categories">
             <CategoryTitle title="Featured Deals" />

@@ -1,6 +1,7 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Link from "next/link";
 import AuthHeader from "./authHeader";
+import { AuthButton } from "../../components/authComponent";
 
 const Auth = () => {
   return (
@@ -9,26 +10,16 @@ const Auth = () => {
       <Row>
         <Col xs={12} className="mt-4 d-flex flex-column">
           <Link href="/auth/signup">
-            <a className="mx-auto w-75">
-              <Button
-                variant="secondary"
-                className="p-2 w-75 mx-auto justify-content-center d-flex font-weight-bold"
-              >
-                Sign Up
-              </Button>
+            <a className="mx-auto w-75 text-decoration-none">
+              <AuthButton>Sign Up</AuthButton>
             </a>
           </Link>
-          <p className="text-center m-3"> Or</p>
+          <p className="text-center mt-3 mb-0"> Or</p>
         </Col>
         <Col xs={12} className="d-flex flex-column">
           <Link href="/auth/login">
-            <a className="mx-auto w-75">
-              <Button
-                variant="secondary"
-                className="p-2 w-75 mx-auto justify-content-center d-flex font-weight-bold"
-              >
-                Login
-              </Button>
+            <a className="mx-auto w-75 text-decoration-none">
+              <AuthButton>Login</AuthButton>
             </a>
           </Link>
           <p className="text-mute text-center m-5">

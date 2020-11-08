@@ -84,12 +84,8 @@ const Location = props => {
       <Container className="location" fluid>
         <Row className={style.header}>
           <Col>
-            <div className={style.arrow}>
-              <Link href="/">
-                <a>
-                  <ArrowBackIcon />
-                </a>
-              </Link>
+            <div className={style.arrow} onClick={() => router.back()}>
+              <ArrowBackIcon />
             </div>
             <h3 className="text-center">Select Address</h3>
           </Col>

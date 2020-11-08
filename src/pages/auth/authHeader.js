@@ -23,7 +23,7 @@ const AuthHeader = ({ title }) => {
           <div onClick={() => router.back()} className="arrow">
             <ArrowBackIcon />
           </div>
-          <h5 className="text-center authtext">{title}</h5>
+          <h5 className="text-center authtext font-weight-bold">{title}</h5>
         </div>
         <style jsx>
           {`

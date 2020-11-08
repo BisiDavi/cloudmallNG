@@ -2,6 +2,7 @@ import { Container, Button, Row, Col } from "react-bootstrap";
 import Link from "next/link";
 import { TextField, makeStyles } from "@material-ui/core";
 import AuthHeader from "./authHeader";
+import { AuthButton } from "../../components/authComponent";
 
 const useStyles = makeStyles(theme => ({
   form: {
@@ -21,7 +22,6 @@ const GoogleSignup = () => {
   return (
     <Container>
       <AuthHeader title="Verify your account" />
-
       <Row>
         <Col className="mt-3 mb-2">
           <p className="text-center">A verification code was sent to you</p>
@@ -46,10 +46,10 @@ const GoogleSignup = () => {
             />
             <p className="mt-2 ">Verification code expires after 10 minutes</p>
             <Link href="/home">
-              <a className="w-75 p-2 mx-auto">
-                <Button variant="secondary" className="w-75 p-2 mx-auto">
-                  Continue
-                </Button>
+              <a className="w-75 p-2 mx-auto text-decoration-none">
+                <AuthButton>                 
+                  Continue                  
+                </AuthButton>
               </a>
             </Link>
           </form>

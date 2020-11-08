@@ -93,5 +93,7 @@
   }
   .formText {
     margin-bottom: 5px !important;
+    display: flex;
+    justify-content: center;
   }
 }

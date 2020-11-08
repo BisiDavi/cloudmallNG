@@ -1,15 +1,18 @@
 import {
   CssBaseline,
   TextField,
-  Container,
-  Button,
   IconButton,
   InputLabel,
   OutlinedInput,
+  Button,
   InputAdornment,
   FormControl
 } from "@material-ui/core";
 import clsx from "clsx";
+import Link from "next/link";
+import { AuthButton } from "../../components/authComponent";
+import { Container, Row, Col } from "react-bootstrap";
+import { googleIcon } from "../../imports";
 import AuthHeader from "./authHeader";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
@@ -23,17 +26,37 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center"
   },
   form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(1)
+    width: "80% !important", // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+    "& input": {
+      height: "40px !important",
+      width: "80% !important"
+    },
+    "& .MuiFormControl-fullWidth": {
+      margin: "20px 0px !important"
+    },
+    "& .MuiInputLabel-formControl": {
+      marginTop: "-7px !important"
+    },
+    "& .MuiIconButton-label": {
+      marginRight: "-50px !important"
+    }
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
+    margin: `${theme.spacing(3, 0, 2)} !important`,
+    height: "40px  !important",
+    background: "#DBDADA !important",
+    fontWeight: "bold !important",
+    bottom: "60px",
+    position: "absolute",
+    width: "80% !important",
+    left: "35px"
   },
   margin: {
     margin: theme.spacing(1)
   },
   textField: {
-    width: "25ch"
+    width: "100% !important"
   }
 }));
 
@@ -57,14 +80,26 @@ const Login = () => {
   };
 
   return (
-    <div className="signupemail">
+    <Container className="signupemail">
       <AuthHeader title="Login" />
-      <div className="loginText d-block">
-        <div className="withGoogle">Continue with Google</div>
-        <div className="withEmail">
-          <p>Continue with Email</p>
-        </div>
-      </div>
+      <Row className="loginText d-flex flex-column">
+        <Col className="withGoogle mt-2">
+          <Link href="/auth/googlesignup">
+            <a className="mx-auto w-75 mt-3 text-decoration-none">
+              <AuthButton width="80%">
+                <img
+                  src={googleIcon}
+                  className="mr-3"
+                  alt="signin with google"
+                />
+                Continue with Google
+              </AuthButton>
+            </a>
+          </Link>
+          <p className="text-center m-2">Or</p>
+          <p className="text-center withEmail">Continue with Email</p>
+        </Col>
+      </Row>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>
@@ -113,7 +148,6 @@ const Login = () => {
               type="submit"
               fullWidth
               variant="contained"
-              color="primary"
               className={classes.submit}
             >
               Login
@@ -121,7 +155,7 @@ const Login = () => {
           </form>
         </div>
       </Container>
-    </div>
+    </Container>
   );
 };
 

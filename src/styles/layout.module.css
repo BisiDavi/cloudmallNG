@@ -1,9 +1,9 @@
-.content {
+/* .content {
   margin-bottom: 80px !important;
-}
+} */
 
 @media (min-width: 600px) {
-  .header{
+  .header {
     display: none !important;
   }
   .footer {

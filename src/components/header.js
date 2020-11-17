@@ -8,8 +8,6 @@ import homeStyle from "../styles/Home.module.css";
 const Header = ({ isLoggedIn }) => {
   const [openMenu, setOpenMenu] = useState(false);
 
-  console.log("openMenu", openMenu);
-
   const openHamburgerMenu = () => setOpenMenu(!openMenu);
 
   const closeHamburgerMenu = () => setOpenMenu(false);

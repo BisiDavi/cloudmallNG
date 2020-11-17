@@ -17,10 +17,12 @@ const OrderProduct = props => {
             background-color: rgba(0, 0, 0, 0.5);
             height: 100vh;
             width: 100vw;
+            left: 0px;
             bottom: 0px;
             z-index: 10000;
           }
           .orderProduct {
+            left:0px;
             position: absolute;
             bottom: 0px !important;
             z-index: 20000 !important;

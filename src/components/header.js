@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { hamburger, man, heart } from "../imports";
+import { hamburger, man, heart, SidebarDrawer } from "../imports";
 import { connect } from "react-redux";
 import Link from "next/link";
 import homeStyle from "../styles/Home.module.css";
@@ -8,7 +8,11 @@ import homeStyle from "../styles/Home.module.css";
 const Header = ({ isLoggedIn }) => {
   const [openMenu, setOpenMenu] = useState(false);
 
-  const handleMenu = () => setOpenMenu(true);
+  console.log("openMenu", openMenu);
+
+  const openHamburgerMenu = () => setOpenMenu(!openMenu);
+
+  const closeHamburgerMenu = () => setOpenMenu(false);
 
   const isUserLoggedIn = () =>
     isLoggedIn ? (
@@ -28,7 +32,7 @@ const Header = ({ isLoggedIn }) => {
       <Container className={`${homeStyle.header} py-2 px-1 m-auto`} fluid>
         <Row>
           <Col xs={1} className="ml-3 mr-3">
-            <div onClick={handleMenu} className="menu-hamburger">
+            <div onClick={openHamburgerMenu} className="menu-hamburger">
               <img src={hamburger} alt="menu bar icon" />
             </div>
           </Col>
@@ -44,8 +48,8 @@ const Header = ({ isLoggedIn }) => {
         </Row>
       </Container>
       {openMenu ? (
-        <div className="position-absolute">
-          <SidebarDrawer />
+        <div>
+          <SidebarDrawer onClose={closeHamburgerMenu} />
         </div>
       ) : null}
       <style jsx>

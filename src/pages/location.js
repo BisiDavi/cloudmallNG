@@ -3,7 +3,6 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import { useRouter } from "next/router";
 import { Layout, Spinner } from "../imports";
 import { useForm } from "react-hook-form";
-import Link from "next/link";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import style from "../styles/Location.module.css";

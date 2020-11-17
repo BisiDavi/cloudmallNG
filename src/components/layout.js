@@ -14,7 +14,7 @@ const Layout = props => {
         <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
         <script
           src="https://kit.fontawesome.com/83f2ab5e93.js"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
         ></script>
         <title>🛒 CloudMallNG - {props.headerTitle}</title>
       </Head>

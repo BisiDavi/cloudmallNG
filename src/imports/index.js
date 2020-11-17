@@ -29,6 +29,7 @@ export { default as inviteIcon } from "../../public/static/images/inviteIcon.svg
 export { default as mailIcon } from "../../public/static/images/mailIcon.svg";
 export { default as googleIcon } from "../../public/static/images/googleIcon.svg";
 
+
 /* Components */
 export { default as Layout } from "../components/layout";
 export { default as Header } from "../components/header";
@@ -39,5 +40,6 @@ export { default as CategoryTitle } from "../components/categoryTitle";
 export { default as HomepageSlider } from "../components/slider";
 export { default as Spinner } from "../components/spinner";
 export { default as OrderModal } from "../components/orderModal";
+export { default as SidebarDrawer } from "../components/SidebarDrawer";
 
 /* temp */

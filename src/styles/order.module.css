@@ -17,9 +17,9 @@
   flex-direction: column;
 }
 
-.orderPage {
+/* .orderPage {
   margin-top: 40% !important;
-}
+} */
 
 .orderButton{
   display: flex;

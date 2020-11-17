@@ -1,7 +1,7 @@
 import React from "react";
 import { profileIcon, ProfileImg, walletIcon, inviteIcon } from "../imports";
 
-const SidebarDrawer = (props) => {
+const SidebarDrawer = props => {
   const menuLink = [
     { id: 1, name: "Profile", image: profileIcon, link: "" },
     { id: 2, name: "Wallet", image: walletIcon, link: "" },
@@ -45,28 +45,27 @@ const SidebarDrawer = (props) => {
   ];
 
   return (
-    <div className="SidebarDrawer position-absolute">
-      <div className="overlay" onClick={props.onClose}>
-        <div className="profile w-50 h-100 bg-white">
-          <div className="profile-img">
-            <img src={ProfileImg} alt="cloudmall profile logo" />
-          </div>
-          <div className="menu">
-            <ul className="sidebar-menu">
-              {menuLink.map(menu => (
-                <li className="d-flex" key={menu.id}>
-                  {menu.image ? (
-                    <img src={menu.image} />
-                  ) : (
-                    <span>{menu.faImage}</span>
-                  )}
-                  <h6>{menu.name}</h6>
-                </li>
-              ))}
-            </ul>
-          </div>
+    <div className="SidebarDrawer d-flex position-absolute">
+      <div className="profile w-50 h-100 bg-white">
+        <div className="profile-img">
+          <img src={ProfileImg} alt="cloudmall profile logo" />
+        </div>
+        <div className="menu">
+          <ul className="sidebar-menu">
+            {menuLink.map(menu => (
+              <li className="d-flex" key={menu.id}>
+                {menu.image ? (
+                  <img src={menu.image} />
+                ) : (
+                  <span>{menu.faImage}</span>
+                )}
+                <h6>{menu.name}</h6>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
+      <div className="overlay" onClick={props.onClose}></div>
       <style jsx>
         {`
           .profile-img img {
@@ -80,6 +79,7 @@ const SidebarDrawer = (props) => {
             top: 50px;
             width: 100vw !important;
             height: 100vh !important;
+            transition: 0.5s ease-in-out;
           }
           .profile {
             z-index: 1200;
@@ -89,7 +89,7 @@ const SidebarDrawer = (props) => {
             background: rgba(0, 0, 0, 0.5);
             z-index: 1005;
             left: 0px;
-            top: 50px;
+            top: 0px;
             width: 100vw !important;
             height: 100vh !important;
           }

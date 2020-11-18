@@ -45,7 +45,7 @@ const SidebarDrawer = props => {
   ];
 
   return (
-    <div className="SidebarDrawer d-flex position-absolute">
+    <div className="SidebarDrawer d-flex">
       <div className="profile w-50 h-100 bg-white">
         <div className="profile-img">
           <img src={ProfileImg} alt="cloudmall profile logo" />
@@ -76,6 +76,7 @@ const SidebarDrawer = props => {
           .SidebarDrawer {
             z-index: 1000;
             left: 0px;
+            position: fixed;
             top: 50px;
             width: 100vw !important;
             height: 100vh !important;

@@ -21,9 +21,9 @@ const OrderProduct = props => {
             width: 100vw !important;
           }
           .ordermenu {
-            position: absolute;
+            position: fixed;
             background-color:rgba(0, 0, 0, 0.5);
-            height: 40vh;
+            height: 100vh;
             bottom: 0px;
             width: 100vw;
             left: 0px;

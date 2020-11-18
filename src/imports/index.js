@@ -39,7 +39,7 @@ export { default as CategoryTitle } from "../components/categoryTitle";
 export { default as HomepageSlider } from "../components/slider";
 export { default as Spinner } from "../components/spinner";
 export { default as OrderModal } from "../components/orderModal";
-export { default as OrderProduct } from "../components/OrderProduct";
-export { default as SidebarDrawer } from "../components/SidebarDrawer";
+export { default as OrderProduct } from "../components/orderProduct";
+export { default as SidebarDrawer } from "../components/sidebarDrawer";
 
 /* temp */

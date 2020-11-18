@@ -4,7 +4,8 @@ import style from "../styles/order.module.css";
 
 const OrderProduct = props => {
   return (
-    <div className="ordermenu" onClick={props.closeOrderMenu}>
+    <div className="ordermenuWrapper d-flex flex-column">
+      <div className="ordermenu" onClick={props.closeOrderMenu}></div>
       <div className="orderProduct">
         <div className={style.orders}>
           <MealCalculator meals={meals} />
@@ -12,17 +13,23 @@ const OrderProduct = props => {
       </div>
       <style jsx>
         {`
+          .ordermenuWrapper {
+            height: 100vh !important;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            width: 100vw !important;
+          }
           .ordermenu {
             position: absolute;
             background-color: rgba(0, 0, 0, 0.5);
-            height: 100vh;
+            height: 40vh;
             width: 100vw;
             left: 0px;
-            bottom: 0px;
             z-index: 10000;
           }
           .orderProduct {
-            left:0px;
+            left: 0px;
             position: absolute;
             bottom: 0px !important;
             z-index: 20000 !important;

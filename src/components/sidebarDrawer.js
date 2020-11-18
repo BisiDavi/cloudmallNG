@@ -74,10 +74,10 @@ const SidebarDrawer = props => {
             display: flex;
           }
           .SidebarDrawer {
-            z-index: 1000;
+            z-index: 100000;
             left: 0px;
             position: fixed;
-            top: 50px;
+            top: 0px;
             width: 100vw !important;
             height: 100vh !important;
             transition: 0.5s ease-in-out;

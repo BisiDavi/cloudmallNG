@@ -26,7 +26,7 @@ const Header = ({ isLoggedIn }) => {
     );
 
   return (
-    <section className="position-relative">
+    <section className="header position-fixed">
       <Container className={`${homeStyle.header} py-2 px-1 m-auto`} fluid>
         <Row>
           <Col xs={1} className="ml-3 mr-3">
@@ -45,13 +45,14 @@ const Header = ({ isLoggedIn }) => {
           </Col>
         </Row>
       </Container>
-      {openMenu ? (
-        <div>
-          <SidebarDrawer onClose={closeHamburgerMenu} />
-        </div>
-      ) : null}
+      {openMenu ? <SidebarDrawer onClose={closeHamburgerMenu} /> : null}
       <style jsx>
         {`
+          .header {
+            top: 0px;
+            background: white !important;
+            z-index: 100000;
+          }
           .menu-hamburger {
             cursor: pointer;
           }

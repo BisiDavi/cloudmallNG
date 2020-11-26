@@ -1,5 +1,6 @@
 import { Button } from "react-bootstrap";
 export const OrangeButton = props => {
+  const { buttonMargin, text } = props;
   const style = {
     orangeButton: {
       backgroundColor: "#f29100 !important",
@@ -8,7 +9,11 @@ export const OrangeButton = props => {
       textAlign: "center !important",
       justifyContent: "center",
       alignContent: "center !important",
-      alignItems: "cente"
+      alignItems: "center",
+      fontFamily: "Roboto",
+      fontSize: "20px",
+      display: "flex",
+      margin: buttonMargin
     }
   };
   return (
@@ -16,7 +21,7 @@ export const OrangeButton = props => {
       style={style.orangeButton}
       className="orange_button text-white w-75"
     >
-      {props.text}
+      {text}
     </Button>
   );
 };

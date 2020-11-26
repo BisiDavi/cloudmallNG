@@ -28,6 +28,7 @@ export { default as walletIcon } from "../../public/static/images/wallet.svg";
 export { default as inviteIcon } from "../../public/static/images/inviteIcon.svg";
 export { default as mailIcon } from "../../public/static/images/mailIcon.svg";
 export { default as googleIcon } from "../../public/static/images/googleIcon.svg";
+export { default as emoji404 } from "../../public/static/images/emoji_404.png";
 
 /* Components */
 export { default as Layout } from "../components/layout";
@@ -41,5 +42,7 @@ export { default as Spinner } from "../components/spinner";
 export { default as OrderModal } from "../components/orderModal";
 export { default as OrderProduct } from "../components/orderProduct";
 export { default as SidebarDrawer } from "../components/sidebarDrawer";
+
+export { OrangeButton } from "../components/buttonComponent";
 
 /* temp */

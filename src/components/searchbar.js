@@ -24,22 +24,18 @@ const Searchbar = () => {
             onSubmit={handleSubmit(onSubmit)}
           >
             <InputGroup className="searchbar">
+              <InputGroup.Prepend className={style.inputprepend}>
+                <InputGroup.Text id="user-search">
+                  <i className="fa-search fa-2x"></i>
+                </InputGroup.Text>
+              </InputGroup.Prepend>
               <FormControl
                 ref={register}
                 name="search"
-                placeholder="Search"
+                placeholder="Search for products or store"
                 aria-label="search"
                 aria-describedby="user-search "
-              />
-              <InputGroup.Append>
-                <InputGroup.Text id="user-search">
-                  <img
-                    className={style.searchIcon}
-                    src={searchIcon}
-                    alt="search products"
-                  />
-                </InputGroup.Text>
-              </InputGroup.Append>
+              />              
             </InputGroup>
           </Form>
           {errors.search && <span>Not Available</span>}

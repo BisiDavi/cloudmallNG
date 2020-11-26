@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-evenly;
   position: relative;
+  background-color: #FFCE85;
 }
 
 .header h3 {
@@ -94,6 +95,6 @@
   .formText {
     margin-bottom: 5px !important;
     display: flex;
-    justify-content: center;
+    justify-content: left;
   }
 }

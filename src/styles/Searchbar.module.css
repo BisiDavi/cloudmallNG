@@ -1,10 +1,12 @@
 .searchform {
   margin-left: 10% !important;
   width: 100%;
+  background-color: #faf5ed !important;
 }
 .searchIcon {
   width: 30px;
   height: 30px;
+  background-color: #faf5ed !important;
 }
 .filterIcon {
   width: 30px;
@@ -13,8 +15,19 @@
   margin-top: 5px !important;
 }
 
+.inputprepend{
+  background-color: #faf5ed !important;
+  border: 0px !important;
+}
+.inputprepend span{
+  background-color: #faf5ed !important;
+  border: 0px !important;
+}
+
 .searchform input::placeholder {
   padding-left: 10px !important;
-  font-style: italic;
+  color: #ffce85;
+  font-family: Roboto;
+  background-color: #faf5ed !important;
   font-weight: 400;
 }

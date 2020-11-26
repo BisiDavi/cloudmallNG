@@ -28,8 +28,8 @@ const AuthHeader = ({ title }) => {
         <style jsx>
           {`
             .authheader {
-              border-bottom: 1px solid black;
               display: flex !important;
+              background-color: #ffce85;
             }
             .arrow {
               width: 50px;

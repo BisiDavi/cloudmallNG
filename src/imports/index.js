@@ -8,7 +8,7 @@ export { default as man } from "../../public/static/images/man.svg";
 export { default as shop } from "../../public/static/images/shop.svg";
 export { default as hamburger } from "../../public/static/images/hamburger.svg";
 export { default as eyeIcon } from "../../public/static/images/eye.svg";
-export { default as filterIcon } from "../../public/static/images/filter.svg";
+export { default as filterIcon } from "../../public/static/images/filterIcon.png";
 export { default as rightArrowIcon } from "../../public/static/images/rightArrow.svg";
 export { default as searchIcon } from "../../public/static/images/search.png";
 export { default as starIcon } from "../../public/static/images/star.svg";

@@ -18,7 +18,7 @@ const Header = ({ isLoggedIn }) => {
     ) : (
       <Link href="/auth">
         <a>
-          <span>
+          <span className="signin">
             <i className="fa fa-sign-in-alt fa-2x mr-3"></i>
           </span>
         </a>
@@ -31,7 +31,7 @@ const Header = ({ isLoggedIn }) => {
         <Row>
           <Col xs={1} className="ml-3 mr-3">
             <div onClick={openHamburgerMenu} className="menu-hamburger">
-              <img src={hamburger} alt="menu bar icon" />
+              <i className="fa fa-bars fa-2x" aria-hidden="true"></i>
             </div>
           </Col>
           <Col xs={7} className="d-block">
@@ -40,8 +40,8 @@ const Header = ({ isLoggedIn }) => {
           <Col xs={1} className="mr-3">
             {isUserLoggedIn()}
           </Col>
-          <Col xs={1} className="mr-1 heart">
-            <img src={heart} alt="heart icon" />
+          <Col xs={1} className={`mr-1 ${homeStyle.heart}`}>
+            <i className="fa fa-heart fa-2x" aria-hidden="true"></i>
           </Col>
         </Row>
       </Container>
@@ -50,14 +50,18 @@ const Header = ({ isLoggedIn }) => {
         {`
           .header {
             top: 0px;
-            background: white !important;
+            background: #ffce85 !important;
             z-index: 100000;
+            width: 100%;
           }
           .menu-hamburger {
             cursor: pointer;
           }
           .heart {
             cursor: pointer;
+          }
+          .heart svg{
+            color: #d12e2e !important;
           }
         `}
       </style>

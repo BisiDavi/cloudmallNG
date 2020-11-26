@@ -86,7 +86,7 @@ const Location = props => {
             <div className={style.arrow} onClick={() => router.back()}>
               <ArrowBackIcon />
             </div>
-            <h3 className="text-center">Select Address</h3>
+            <h3 className="text-center">Enter your Address</h3>
           </Col>
         </Row>
         <hr />

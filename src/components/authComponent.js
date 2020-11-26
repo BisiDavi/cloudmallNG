@@ -10,13 +10,20 @@ const useStyles = makeStyles({
       ? `${styledProps.width} !important`
       : "100% !important",
     marginTop: "20px !important",
-    background: "#DBDADA !important",
-    fontWeight: "bold"
+    border: ` 1px solid ${styledProps.borderColor}`,
+    backgroundColor: styledProps.backgroundColor || "#f29100 !important",
+    fontWeight: "bold",
+    color: styledProps.color || "white !important"
   })
 });
 
 export const AuthButton = props => {
-  const styledProps = { width: `${props.width}` };
+  const styledProps = {
+    width: `${props.width}`,
+    backgroundColor: `${props.backgroundColor}`,
+    color: `${props.color}`,
+    borderColor: `${props.borderColor}`
+  };
   const classes = useStyles(styledProps);
 
   return (

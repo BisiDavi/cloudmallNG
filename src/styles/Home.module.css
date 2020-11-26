@@ -46,6 +46,13 @@
   height: 75%;
 }
 
+.header svg {
+  color: #f29100 !important;
+}
+.heart svg {
+  color: #d12e2e !important;
+}
+
 .header {
   border-bottom: 1px solid #eee;
 }

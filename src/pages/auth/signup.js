@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import { googleIcon, mailIcon } from "../../imports";
-import AuthHeader from "./authHeader";
+import { googleIcon, mailIcon, Pageheader } from "../../imports";
 import { AuthButton } from "../../components/authComponent";
 
 const SignupPage = () => {
   return (
     <Container className="authpage">
-      <AuthHeader title="Sign Up" />
+      <Pageheader title="Sign Up" />
       <Row>
         <Col xs={12} className="mt-4 d-flex flex-column">
           <Link href="/auth/googlesignup">

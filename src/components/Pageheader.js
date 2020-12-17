@@ -2,7 +2,7 @@ import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-const AuthHeader = ({ title }) => {
+const Pageheader = ({ title }) => {
   const router = useRouter();
 
   return (
@@ -30,6 +30,7 @@ const AuthHeader = ({ title }) => {
             .authheader {
               display: flex !important;
               background-color: #ffce85;
+              height: 45px;
             }
             .arrow {
               width: 50px;
@@ -50,4 +51,4 @@ const AuthHeader = ({ title }) => {
   );
 };
 
-export default AuthHeader;
+export default Pageheader;

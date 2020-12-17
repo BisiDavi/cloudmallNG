@@ -1,45 +1,51 @@
 import React from "react";
+import Link from 'next/link';
 import { profileIcon, ProfileImg, walletIcon, inviteIcon } from "../imports";
 
 const SidebarDrawer = props => {
   const menuLink = [
     { id: 1, name: "Profile", image: profileIcon, link: "" },
-    { id: 2, name: "Wallet", image: walletIcon, link: "" },
+    { id: 2, name: "Wallet", image: walletIcon, link: "/wallet" },
     {
       id: 3,
       name: "Address",
-      faImage: <i class="fas fa-address-book fa-2x"></i>,
-      link: ""
+      faImage: <i className="fas fa-address-book fa-2x"></i>,
+      link: "/addressbook"
     },
     {
       id: 4,
       name: "Settings",
-      faImage: <i class="fas fa-cog fa-2x"></i>,
-      link: ""
+      faImage: <i className="fas fa-cog fa-2x"></i>,
+      link: "/settings"
     },
-    { id: 5, name: "Invite friends", image: inviteIcon, link: "" },
+    {
+      id: 5,
+      name: "Invite friends",
+      image: inviteIcon,
+      link: "/invitefriends"
+    },
     {
       id: 6,
       name: "Reviews",
-      faImage: <i class="fas fa-comment-alt-edit fa-2x"></i>,
+      faImage: <i className="fas fa-comment-alt-edit fa-2x"></i>,
       link: ""
     },
     {
       id: 7,
       name: "Contact us",
-      faImage: <i class="fas fa-phone-square-alt fa-2x"></i>,
+      faImage: <i className="fas fa-phone-square-alt fa-2x"></i>,
       link: ""
     },
     {
       id: 8,
       name: "Help",
-      faImage: <i class="fas fa-question-circle fa-2x"></i>,
+      faImage: <i className="fas fa-question-circle fa-2x"></i>,
       link: ""
     },
     {
       id: 9,
       name: "Logout",
-      faImage: <i class="fas fa-sign-out-alt fa-2x"></i>,
+      faImage: <i className="fas fa-sign-out-alt fa-2x"></i>,
       link: ""
     }
   ];
@@ -53,14 +59,18 @@ const SidebarDrawer = props => {
         <div className="menu">
           <ul className="sidebar-menu">
             {menuLink.map(menu => (
-              <li className="d-flex" key={menu.id}>
-                {menu.image ? (
-                  <img src={menu.image} />
-                ) : (
-                  <span>{menu.faImage}</span>
-                )}
-                <h6>{menu.name}</h6>
-              </li>
+              <Link href={menu.link}>
+                <a className="text-decoration-none" key={menu.id}>
+                  <li className="d-flex">
+                    {menu.image ? (
+                      <img src={menu.image} />
+                    ) : (
+                      <span>{menu.faImage}</span>
+                    )}
+                    <h6>{menu.name}</h6>
+                  </li>
+                </a>
+              </Link>
             ))}
           </ul>
         </div>

@@ -1,12 +1,12 @@
 import { Container, Row, Col } from "react-bootstrap";
 import Link from "next/link";
-import AuthHeader from "./authHeader";
+import {Pageheader} from "../../imports";
 import { AuthButton } from "../../components/authComponent";
 
 const Auth = () => {
   return (
     <Container className="authpage">
-      <AuthHeader title="Sign Up or Login" />
+      <Pageheader title="Sign Up or Login" />
       <Row>
         <Col xs={12} className="mt-4 d-flex flex-column">
           <Link href="/auth/signup">

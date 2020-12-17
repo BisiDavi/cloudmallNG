@@ -12,8 +12,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { AuthButton } from "../../components/authComponent";
 import { Container, Row, Col } from "react-bootstrap";
-import { googleIcon } from "../../imports";
-import AuthHeader from "./authHeader";
+import { googleIcon, Pageheader } from "../../imports";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import { makeStyles } from "@material-ui/core/styles";
@@ -81,7 +80,7 @@ const Login = () => {
 
   return (
     <Container className="signupemail">
-      <AuthHeader title="Login" />
+      <Pageheader title="Login" />
       <Row className="loginText d-flex flex-column">
         <Col className="withGoogle mt-2">
           <Link href="/auth/googlesignup">

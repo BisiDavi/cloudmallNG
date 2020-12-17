@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Skeleton from "react-loading-skeleton";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import OverflowWrapper from "react-overflow-wrapper";
-import { eyeIcon, OrderModal, starIcon, OrderProduct } from "../imports";
-import style from "../styles/category.module.css";
+import React, { useState } from 'react';
+import Skeleton from 'react-loading-skeleton';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import OverflowWrapper from 'react-overflow-wrapper';
+import { OrderModal, starIcon, OrderProduct, OrangeButton } from '../imports';
+import style from '../styles/category.module.css';
 
 const Category = ({ deals }) => {
   const [modal, setModal] = useState(false);
@@ -22,9 +22,6 @@ const Category = ({ deals }) => {
             (
               <div key={deal.id} className={style.product}>
                 <span onClick={handleOpen}>
-                  <span className={style.eyeicon}>
-                    <img src={eyeIcon} alt="product view" />
-                  </span>
                   {(
                     <img
                       className={style.productImage}
@@ -32,32 +29,33 @@ const Category = ({ deals }) => {
                       alt={deal.name}
                     />
                   ) || <Skeleton duration={2} />}
-                  <span className={style.duration}>{deal.duration}</span>
+                  <span className={style.duration}>
+                    <h6>{deal.duration} </h6>
+                    <p>min</p>
+                  </span>
                 </span>
                 <Container className={style.details}>
-                  <Row>
+                  <Row className={style.row}>
                     <Col xs={8}>
                       <h5>{deal.name}</h5>
                     </Col>
                     <Col xs={4}>
-                      <strong>{deal.price}</strong>
+                      <h3 className={style.price}>{deal.price}</h3>
                     </Col>
                   </Row>
-                  <Row>
+                  <Row className="align-items-center">
                     <Col className="ml-2">
                       <p>{deal.vendor}</p>
                     </Col>
                     <Col className="d-flex">
                       <img src={starIcon} alt="rating" />
-                      <p>{deal.rating}</p>
+                      <p>{deal.rating.substr(0, 3)}</p>
                     </Col>
                     <Col className="ml-2">
-                      <p>{deal.status}</p>
+                      <p className={style.open}>{deal.status}</p>
                     </Col>
                     <Col xs={12}>
-                      <Button onClick={viewOrder} variant="outline-success">
-                        Order
-                      </Button>
+                      <OrangeButton onClick={viewOrder} text="Order" />
                       <OrderModal
                         product={deal}
                         modalState={modal}

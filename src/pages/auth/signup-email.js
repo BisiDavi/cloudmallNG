@@ -10,7 +10,7 @@ import {
   FormControl
 } from "@material-ui/core";
 import clsx from "clsx";
-import AuthHeader from "./authHeader";
+import { Pageheader } from "../../imports";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import { makeStyles } from "@material-ui/core/styles";
@@ -82,7 +82,7 @@ const SignupEmail = () => {
   };
   return (
     <div className="signupemail">
-      <AuthHeader title="Continue with Email" />
+      <Pageheader title="Continue with Email" />
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <div className={classes.paper}>

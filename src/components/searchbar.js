@@ -26,7 +26,8 @@ const Searchbar = () => {
             <InputGroup className="searchbar">
               <InputGroup.Prepend className={style.inputprepend}>
                 <InputGroup.Text id="user-search">
-                  <i className="fa-search fa-2x"></i>
+                  <span class="glyphicon glyphicon-search"></span>
+                  {/* <i className="fa-search fa-2x"></i> */}
                 </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl

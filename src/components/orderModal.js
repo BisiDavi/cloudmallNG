@@ -1,7 +1,7 @@
-import React from "react";
-import { Modal } from "react-bootstrap";
-import Link from "next/link";
-import style from "../styles/Home.module.css";
+import React from 'react';
+import { Modal } from 'react-bootstrap';
+import Link from 'next/link';
+import style from '../styles/Home.module.css';
 
 const OrderModal = ({ product, modalState, closeModal }) => {
   return (
@@ -12,38 +12,38 @@ const OrderModal = ({ product, modalState, closeModal }) => {
         onHide={closeModal}
         backdropClassName={style.backdrop}
       >
-        <Modal.Header closeButton>
-          <Modal.Title className={style.modaltitle}>
-            😉 Hello - Welcome
-          </Modal.Title>
-        </Modal.Header>
+        <Modal.Header className={style.modalHeader} closeButton></Modal.Header>
         <Modal.Body className={style.modalbody}>
           <div className="product-image">
-            <img src={product.image} alt="product image" />
+            <img
+              className={style.productImg}
+              src={product.image}
+              alt="product image"
+            />
           </div>
-          <div className="product-detail">
+          <div className={style.productDetail}>
             <ul>
               <li className="d-flex justify-content-around my-2">
                 <h4>{product.name} (A pack of 5)</h4>
                 <span className="favourite">
                   <i className="fa fa-heart"></i>
                 </span>
-                <p>N{product.price}</p>
+                <p>{product.price}</p>
               </li>
               <li className="d-flex my-2">
-                <span className="mr-3">
-                  <i className="fa fa-map-marked-alt"></i>
+                <span className={`${style.productIcon} mr-3`}>
+                  <i className="fa fa-map-marker"></i>
                 </span>
                 <p>{product.vendor}</p>
               </li>
               <li className="d-flex my-2">
-                <span className="mr-3">
+                <span className={`${style.productIcon}  mr-3`}>
                   <i className="fa fa-star"></i>
                 </span>
                 <p>{product.rating}</p>
               </li>
               <li className="d-flex justify-content-between my-2">
-                <p>Delivery Period</p>
+                <p>Time to Prepare</p>
                 <p>{product.duration}</p>
               </li>
               <li className="my-2">

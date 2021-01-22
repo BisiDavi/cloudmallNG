@@ -1,8 +1,9 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
+import { getLandingPageProductsReducer } from './productReducer';
 
 const initialState = {
   isLoggedIn: false,
-  location: ""
+  location: ''
 };
 
 const locationReducer = (state = initialState.location, action) => {
@@ -12,7 +13,9 @@ const locationReducer = (state = initialState.location, action) => {
 const loggedInReducer = (state = initialState.isLoggedIn, action) => {
   return state;
 };
+
 export const rootReducer = combineReducers({
   islogin: loggedInReducer,
-  location: locationReducer
+  location: locationReducer,
+  LandingPageProducts: getLandingPageProductsReducer
 });

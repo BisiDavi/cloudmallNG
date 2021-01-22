@@ -1,20 +1,38 @@
+import React from 'react';
+import useSWR from 'swr';
+import Typewriter from 'typewriter-effect';
+import { axiosInstance } from '../axios';
+// import { FetchProductAsync } from '../store/action/productActions';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   Layout,
   HomepageSlider,
   Searchbar,
   Category,
   CategoryTitle
-} from "../imports";
-import { featuredDeals } from "../components/temp";
-import Typewriter from "typewriter-effect";
-import { AppNavbar } from "../components/homeComponents";
-import style from "../styles/Home.module.css";
+} from '../imports';
+import { featuredDeals } from '../components/temp';
+import { AppNavbar } from '../components/homeComponents';
+import style from '../styles/Home.module.css';
 
 const Homepage = () => {
+  // const dispatch = useDispatch();
+
+  const fetcher = url => axiosInstance.post(url).then(res => res.data);
+
+  const { data, error } = useSWR('/app/landing', fetcher);
+  console.log('data', data);
+
+  /* useEffect(() => {
+    dispatch(FetchProductAsync());
+  }, [dispatch]);
+ */
+  const productData = useSelector(state => state.LandingPageProducts);
+  const { products } = productData;
   const FeaturedDeals = () => {
     return <Category deals={featuredDeals} />;
   };
-
+  console.log('products', products);
   return (
     <Layout
       headerTitle="Home"
@@ -33,7 +51,7 @@ const Homepage = () => {
               options={{
                 strings: [
                   `Do you need Groceries,Pastries or Raw Foods?`,
-                  "We have you covered, with our reliable delivery services"
+                  'We have you covered, with our reliable delivery services'
                 ],
                 autoStart: true,
                 loop: true

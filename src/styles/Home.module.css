@@ -32,7 +32,7 @@
   padding: 10px !important;
 }
 
-.modalButton {
+.modalButton, .modalFooter {
   display: flex;
   justify-content: space-between;
   padding: 5px 10px !important;
@@ -93,7 +93,7 @@
   margin: 15px auto;
 }
 
-.productDetail li.d-flex.justify-content-between.my-2 p:nth-child(2) {
+.productDetail li p:nth-child(2) {
   color: orange !important;
 }
 
@@ -101,7 +101,7 @@
   padding: 0px 20px !important;
 }
 
-.productIcon i {
+.productIcon svg {
   color: #ffb647;
 }
 

@@ -1,21 +1,26 @@
-import { useState, useEffect } from "react";
-import Link from "next/link";
-import { Modal } from "react-bootstrap";
-import { logo, pattern, Layout, Spinner } from "../imports";
-import style from "../styles/Home.module.css";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Modal } from 'react-bootstrap';
+import { logo, pattern, Layout, Spinner, ButtonLink } from '../imports';
+import UserLocation from '../utils/UserLocation';
+import style from '../styles/Home.module.css';
 
 export default function Home() {
   const [modal, setModal] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
-    handleOpen();
+    UserLocation.checkBrowserGeoCompatibility();
+    UserLocation.getUserCurrentLocation(router);
+    UserLocation.watchUserLocationChanges();
+    // handleOpen();
   }, []);
 
-  const handleOpen = () => {
-    setTimeout(() => {
-      setModal(true);
-    }, 1000);
-  };
+  // const handleOpen = () => {
+  //   setTimeout(() => {
+  //     setModal(true);
+  //   }, 1000);
+  // };
   const handleClose = () => setModal(false);
 
   return (
@@ -39,12 +44,16 @@ export default function Home() {
             <Modal.Body className={style.modalbody}>
               <p>Please, help us with your location to serve you better</p>
             </Modal.Body>
-            <Modal.Footer className={style.modalButton}>
+            <Modal.Footer className={style.modalFooter}>
               <Link href="/home">
-                <a className="text-danger font-weight-bold">Cancel</a>
+                <a>
+                  <ButtonLink text="Cancel" />
+                </a>
               </Link>
               <Link href="/location">
-                <a className="text-success font-weight-bold">Allow</a>
+                <a>
+                  <ButtonLink text="Allow" />
+                </a>
               </Link>
             </Modal.Footer>
           </Modal>

@@ -27,3 +27,26 @@ export const OrangeButton = ({ buttonMargin, text, onClick }) => {
     </>
   );
 };
+
+export const ButtonLink = ({ text }) => {
+  return (
+    <>
+      <button className="link_button">{text}</button>
+      <style jsx>
+        {`
+          .link_button {
+            color: #f29100 !important;
+            font-family: Roboto;
+            background: none;
+            border: none;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 16px;
+          }
+        `}
+      </style>
+    </>
+  );
+};

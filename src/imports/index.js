@@ -46,6 +46,5 @@ export { default as OrderProduct } from '../components/orderProduct';
 export { default as SidebarDrawer } from '../components/sidebarDrawer';
 export { default as Pageheader } from '../components/Pageheader';
 
-export { OrangeButton } from '../components/buttonComponent';
+export { OrangeButton, ButtonLink } from '../components/buttonComponent';
 
-/* temp */

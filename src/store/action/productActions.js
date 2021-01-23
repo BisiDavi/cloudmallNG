@@ -9,8 +9,6 @@ export const FetchProductAsync = () => dispatch => {
     type: FETCH_PRODUCTS_REQUEST
   });
 
-
-
   dispatch({
     type: FETCH_PRODUCTS_SUCCESS,
     payload: data

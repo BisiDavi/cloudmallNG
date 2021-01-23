@@ -16,17 +16,19 @@ import { AppNavbar } from '../components/homeComponents';
 import style from '../styles/Home.module.css';
 
 const Homepage = () => {
-  // const dispatch = useDispatch();
+  const fetcher = url =>
+    axiosInstance.post(url, { crossdomain: true }).then(res => res.data);
 
-  const fetcher = url => axiosInstance.post(url).then(res => res.data);
-
-  const { data, error } = useSWR('/app/landing', fetcher);
+  const { data, error, loading } = useSWR('/app/landing', fetcher);
   console.log('data', data);
+  console.log('loading', loading);
+  console.log('error', error);
 
-  /* useEffect(() => {
-    dispatch(FetchProductAsync());
-  }, [dispatch]);
- */
+  if (typeof data !== 'undefined') {
+    const { message } = data;
+    console.log('result', result);
+  }
+
   const productData = useSelector(state => state.LandingPageProducts);
   const { products } = productData;
   const FeaturedDeals = () => {
@@ -93,4 +95,5 @@ const Homepage = () => {
     </Layout>
   );
 };
+
 export default Homepage;

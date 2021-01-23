@@ -25,8 +25,8 @@ const Homepage = () => {
   console.log('error', error);
 
   if (typeof data !== 'undefined') {
-    const { message } = data;
-    console.log('result', result);
+    const { result } = data;
+    console.log('result', result.products);
   }
 
   const productData = useSelector(state => state.LandingPageProducts);

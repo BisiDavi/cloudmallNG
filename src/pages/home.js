@@ -1,33 +1,33 @@
 import React from 'react';
-import useSWR from 'swr';
 import Typewriter from 'typewriter-effect';
-import { axiosInstance } from '../axios';
 import {
   Layout,
   HomepageSlider,
   Searchbar,
   Category,
-  CategoryTitle
+  CategoryTitle,
+  PageSpinner
 } from '../imports';
+import useGetProducts from '../utils/GetProducts';
 import { featuredDeals } from '../components/temp';
 import { AppNavbar } from '../components/homeComponents';
 import style from '../styles/Home.module.css';
 
 const Homepage = () => {
-  const fetcher = url =>
-    axiosInstance.post(url, { crossdomain: true }).then(res => res.data);
-
-  const { data: result, error, loading } = useSWR('/app/landing', fetcher);
-  console.log('data result', result);
-  console.log('loading', loading);
-  console.log('error', error);
-
-  const { products } = result;
-  console.log('products', products);
-
+  const { result, error, loading } = useGetProducts('/app/landing');
   const FeaturedDeals = () => {
     return <Category deals={featuredDeals} />;
   };
+  if (error) {
+    return (
+      <div>
+        An error occured, can't fetch products from the store, <b>{error} </b>
+      </div>
+    );
+  }
+  if (loading) <PageSpinner />;
+
+  console.log('results from cloudmall store', result);
   return (
     <Layout
       headerTitle="Home"

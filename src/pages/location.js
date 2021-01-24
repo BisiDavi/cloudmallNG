@@ -113,11 +113,12 @@ const Location = props => {
                   </span>
                 )}
                 {loading ? (
-                  <Button variant="primary" disabled>
+                  <Button variant="primary" className="py-2" disabled>
                     <Spinner
                       as="span"
                       animation="border"
                       size="sm"
+                      className="mr-3"
                       role="status"
                       aria-hidden="true"
                     />

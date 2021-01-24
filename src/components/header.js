@@ -1,12 +1,16 @@
-import React, { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { hamburger, man, heart, SidebarDrawer } from "../imports";
-import { connect } from "react-redux";
-import Link from "next/link";
-import homeStyle from "../styles/Home.module.css";
+import React, { useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { hamburger, man, heart, SidebarDrawer } from '../imports';
+import { useSelector } from 'react-redux';
+import Link from 'next/link';
+import homeStyle from '../styles/Home.module.css';
 
 const Header = ({ isLoggedIn }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const userCurrentAddress = useSelector(state => state.location);
+  const { address } = userCurrentAddress;
+
+  console.log('address', address);
 
   const openHamburgerMenu = () => setOpenMenu(!openMenu);
 
@@ -35,7 +39,7 @@ const Header = ({ isLoggedIn }) => {
             </div>
           </Col>
           <Col xs={7} className="d-block">
-            <span>Now</span>
+            <span>{address}</span>
           </Col>
           <Col xs={1} className="mr-3">
             {isUserLoggedIn()}
@@ -60,7 +64,7 @@ const Header = ({ isLoggedIn }) => {
           .heart {
             cursor: pointer;
           }
-          .heart svg{
+          .heart svg {
             color: #d12e2e !important;
           }
         `}
@@ -69,10 +73,4 @@ const Header = ({ isLoggedIn }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    isLoggedIn: state.isLoggedIn
-  };
-};
-
-export default connect(mapStateToProps)(Header);
+export default Header;

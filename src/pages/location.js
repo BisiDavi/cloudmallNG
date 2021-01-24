@@ -1,11 +1,13 @@
-import { useState } from "react";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import { useRouter } from "next/router";
-import { Layout, Spinner } from "../imports";
-import { useForm } from "react-hook-form";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import style from "../styles/Location.module.css";
+import { useState } from 'react';
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { useRouter } from 'next/router';
+import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { Form, Button, Container, Row, Col, Spinner } from 'react-bootstrap';
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { UserPreferredAddress } from '../store/action/userActions';
+import { Layout, PageSpinner } from '../imports';
+import style from '../styles/Location.module.css';
 
 const Location = props => {
   const [map, setMap] = useState({
@@ -14,25 +16,20 @@ const Location = props => {
     selectedPlace: {}
   });
 
-  const [userAddress, setUserAddress] = useState({
-    location: ""
-  });
-
   const { register, handleSubmit, watch, errors } = useForm();
+
+  const dispatch = useDispatch();
+  const userLocation = useSelector(state => state.location);
+
+  const { loading } = userLocation;
+
+  console.log('loading', loading);
 
   const router = useRouter();
 
   const onSubmit = data => {
-    setUserAddress({
-      ...userAddress,
-      location: data.locationAddress
-    });
-    const linkHref = (router.pathname = "/home");
-    console.log("users data", data.locationAddress);
-    router.push(linkHref);
+    dispatch(UserPreferredAddress(data.locationAddress, router));
   };
-
-  console.log("users location", userAddress.location);
 
   const onMarkerClick = (props, marker, e) => {
     return setMap({
@@ -55,10 +52,10 @@ const Location = props => {
   const googleMap = () => (
     <Map
       style={{
-        height: "70vh !important",
-        width: "100%",
-        padding: "10px",
-        margin: "auto"
+        height: '70vh !important',
+        width: '100%',
+        padding: '10px',
+        margin: 'auto'
       }}
       google={props.google}
       onClick={onMapClicked}
@@ -69,7 +66,7 @@ const Location = props => {
       }}
       zoom={14}
     >
-      <Marker onClick={onMarkerClick} name={"Current location"} />
+      <Marker onClick={onMarkerClick} name={'Current location'} />
       <InfoWindow marker={map.activeMarker} visible={map.showingInfoWindow}>
         <div>
           <h1>{map.selectedPlace.name}</h1>
@@ -92,8 +89,8 @@ const Location = props => {
         <hr />
         <Row>
           <Col lg={9} xs={12} className={`${style.mapContainer} 100vh`}>
-            <div style={{ height: "100vh !important" }}>
-              {props.google ? googleMap() : <Spinner />}
+            <div style={{ height: '100vh !important' }}>
+              {props.google ? googleMap() : <PageSpinner />}
             </div>
           </Col>
           <Col lg={3} xs={12} className={`${style.formAddress} 100vh`}>
@@ -105,7 +102,7 @@ const Location = props => {
                 <Form.Control
                   name="locationAddress"
                   type="text"
-                  defaultValue={userAddress.location}
+                  defaultValue=""
                   className={style.inputField}
                   placeholder="Your Location"
                   ref={register({ required: true })}
@@ -115,13 +112,26 @@ const Location = props => {
                     Your Address is required
                   </span>
                 )}
-                <Button
-                  type="submit"
-                  className={`${style.formbutton}
+                {loading ? (
+                  <Button variant="primary" disabled>
+                    <Spinner
+                      as="span"
+                      animation="border"
+                      size="sm"
+                      role="status"
+                      aria-hidden="true"
+                    />
+                    <span className="sr-only">Loading...</span> Please wait
+                  </Button>
+                ) : (
+                  <Button
+                    type="submit"
+                    className={`${style.formbutton}
                   btn btn-primary p-2 mt-lg-5 mb-2 m-auto text-white`}
-                >
-                  Confirm Address
-                </Button>
+                  >
+                    Confirm Address
+                  </Button>
+                )}
               </Form.Group>
             </Form>
           </Col>
@@ -132,5 +142,5 @@ const Location = props => {
 };
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyDjGviSQ3NuCZ1smhHroLRlK-bmBsf1R9c"
+  apiKey: 'AIzaSyDjGviSQ3NuCZ1smhHroLRlK-bmBsf1R9c'
 })(Location);

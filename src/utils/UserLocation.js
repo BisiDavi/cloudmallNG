@@ -32,9 +32,12 @@ const getPositionError = (error, router) => {
   }
 };
 
-const watchPosition20MinsInterval = () => {
+const watchPosition20MinsInterval = router => {
   const after30Mins = () => {
-    navigator.geolocation.watchPosition();
+    navigator.geolocation.watchPosition(
+      position => trackUserPosition(position, router),
+      error => getPositionError(error, router)
+    );
   };
   setTimeout(after30Mins, 1200000);
 };
@@ -46,7 +49,7 @@ export const UserLocation = {
       position => trackUserPosition(position, router),
       error => getPositionError(error, router)
     ),
-  watchUserLocationChanges: () => watchPosition20MinsInterval()
+  watchUserLocationChanges: router => watchPosition20MinsInterval(router)
 };
 
 export default UserLocation;

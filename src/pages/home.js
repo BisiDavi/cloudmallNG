@@ -2,8 +2,6 @@ import React from 'react';
 import useSWR from 'swr';
 import Typewriter from 'typewriter-effect';
 import { axiosInstance } from '../axios';
-// import { FetchProductAsync } from '../store/action/productActions';
-import { useDispatch, useSelector } from 'react-redux';
 import {
   Layout,
   HomepageSlider,
@@ -19,22 +17,17 @@ const Homepage = () => {
   const fetcher = url =>
     axiosInstance.post(url, { crossdomain: true }).then(res => res.data);
 
-  const { data, error, loading } = useSWR('/app/landing', fetcher);
-  console.log('data', data);
+  const { data: result, error, loading } = useSWR('/app/landing', fetcher);
+  console.log('data result', result);
   console.log('loading', loading);
   console.log('error', error);
 
-  if (typeof data !== 'undefined') {
-    const { result } = data;
-    console.log('result', result.products);
-  }
+  const { products } = result;
+  console.log('products', products);
 
-  const productData = useSelector(state => state.LandingPageProducts);
-  const { products } = productData;
   const FeaturedDeals = () => {
     return <Category deals={featuredDeals} />;
   };
-  console.log('products', products);
   return (
     <Layout
       headerTitle="Home"

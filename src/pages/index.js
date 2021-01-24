@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Modal } from 'react-bootstrap';
-import { logo, pattern, Layout, Spinner, ButtonLink } from '../imports';
+import { logo, pattern, Layout, PageSpinner, ButtonLink } from '../imports';
 import UserLocation from '../utils/UserLocation';
 import style from '../styles/Home.module.css';
 
@@ -27,7 +27,7 @@ export default function Home() {
     <Layout headerTitle="Welcome">
       <div className={style.container}>
         <div className="splashtop"></div>
-        {modal ? null : <Spinner />}
+        {modal ? null : <PageSpinner />}
         <div className="locationModal">
           <Modal
             show={modal}

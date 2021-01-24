@@ -1,6 +1,6 @@
 import style from "../styles/Spinner.module.css";
 
-const Spinner = () => (
+const PageSpinner = () => (
   <div className={style.ldsSpinner}>
     <div></div>
     <div></div>
@@ -17,4 +17,4 @@ const Spinner = () => (
   </div>
 );
 
-export default Spinner;
+export default PageSpinner;

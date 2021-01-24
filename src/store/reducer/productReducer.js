@@ -4,7 +4,10 @@ import {
   FETCH_PRODUCTS_FAIL
 } from '../constant';
 
-export const getLandingPageProductsReducer = (state = { products: [] }, action) => {
+export const GetLandingPageProductsReducer = (
+  state = { products: [] },
+  action
+) => {
   switch (action.type) {
     case FETCH_PRODUCTS_REQUEST:
       return { loading: true, products: [] };

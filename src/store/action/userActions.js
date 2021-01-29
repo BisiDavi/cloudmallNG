@@ -1,11 +1,11 @@
 import {
   USER_PREFERRED_ADDRESS_ENTERED,
   USER_PREFERRED_ADDRESS_ERROR,
-  USER_PREFERRED_ADDRESS_SUCCESS
+  USER_PREFERRED_ADDRESS_SUCCESS,
 } from '../constant';
 
 export const UserPreferredAddress = (location, router) => dispatch => {
-  try {
+  try { 
     console.log('location', location);
     dispatch({
       type: USER_PREFERRED_ADDRESS_ENTERED
@@ -15,7 +15,7 @@ export const UserPreferredAddress = (location, router) => dispatch => {
       type: USER_PREFERRED_ADDRESS_SUCCESS,
       payload: location
     });
-
+   
     router.push('/home');
   } catch (error) {
     dispatch({

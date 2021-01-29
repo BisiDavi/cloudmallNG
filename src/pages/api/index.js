@@ -15,11 +15,4 @@ export default async function handler(req, res) {
   res.setHeader('Content-Type', 'application/json');
   await cors(req, res);
   res.json({ message: 'Hello from cloudmall' });
-  req.post(axiosInstance
-    .post('/app/landing')
-    .then(result => result.data)
-    .then(result => res.json(result))
-    .then(result => console.log('result', result))
-    .catch(err => res.json(err));
-  )
 }

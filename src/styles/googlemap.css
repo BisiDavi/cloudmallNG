@@ -1,0 +1,9 @@
+input.pac-target-input {
+  width: 80% !important;
+  border-radius: 5px;
+  margin: 20px auto !important;
+  display: flex;
+  background: #ffffff;
+  border: 1px solid #f29100;
+  box-sizing: border-box;
+}

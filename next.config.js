@@ -1,6 +1,10 @@
 const withImages = require('next-images');
 
-module.exports = withImages();
+module.exports = withImages({
+  env: {
+    API_KEY: process.env.API_KEY
+  }
+});
 
 /* module.exports = {
   async rewrites() {

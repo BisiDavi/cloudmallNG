@@ -32,10 +32,11 @@
   padding: 10px !important;
 }
 
-.modalButton, .modalFooter {
+.modalButton,
+.modalFooter {
   display: flex;
   justify-content: space-between;
-  padding: 5px 10px !important;
+  padding: 5px 10px;
   border: none;
 }
 
@@ -49,10 +50,12 @@
 }
 
 .header svg {
-  color: #f29100 !important;
+  color: #f29100;
+  font-size: 1.2em;
+  margin-top: 8px !important;
 }
 .heart svg {
-  color: #d12e2e !important;
+  color: #d12e2e;
 }
 
 .header {
@@ -60,11 +63,11 @@
 }
 
 .locationmodal .fade.modal-backdrop.show {
-  opacity: 0.15 !important;
+  opacity: 0.15;
 }
 
 .backdrop {
-  opacity: 0.15 !important;
+  opacity: 0.15;
 }
 
 .productImg {
@@ -76,9 +79,9 @@
 }
 
 .productDetail li p {
-  font-size: 1em !important;
+  font-size: 1em;
   margin-top: -1;
-  margin-top: -10px !important;
+  margin-top: -10px;
 }
 
 .modalButton a {
@@ -94,11 +97,11 @@
 }
 
 .productDetail li p:nth-child(2) {
-  color: orange !important;
+  color: orange;
 }
 
 .productDetail {
-  padding: 0px 20px !important;
+  padding: 0px 20px;
 }
 
 .productIcon svg {
@@ -109,6 +112,14 @@
   font-size: 2em;
   right: 0px;
   position: absolute;
+}
+
+.userAddress {
+  overflow: hidden;
+  width: 100%;
+  padding-top: 5px !important;
+  height: 30px;
+  text-overflow: ellipsis;
 }
 
 @media (max-width: 768px) {

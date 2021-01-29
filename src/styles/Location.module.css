@@ -82,6 +82,7 @@
     margin-bottom: 25px !important;
     margin-left: 50px !important;
     font-weight: 600;
+    font-size: 12px
   }
   .formbutton {
     margin-top: 140px !important;
@@ -96,5 +97,7 @@
     margin-bottom: 5px !important;
     display: flex;
     justify-content: left;
+        font-size: 10px;
+    margin-top: 30px !important;
   }
 }

@@ -14,20 +14,20 @@ import { AppNavbar } from '../components/homeComponents';
 import style from '../styles/Home.module.css';
 
 const Homepage = () => {
-  const { result, error, loading } = useGetProducts('/app/landing');
+  // const { result, error, loading } = useGetProducts('/app/landing');
   const FeaturedDeals = () => {
     return <Category deals={featuredDeals} />;
   };
-  if (error) {
-    return (
-      <div>
-        An error occured, can't fetch products from the store, <b>{error} </b>
-      </div>
-    );
-  }
-  if (loading) <PageSpinner />;
+  // if (error) {
+  //   return (
+  //     <div>
+  //       An error occured, can't fetch products from the store, <b> {error}</b>
+  //     </div>
+  //   );
+  // }
+  // if (loading) <PageSpinner />;
 
-  console.log('results from cloudmall store', result);
+  // console.log('results from cloudmall store', result);
   return (
     <Layout
       headerTitle="Home"

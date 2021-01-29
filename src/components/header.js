@@ -33,12 +33,12 @@ const Header = ({ isLoggedIn }) => {
     <section className="header position-fixed">
       <Container className={`${homeStyle.header} py-2 px-1 m-auto`} fluid>
         <Row>
-          <Col xs={1} className="ml-3 mr-3">
+          <Col xs={1} className="ml-3 mr-1">
             <div onClick={openHamburgerMenu} className="menu-hamburger">
               <i className="fa fa-bars fa-2x" aria-hidden="true"></i>
             </div>
           </Col>
-          <Col xs={7} className="d-block">
+          <Col xs={7} className={`${homeStyle.userAddress} mr-2`}>
             <span>{address}</span>
           </Col>
           <Col xs={1} className="mr-3">

@@ -1,10 +1,4 @@
-export const OrangeButton = ({
-  btnMargin,
-  text,
-  onClick,
-  icon,
-  className
-}) => {
+export const OrangeButton = ({ btnMargin, text, onClick, icon, className }) => {
   return (
     <>
       <button onClick={onClick} className="rounded">
@@ -19,7 +13,6 @@ export const OrangeButton = ({
             display: flex;
             align-items: center;
             display: flex;
-            justify-content: space-between !important;
             padding: 0 10px 0 15px !important;
             width: 100%;
             align-items: center;

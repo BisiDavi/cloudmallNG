@@ -21,7 +21,6 @@ const AddressBook = () => {
                   <h3>{info.title}</h3>
                   <p>{info.address}</p>
                 </span>
-                <i className="fas fa-chevron-right"></i>
               </li>
             ))}
           </ul>
@@ -30,7 +29,7 @@ const AddressBook = () => {
           <OrangeButton
             text="Add new address"
             icon="fas fa-plus-square"
-            className="justify-content-around"
+            className="justify-content-between"
             btnMargin="120px auto"
           />
         </Col>
@@ -50,12 +49,17 @@ const AddressBook = () => {
             justify-content: space-between;
             display: flex;
           }
-          li span {
+          li span,
+          h5 {
             display: flex;
             flex-direction: column;
             font-family: 'Roboto', sans-serif;
             font-style: normal;
             font-weight: normal;
+          }
+          h5 {
+            font-size: 12px;
+            line-height: 14px;
           }
           li h3 {
             font-weight: bold;

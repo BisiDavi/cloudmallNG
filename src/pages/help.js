@@ -14,28 +14,40 @@ const Help = () => {
         <Col className="h-50" lg={12} sm={12}>
           <ul>
             {helpLinks.map(link => (
-              <span>
-                <li key={link.id}>{link.title}</li>
+              <li key={link.id}>
+                <p>{link.title}</p>
                 <i className="fas fa-chevron-right"></i>
-              </span>
+              </li>
             ))}
           </ul>
         </Col>
       </Row>
       <style jsx>
         {`
-          li span {
+          li {
             display: flex;
             justify-content: space-between;
             border-bottom: 1px solid rgba(62, 64, 68, 0.25);
+            margin: 20px 0px;
+            height: 30px;
+            padding-bottom: 10px;
+            align-items: center;
+          }
+          li svg {
+            color: #f29100;
+          }
+          li p {
             font-family: 'Roboto', sans-serif;
             font-style: normal;
             font-weight: normal;
             font-size: 14px;
             line-height: 16px;
+            margin: 0px;
+            color: #000000;
           }
-          li svg {
-            color: #f29100;
+
+          li:last-child {
+            border-bottom: none;
           }
         `}
       </style>

@@ -27,9 +27,15 @@ export const OrangeButton = ({ btnMargin, text, onClick, icon, className }) => {
             font-family: 'Roboto', san-serif;
             width: 100%;
             color: white;
-            font-size: 20px;
+            font-size: 18px;
             display: flex;
             margin: ${btnMargin} !important;
+          }
+          button:hover {
+            background-color: #db8300;
+          }
+          button:active {
+            background-color: #b86e00;
           }
         `}
       </style>

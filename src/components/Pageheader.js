@@ -19,6 +19,13 @@ const Pageheader = ({ title }) => {
         </div>
         <style jsx>
           {`
+            .authHeader {
+              width: 100%;
+              position: absolute;
+              top: 0px;
+              left: 0px;
+              z-index: 1000;
+            }            
             .authheader {
               display: flex !important;
               background-color: #ffce85;

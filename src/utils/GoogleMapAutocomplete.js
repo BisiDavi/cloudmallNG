@@ -12,7 +12,7 @@ import {
 } from 'react-google-maps';
 import Geocode from 'react-geocode';
 import Autocomplete from 'react-google-autocomplete';
-import { Layout, PageSpinner } from '../imports';
+import { Layout, PageSpinner, Pageheader } from '../imports';
 import { UserPreferredAddress } from '../store/action/userActions';
 import style from '../styles/Location.module.css';
 
@@ -190,73 +190,69 @@ class GoogleMapAutocomplete extends Component {
     let map;
     if (this.props.center.lat !== undefined) {
       map = (
-        <Layout headerTitle="Enter your Address">
-          <Container className="location" fluid>
-            <Row className={style.header}>
-              <Col>
-                <div
-                  className={style.arrow}
-                  onClick={() => this.props.router.back()}
-                >
-                  <ArrowBackIcon />
-                </div>
-                <h3 className="text-center">Enter your Address</h3>
-              </Col>
-            </Row>
-            <hr />
-            <Row>
-              <Col lg={9} xs={12} className={`${style.mapContainer} 100vh`}>
-                <AsyncMap
-                  googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.API_KEY}&libraries=places`}
-                  loadingElement={<PageSpinner />}
-                  containerElement={
-                    <div style={{ height: this.props.height }} />
-                  }
-                  mapElement={<div style={{ height: `100%` }} />}
-                />
-              </Col>
-              <Col lg={3} xs={12} className={`${style.formAddress} 100vh`}>
-                <Form onSubmit={this.handleFormSubmit}>
-                  <Form.Group controlId="userAddress">
-                    <Form.Label className={`${style.formText} mb-5`}>
-                      Press the confirm button if this your preferred address
-                    </Form.Label>
-                    <Form.Control
-                      type="text"
-                      name="address"
-                      className={style.inputField}
-                      onChange={this.onChange}
-                      value={this.state.address}
-                      readOnly="readOnly"
-                      required
-                    />
-                    {loading ? (
-                      <Button variant="primary" className="py-2" disabled>
-                        <Spinner
-                          as="span"
-                          animation="border"
-                          size="sm"
-                          className="mr-3"
-                          role="status"
-                          aria-hidden="true"
-                        />
-                        <span className="sr-only">Loading...</span> Please wait
-                      </Button>
-                    ) : (
-                      <Button
-                        type="submit"
-                        className={`${style.formbutton}
+        <Container className="location" fluid>
+          <Pageheader title="Enter your Address" />
+          <Row className={style.header}>
+            <Col>
+              <div
+                className={style.arrow}
+                onClick={() => this.props.router.back()}
+              >
+                <ArrowBackIcon />
+              </div>
+              <h3 className="text-center">Enter your Address</h3>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={9} xs={12} className={`${style.mapContainer} 100vh px-0`}>
+              <AsyncMap
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${process.env.API_KEY}&libraries=places`}
+                loadingElement={<PageSpinner />}
+                containerElement={<div style={{ height: this.props.height }} />}
+                mapElement={<div style={{ height: `100%` }} />}
+              />
+            </Col>
+            <Col lg={3} xs={12} className={`${style.formAddress} 100vh`}>
+              <Form onSubmit={this.handleFormSubmit}>
+                <Form.Group controlId="userAddress">
+                  <Form.Label className={`${style.formText} mb-5`}>
+                    Press the confirm button if this your preferred address
+                  </Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="address"
+                    className={style.inputField}
+                    onChange={this.onChange}
+                    value={this.state.address}
+                    readOnly="readOnly"
+                    required
+                  />
+                  {loading ? (
+                    <Button variant="primary" className="py-2" disabled>
+                      <Spinner
+                        as="span"
+                        animation="border"
+                        size="sm"
+                        className="mr-3"
+                        role="status"
+                        aria-hidden="true"
+                      />
+                      <span className="sr-only">Loading...</span> Please wait
+                    </Button>
+                  ) : (
+                    <Button
+                      type="submit"
+                      className={`${style.formbutton}
                   btn btn-primary p-2 mt-lg-5 mb-2 m-auto text-white`}
-                      >
-                        Confirm Address
-                      </Button>
-                    )}
-                  </Form.Group>
-                </Form>
-              </Col>
-            </Row>
-          </Container>
-        </Layout>
+                    >
+                      Confirm Address
+                    </Button>
+                  )}
+                </Form.Group>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
       );
     } else {
       map = <PageSpinner />;

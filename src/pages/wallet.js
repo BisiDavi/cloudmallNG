@@ -32,6 +32,7 @@ const Wallet = () => {
             background: white;
             padding: 5px 15px !important;
             margin: 10px auto !important;
+            display: flex;
           }
           img {
             width: 150px;

@@ -15,7 +15,11 @@ const settings = [
 const Settings = () => {
   const [toggleBtn, setToggleBtn] = useState(true);
 
-  const toggleHandler = () => setToggleBtn(!toggleBtn);
+  const toggleHandler = () => {
+    setToggleBtn(!toggleBtn)
+    toggleBtn ? 'fas fa-toggle-on' : 'fas fa-toggle-off';
+  }
+    ;
 
   console.log('toggleBtn state:', toggleBtn);
 
@@ -30,6 +34,8 @@ const Settings = () => {
     return <span onClick={toggleHandler}>{linkIcon}</span>;
   };
 
+  const toggleBtnState = toggleBtn ? 'fas fa-toggle-on' : 'fas fa-toggle-off';
+
   return (
     <Container className="px-0" fluid>
       <Pageheader title="Settings" />
@@ -42,14 +48,10 @@ const Settings = () => {
                 {/* <span>{selectIcon(settingsLink.hasToggle)}</span> */}
                 <span>
                   {settingsLink.hasToggle ? (
-                    <i className="fas fa-chevron-right icon"></i>
+                    <i className="fas fa-chevron-right"></i>
                   ) : (
                     <span onClick={toggleHandler}>
-                      {toggleBtn ? (
-                        <i className="fas fa-toggle-on"></i>
-                      ) : (
-                        <i className="fas fa-toggle-off"></i>
-                      )}
+                      <i className={toggleBtnState}></i>
                     </span>
                   )}
                 </span>

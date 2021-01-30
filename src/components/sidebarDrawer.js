@@ -4,57 +4,68 @@ import { profileIcon, ProfileImg, walletIcon, inviteIcon } from '../imports';
 
 const SidebarDrawer = props => {
   const menuLink = [
-    { id: 1, name: 'Profile', image: profileIcon, link: '' },
-    { id: 2, name: 'Wallet', image: walletIcon, link: '/wallet' },
+    {
+      id: 1,
+      name: 'Profile',
+      icon: 'fas fa-user-circle',
+      link: '#'
+    },
+    {
+      id: 2,
+      name: 'Wallet',
+      icon: 'fas fa-wallet',
+      link: '/wallet'
+    },
     {
       id: 3,
       name: 'Address',
-      faImage: <i className="fas fa-address-book fa-2x"></i>,
+      icon: 'fas fa-address-book fa-2x',
       link: '/addressbook'
     },
     {
       id: 4,
       name: 'Settings',
-      faImage: <i className="fas fa-cog fa-2x"></i>,
+      icon: 'fas fa-cog fa-2x',
       link: '/settings'
     },
     {
       id: 5,
       name: 'Invite friends',
-      image: inviteIcon,
+      icon: 'fas fa-envelope-open-text',
       link: '/invitefriends'
     },
     {
       id: 6,
       name: 'Reviews',
-      faImage: <i className="fas fa-comment-alt-edit fa-2x"></i>,
+      icon: 'fas fa-comment-alt-edit fa-2x',
       link: ''
     },
     {
       id: 7,
       name: 'Contact us',
-      faImage: <i className="fas fa-phone-square-alt fa-2x"></i>,
+      icon: 'fas fa-phone-square-alt fa-2x',
       link: ''
     },
     {
       id: 8,
       name: 'Help',
-      faImage: <i className="fas fa-question-circle fa-2x"></i>,
+      icon: 'fas fa-question-circle fa-2x',
       link: ''
     },
     {
       id: 9,
       name: 'Logout',
-      faImage: <i className="fas fa-sign-out-alt fa-2x"></i>,
+      icon: 'fas fa-sign-out-alt fa-2x',
       link: ''
     }
   ];
 
   return (
     <div className="SidebarDrawer d-flex">
-      <div className="profile w-50 h-100 bg-white">
+      <div className="profile h-100 bg-white">
         <div className="profile-img">
           <img src={ProfileImg} alt="cloudmall profile logo" />
+          <p>1000.00</p>
         </div>
         <div className="menu">
           <ul className="sidebar-menu">
@@ -63,11 +74,9 @@ const SidebarDrawer = props => {
                 <Link href={menu.link}>
                   <a className="text-decoration-none">
                     <li className="d-flex">
-                      {menu.image ? (
-                        <img src={menu.image} />
-                      ) : (
-                        <span>{menu.faImage}</span>
-                      )}
+                      <span>
+                        <i className={menu.icon}></i>
+                      </span>
                       <h6>{menu.name}</h6>
                     </li>
                   </a>
@@ -80,22 +89,41 @@ const SidebarDrawer = props => {
       <div className="overlay" onClick={props.onClose}></div>
       <style jsx>
         {`
+          ul span a:hover {
+            color: #fd4b13;
+          }
+          .profile-img {
+            flex-direction: column;
+          }
+          .profile-img p {
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 16px;
+            text-align: center;
+            margin-top: 15px;
+            color: #3e4044;
+          }
+
           .profile-img img {
-            height: 100px !important;
-            margin: auto !important;
+            height: 100px;
+            margin: 10px auto;
             display: flex;
           }
           .SidebarDrawer {
             z-index: 100000;
             left: 0px;
             position: fixed;
-            top: 0px;
-            width: 100vw !important;
-            height: 100vh !important;
+            top: 47px;
+            width: 100vw;
+            height: 100vh;
             transition: 0.5s ease-in-out;
           }
           .profile {
             z-index: 1200;
+            padding-top: 80px;
+            width: 250px;
           }
           .overlay {
             position: absolute;
@@ -103,33 +131,39 @@ const SidebarDrawer = props => {
             z-index: 1005;
             left: 0px;
             top: 0px;
-            width: 100vw !important;
-            height: 100vh !important;
+            width: 100vw;
+            height: 100vh;
           }
           .menu {
-            background-color: white !important;
+            background-color: white;
           }
           li.d-flex {
-            height: 40px;
-            margin-bottom: 10px !important;
+            height: 30px;
+            margin: 10px 0px;
+            padding: 0px 15px;
           }
           li.d-flex img {
-            margin-right: 25px !important;
-            margin-left: 15px !important;
+            margin-right: 25px;
+            margin-left: 15px;
             height: 100%;
           }
           li.d-flex span {
-            margin-right: 35px !important;
-            margin-left: 15px !important;
+            margin: 0px 35px 0px 15px;
             height: 100%;
           }
           .d-flex span svg {
-            width: 30px !important;
-            height: 30px !important;
+            width: 30px;
+            height: 30px;
           }
           li.d-flex h6 {
             display: flex;
             align-items: center;
+            margin: 0px;
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 16px;
           }
         `}
       </style>

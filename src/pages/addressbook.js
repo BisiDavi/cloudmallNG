@@ -21,6 +21,7 @@ const AddressBook = () => {
                   <h3>{info.title}</h3>
                   <p>{info.address}</p>
                 </span>
+                <i className="fas fa-chevron-right icon"></i>
               </li>
             ))}
           </ul>
@@ -60,6 +61,10 @@ const AddressBook = () => {
           h5 {
             font-size: 12px;
             line-height: 14px;
+          }
+          li span h3,
+          li span p {
+            margin: 2px;
           }
           li h3 {
             font-weight: bold;

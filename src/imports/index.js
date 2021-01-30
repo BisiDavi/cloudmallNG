@@ -23,9 +23,9 @@ export { default as Ordinaryjollof } from '../../public/static/images/jRice.png'
 export { default as Rectangle } from '../../public/static/images/Rectangle1.png';
 export { default as BeansDodo } from '../../public/static/images/BeansDodo.png';
 export { default as ProfileImg } from '../../public/static/images/avatarMale.png';
-export { default as profileIcon } from '../../public/static/images/profileIcon.png';
-export { default as walletIcon } from '../../public/static/images/wallet.svg';
-export { default as inviteIcon } from '../../public/static/images/inviteIcon.svg';
+export { default as profileIcon } from '../../public/static/images/profile.svg';
+export { default as walletIcon } from '../../public/static/images/walletIcon.svg';
+export { default as inviteIcon } from '../../public/static/images/invite.svg';
 export { default as mailIcon } from '../../public/static/images/mailIcon.svg';
 export { default as googleIcon } from '../../public/static/images/googleIcon.svg';
 export { default as emoji404 } from '../../public/static/images/emoji_404.png';

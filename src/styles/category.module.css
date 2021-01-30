@@ -1,50 +1,79 @@
 .product {
-  width: 350px !important;
-  height: 200px !important;
+  width: 350px;
+  height: 200px;
   border: 1px solid #eee;
   position: relative;
   cursor: pointer;
-  margin: 10px 10px !important;
-  -webkit-box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.15);
+  margin: 10px 10px;
   box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.15);
   filter: drop-shadow(0px 4px 4px rgba(184, 110, 0, 0.35));
-  margin-bottom: 20px !important;
+  margin-bottom: 28px;
 }
 .productStore {
-  width: 170px !important;
-  height: 100% !important;
+  width: 170px;
+  height: 100%;
   border: 1px solid #eee;
   position: relative;
-  margin: auto !important;
-  -webkit-box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.15);
+  margin: auto;
   box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.15);
 }
 
+.row1 {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  margin: 2px 0px;
+}
+
+.row1,
+.productDetails {
+  padding-right: 10px;
+}
+
+.details h5,
+.details h3,
+.productDetails p {
+  margin: 0px;
+}
+
+.details h5, .details h3{
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 12px;
+line-height: 14px;
+color: #3E4044;
+}
+
+.productDetails {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0px 8px 0px;
+}
+
 .duration h6 {
-  margin-bottom: -7px !important;
-  font-weight: 600 !important;
+  margin-bottom: -7px;
+  font-weight: 600;
   font-size: 13px;
-  margin-top: 2px !important;
+  margin-top: 2px;
 }
 .duration p {
   font-weight: 100;
 }
 .duration {
   color: black;
-  width: 60px;
+  width: 55px;
   position: absolute;
   height: 30px;
   right: 0px;
-  bottom: 78px;
+  bottom: 76px;
+  border:none;
   font-weight: bold;
   font-size: 13px;
   background: white;
-  filter: drop-shadow(0px 4px 4px rgba(184, 110, 0, 0.35));
   text-align: center;
   border-radius: 5px;
-  margin-right: 10px !important;
+  margin-right: 10px;
 }
 
 .price {
@@ -57,42 +86,44 @@
   color: #56ac55;
   text-align: center;
   border-radius: 5px;
-  margin-right: 10px !important;
-  padding: 3px 5px !important;
-  height: 25px !important;
-  margin-bottom: 10px !important;
+  margin-right: 10px;
+  padding: 3px 5px;
+  height: 25px;
+  margin-bottom: 10px;
 }
 .details h5 {
   font-size: 1.2rem;
-  margin-left: 0px !important;
+  margin-left: 0px;
   font-weight: 400;
 }
 .details .row {
-  align-items: center !important;
+  align-items: center;
   display: flex;
 }
 .details {
-  font-size: 13px !important;
+  font-size: 13px;
+  background: white;
+  border:none;
 }
 .eyeicon img {
   display: flex;
   position: absolute;
   right: 0px;
-  background: rgba(0, 0, 0, 0.15) !important;
-  height: 18px !important;
-  width: 20px !important;
+  background: rgba(0, 0, 0, 0.15);
+  height: 18px;
+  width: 20px;
 }
 .productImage {
   width: 210px;
   height: 120px;
-  padding: 0px !important;
-  margin: 0px !important;
+  padding: 0px;
+  margin: 0px;
   border-radius: 5px 5px 0px 0px;
 }
 
 .details img {
-  width: 20px !important;
-  margin: 2px 5px !important;
+  width: 20px;
+  margin: 2px 5px;
 }
 
 .arrowIcon img {
@@ -105,19 +136,23 @@
 }
 
 .category {
-  padding-left: 15px !important;
-  padding-right: 15px !important;
-  margin-right: auto !important;
-  margin-left: -15px !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: -15px;
   position: relative;
 }
 
+.overflowWrapper {
+  width: 100%;
+}
+
 .overflowWrapper svg {
-  top: 45% !important;
-  width: 30px !important;
+  top: 45%;
+  width: 30px;
   background: black;
   border-radius: 50%;
-  height: 30px !important;
+  height: 30px;
 }
 
 .details button {

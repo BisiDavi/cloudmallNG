@@ -122,7 +122,7 @@ const SidebarDrawer = props => {
           }
           .profile {
             z-index: 1200;
-            padding-top: 80px;
+            padding-top: 50px;
             width: 250px;
           }
           .overlay {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
-import { Container, Row, Col, Button } from 'react-bootstrap';
 import OverflowWrapper from 'react-overflow-wrapper';
 import { OrderModal, starIcon, OrderProduct, OrangeButton } from '../imports';
 import style from '../styles/category.module.css';
@@ -8,9 +7,9 @@ import style from '../styles/category.module.css';
 const Category = ({ deals }) => {
   const [modal, setModal] = useState(false);
   const [orders, showOrders] = useState(false);
+
   const viewOrder = () => showOrders(true);
   const closeOrder = () => showOrders(false);
-
   const handleOpen = () => setModal(true);
   const handleClose = () => setModal(false);
 
@@ -34,36 +33,30 @@ const Category = ({ deals }) => {
                     <p>min</p>
                   </span>
                 </span>
-                <Container className={style.details}>
-                  <Row className={style.row}>
-                    <Col xs={8}>
-                      <h5>{deal.name}</h5>
-                    </Col>
-                    <Col xs={4}>
-                      <h3 className={style.price}>{deal.price}</h3>
-                    </Col>
-                  </Row>
-                  <Row className="align-items-center">
-                    <Col className="ml-2">
-                      <p>{deal.vendor}</p>
-                    </Col>
-                    <Col className="d-flex">
+                <div className={style.details}>
+                  <div className={style.row1}>
+                    <h5>{deal.name}</h5>
+                    <h3 className={style.price}>{deal.price}</h3>
+                  </div>
+                  <div className={style.productDetails}>
+                    <p>{deal.vendor}</p>
+                    <div className="d-flex">
                       <img src={starIcon} alt="rating" />
                       <p>{deal.rating.substr(0, 3)}</p>
-                    </Col>
-                    <Col className="ml-2">
-                      <p className={style.open}>{deal.status}</p>
-                    </Col>
-                    <Col xs={12}>
-                      <OrangeButton onClick={viewOrder} text="Order" />
-                      <OrderModal
-                        product={deal}
-                        modalState={modal}
-                        closeModal={handleClose}
-                      />
-                    </Col>
-                  </Row>
-                </Container>
+                    </div>
+                    <p className={style.open}>{deal.status}</p>
+                  </div>
+                  <OrangeButton
+                    onClick={viewOrder}
+                    text="Order"
+                    className="justify-content-center"
+                  />
+                  <OrderModal
+                    product={deal}
+                    modalState={modal}
+                    closeModal={handleClose}
+                  />
+                </div>
               </div>
             ) || <Skeleton duration={2} />
         )}

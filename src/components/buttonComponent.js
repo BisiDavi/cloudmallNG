@@ -1,26 +1,42 @@
-export const OrangeButton = ({ buttonMargin, text, onClick }) => {
+export const OrangeButton = ({
+  btnMargin,
+  text,
+  onClick,
+  icon,
+  className
+}) => {
   return (
     <>
-      <button
-        onClick={onClick}
-        className="orange_button text-white w-100 rounded"
-      >
-        {text}
+      <button onClick={onClick} className="rounded">
+        <span className={className}>
+          {text}
+          <i className={icon}></i>
+        </span>
       </button>
       <style jsx>
         {`
-          .orange_button {
-            background-color: #f29100 !important;
+          button span {
+            display: flex;
+            align-items: center;
+            display: flex;
+            justify-content: space-between !important;
+            padding: 0 10px 0 15px !important;
+            width: 100%;
+            align-items: center;
+          }
+          button {
+            background-color: #f29100;
             border: none;
             height: 40px;
-            text-align: center !important;
+            text-align: center;
             justify-content: center;
-            align-content: center !important;
             align-items: center;
-            font-family: Roboto;
+            font-family: 'Roboto', san-serif;
+            width: 100%;
+            color: white;
             font-size: 20px;
             display: flex;
-            margin: ${buttonMargin};
+            margin: ${btnMargin} !important;
           }
         `}
       </style>

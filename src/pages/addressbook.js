@@ -16,8 +16,8 @@ const AddressBook = () => {
           <h5 className="my-2">Saved Address</h5>
           <ul>
             {userInfo.map(info => (
-              <li key={info.id} className="info d-flex justify-content-around">
-                <span className="d-flex flex-column">
+              <li key={info.id}>
+                <span>
                   <h3>{info.title}</h3>
                   <p>{info.address}</p>
                 </span>
@@ -26,17 +26,64 @@ const AddressBook = () => {
             ))}
           </ul>
         </Col>
-        <Col sm={12}>
-          <OrangeButton>
-            <span className="d-flex justify-content-between">
-              <p>add new address</p>
-              <i className="fas fa-plus-square"></i>
-            </span>
-          </OrangeButton>
+        <Col className="mx-4" sm={12}>
+          <OrangeButton
+            text="Add new address"
+            icon="fas fa-plus-square"
+            className="justify-content-around"
+            btnMargin="120px auto"
+          />
         </Col>
       </Row>
+      <style jsx>
+        {`
+          li:last-child {
+            border-bottom: 1px solid #3e4044;
+          }
+
+          li {
+            border: 1px solid #3e4044;
+            border-radius: 5px;
+            padding: 5px 10px !important;
+            border-bottom: 0px;
+            align-items: center;
+            justify-content: space-between;
+            display: flex;
+          }
+          li span {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+          }
+          li h3 {
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 16px;
+          }
+          li p {
+            font-size: 12px;
+            line-height: 14px;
+          }
+          li svg {
+            color: #f29100;
+          }
+          span.btnSpan {
+            display: flex;
+            justify-content: space-between;
+          }
+        `}
+      </style>
     </Container>
   );
 };
 
 export default AddressBook;
+
+{
+  /* <span className="btnSpan">
+  <p>add new address</p>
+  <i className="fas fa-plus-square"></i>
+</span>; */
+}

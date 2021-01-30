@@ -7,11 +7,6 @@ const Layout = props => {
   return (
     <>
       <Head>
-        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-        <script
-          src="https://kit.fontawesome.com/83f2ab5e93.js"
-          crossOrigin="anonymous"
-        ></script>
         <title>🛒 CloudMallNG - {props.headerTitle}</title>
       </Head>
       <header className={style.header}>{showHeader ? <Header /> : null}</header>

@@ -1,6 +1,6 @@
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import { useRouter } from "next/router";
-import Head from "next/head";
+import { useRouter } from 'next/router';
+import { arrowLeft } from '../imports';
+import Head from 'next/head';
 
 const Pageheader = ({ title }) => {
   const router = useRouter();
@@ -8,20 +8,12 @@ const Pageheader = ({ title }) => {
   return (
     <>
       <Head>
-        <link
-          rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        />
-        <script
-          src="https://kit.fontawesome.com/83f2ab5e93.js"
-          crossOrigin="anonymous"
-        ></script>
         <title>🛒 CloudMallNG - {title}</title>
       </Head>
       <div className="authHeader">
         <div className="d-flex authheader">
           <div onClick={() => router.back()} className="arrow">
-            <ArrowBackIcon />
+            <img src={arrowLeft} alt="left arrow" />
           </div>
           <h5 className="text-center authtext font-weight-bold">{title}</h5>
         </div>
@@ -31,18 +23,17 @@ const Pageheader = ({ title }) => {
               display: flex !important;
               background-color: #ffce85;
               height: 45px;
+              align-items: center;
             }
             .arrow {
               width: 50px;
               position: absolute;
-              margin-top: 5px !important;
-              margin-left: 10px !important;
+              margin-left: 20px !important;
             }
             .authtext {
-              padding-top: 5px !important;
-              text-align: center !important;
-              padding-bottom: 7px !important;
               margin: auto !important;
+              font-size: 18px;
+              font-family: 'Montserrat', sans-serif;
             }
           `}
         </style>

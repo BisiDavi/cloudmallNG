@@ -1,35 +1,48 @@
-import { Pageheader, inviteIcon } from '../imports';
+import { Pageheader, referralIcon } from '../imports';
+import { Container, Row, Col } from 'react-bootstrap';
 
 const InviteFriends = () => {
   return (
-    <Pageheader title="Invite friends">
-      <div className="settings_page">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-xs-12 col-sm-12 col-lg-12">
-              <div className="text_code mb-5">
-                Your referral code is{" "}
-                <span className="font-weight-bold">5060</span>
-                <button className="border-black rounded">5060</button>
-              </div>
-              <div className="mx-auto invite_friend_img">
-                <img
-                  src={inviteIcon}
-                  alt="invite your friend to use cloudmall"
-                />
-              </div>
-              <div className="user_balance">
-                <p className="text-center">
-                  You currently have
-                  <button className="rounded mx-3">500</button>
-                  cloud coins
-                </p>
-              </div>
-            </div>
+    <Container className="settings_page" fluid>
+      <Pageheader title="Invite friends" />
+      <Row>
+        <Col xs={12} lg={12} sm={12}>
+          <div className="d-flex mt-2 mb-5 flex-column mx-auto ">
+            <p className="text-center">
+              Your referral code is{' '}
+              <span className="font-weight-bold">5060</span>
+            </p>
+            <button className="border-black rounded px-4 py-1 my-2 mx-auto">
+              5060
+            </button>
           </div>
-        </div>
-      </div>
-    </Pageheader>
+          <img
+            src={referralIcon}
+            className="mx-auto d-flex mb-5"
+            alt="invite your friend to use cloudmall"
+          />
+          <p className="text-center">
+            You currently have
+            <button className="rounded mx-3 py-1 px-4">500</button>
+            cloud coins
+          </p>
+        </Col>
+      </Row>
+      <style jsx>
+        {`
+          button {
+            border: 1px solid rgba(62, 64, 68, 0.25);
+            background: white;
+            box-sizing: border-box;
+          }
+          p {
+            font-family: 'Roboto';
+            font-size: 14px;
+            color: #3e4044;
+          }
+        `}
+      </style>
+    </Container>
   );
 };
 

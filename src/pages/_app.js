@@ -35,6 +35,16 @@ function MyApp({ Component, pageProps }) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap"
+          rel="stylesheet"
+        />
+        <script
+          src="https://kit.fontawesome.com/83f2ab5e93.js"
+          crossOrigin="anonymous"
+        ></script>
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
         <CssBaseline />
       </Head>
       <Provider store={store}>

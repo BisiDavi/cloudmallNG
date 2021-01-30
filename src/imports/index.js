@@ -31,6 +31,7 @@ export { default as googleIcon } from '../../public/static/images/googleIcon.svg
 export { default as emoji404 } from '../../public/static/images/emoji_404.png';
 export { default as walletImg } from '../../public/static/images/walletIcon.png';
 export { default as referralIcon } from '../../public/static/images/referralIcon.png';
+export { default as arrowLeft } from '../../public/static/images/arrowLeft.svg';
 
 /* Components */
 export { default as Layout } from '../components/layout';
@@ -47,4 +48,3 @@ export { default as SidebarDrawer } from '../components/sidebarDrawer';
 export { default as Pageheader } from '../components/Pageheader';
 
 export { OrangeButton, ButtonLink } from '../components/buttonComponent';
-

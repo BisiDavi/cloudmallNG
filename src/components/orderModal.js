@@ -47,7 +47,7 @@ const OrderModal = ({ product, modalState, closeModal }) => {
           </div>
         </Modal.Body>
         <Modal.Footer className={style.modalButton}>
-          <Link href="/order">
+          <Link href="/orders">
             <a className="font-weight-bold btn btn-light">Order</a>
           </Link>
         </Modal.Footer>

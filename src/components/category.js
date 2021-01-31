@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import OverflowWrapper from 'react-overflow-wrapper';
-import { OrderModal, starIcon, OrderProduct, ButtonLink } from '../imports';
+import { OrderModal, starIcon, OrderProduct, OrangeButton } from '../imports';
 import style from '../styles/category.module.css';
 
 const Category = ({ deals }) => {
@@ -10,13 +10,12 @@ const Category = ({ deals }) => {
 
   const viewOrder = () => showOrders(true);
   const closeOrder = () => showOrders(false);
-  const handleOpen = (e, deals) => {
-    const productId = e.target.id;
-    console.log('selected id', productId);
+  const handleOpen = (deals) => {
+    console.log('selected id', deals);
 
-    const deal = deals[productId];
+    // const deal = deals[productId];
     setModal(true);
-    console.log('selected deal', deal);
+    // console.log('selected deal', deal);
   };
   const handleClose = () => setModal(false);
 
@@ -24,10 +23,10 @@ const Category = ({ deals }) => {
     <section className={style.category}>
       <OverflowWrapper className={style.overflowWrapper}>
         {deals.map(
-          deal =>
+          (deal, index) =>
             (
               <div key={deal.id} className={style.product}>
-                <span onClick={handleOpen(deal)}>
+                <span onClick={() => handleOpen(index)}>
                   {(
                     <img
                       className={style.productImage}
@@ -61,7 +60,11 @@ const Category = ({ deals }) => {
                     <p className={style.open}>{deal.status}</p>
                   </div>
 
-                  <ButtonLink linkTo="orders" text="Order" />
+                  <OrangeButton
+                    className="justify-content-center"
+                    onClick={viewOrder}
+                    text="Order"
+                  />
                 </div>
               </div>
             ) || <Skeleton duration={2} />

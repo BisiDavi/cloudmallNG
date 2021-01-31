@@ -10,11 +10,11 @@ const CategoryTitle = props => {
           <h5>{props.title}</h5>
         </div>
         <div className={`${style.arrowIcon} float-right `}>
-          <img src={rightArrowIcon} alt="rightIcon" />
+          <i className="fas fa-arrow-right"></i>
         </div>
       </div>
-      </section>
-  )
+    </section>
+  );
 }
 
 export default CategoryTitle;

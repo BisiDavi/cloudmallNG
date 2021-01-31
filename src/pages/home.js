@@ -9,14 +9,24 @@ import {
   PageSpinner
 } from '../imports';
 import useGetProducts from '../utils/GetProducts';
-import { featuredDeals } from '../components/temp';
+import {
+  myFeaturedDeals,
+  freshOffers,
+  fastDeliveries
+} from '../components/temp';
 import { AppNavbar } from '../components/homeComponents';
 import style from '../styles/Home.module.css';
 
 const Homepage = () => {
   // const { result, error, loading } = useGetProducts('/app/landing');
   const FeaturedDeals = () => {
-    return <Category deals={featuredDeals} />;
+    return <Category deals={myFeaturedDeals} />;
+  };
+  const FreshOffers = () => {
+    return <Category deals={freshOffers} />;
+  };
+  const FastDeliveries = () => {
+    return <Category deals={fastDeliveries} />;
   };
   // if (error) {
   //   return (
@@ -28,6 +38,7 @@ const Homepage = () => {
   // if (loading) <PageSpinner />;
 
   // console.log('results from cloudmall store', result);
+
   return (
     <Layout
       headerTitle="Home"
@@ -60,11 +71,11 @@ const Homepage = () => {
           </div>
           <div className="categories">
             <CategoryTitle title="Fast Deliveries" />
-            {FeaturedDeals()}
+            {FastDeliveries()}
           </div>
           <div className="categories">
             <CategoryTitle title="Fresh Offers" />
-            {FeaturedDeals()}
+            {FreshOffers()}
           </div>
         </div>
       </div>

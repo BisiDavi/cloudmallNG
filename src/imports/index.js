@@ -46,5 +46,8 @@ export { default as OrderModal } from '../components/orderModal';
 export { default as OrderProduct } from '../components/orderProduct';
 export { default as SidebarDrawer } from '../components/sidebarDrawer';
 export { default as Pageheader } from '../components/Pageheader';
+export { default as FastDeliveries } from '../components/Pageheader';
+export { default as FreshOffers } from '../components/Pageheader';
+export { default as StoreFeaturedDeals } from '../components/Pageheader';
 
 export { OrangeButton, ButtonLink } from '../components/buttonComponent';

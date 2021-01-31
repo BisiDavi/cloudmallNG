@@ -39,12 +39,16 @@ const Category = ({ deals }) => {
                     <h3 className={style.price}>{deal.price}</h3>
                   </div>
                   <div className={style.productDetails}>
+                    <div className={style.vendor}>
                     <p>{deal.vendor}</p>
                     <div className="d-flex">
                       <img src={starIcon} alt="rating" />
                       <p>{deal.rating.substr(0, 3)}</p>
                     </div>
-                    <p className={style.open}>{deal.status}</p>
+                    </div>
+                    <p 
+                    className={style.open}
+                    >{deal.status}</p>
                   </div>
                   <OrangeButton
                     onClick={viewOrder}

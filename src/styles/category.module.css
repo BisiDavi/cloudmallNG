@@ -5,7 +5,6 @@
   position: relative;
   cursor: pointer;
   margin: 10px 10px;
-  box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.15);
   filter: drop-shadow(0px 4px 4px rgba(184, 110, 0, 0.35));
   margin-bottom: 28px;
 }
@@ -22,7 +21,7 @@
   align-items: center;
   justify-content: space-between;
   display: flex;
-  margin: 2px 0px;
+  margin: 10px 0px;
 }
 
 .row1,
@@ -36,13 +35,14 @@
   margin: 0px;
 }
 
-.details h5, .details h3{
+.details h5,
+.details h3 {
   font-family: 'Roboto';
-font-style: normal;
-font-weight: 500;
-font-size: 12px;
-line-height: 14px;
-color: #3E4044;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #3e4044;
 }
 
 .productDetails {
@@ -67,7 +67,7 @@ color: #3E4044;
   height: 30px;
   right: 0px;
   bottom: 76px;
-  border:none;
+  border: none;
   font-weight: bold;
   font-size: 13px;
   background: white;
@@ -103,7 +103,7 @@ color: #3E4044;
 .details {
   font-size: 13px;
   background: white;
-  border:none;
+  border: none;
 }
 .eyeicon img {
   display: flex;
@@ -126,9 +126,8 @@ color: #3E4044;
   margin: 2px 5px;
 }
 
-.arrowIcon img {
-  width: 50px;
-  height: 15px;
+.arrowIcon svg {
+  color: #ffb647;
 }
 
 .categoryname {
@@ -158,4 +157,13 @@ color: #3E4044;
 .details button {
   width: 100%;
   border-radius: 0px;
+}
+
+.vendor {
+  display: flex;
+  align-items: center;
+}
+
+.vendor p {
+  margin: 0px;
 }

@@ -23,30 +23,24 @@ const OrderModal = ({ product, modalState, closeModal }) => {
           </div>
           <div className={style.productDetail}>
             <ul>
-              <li className="d-flex justify-content-around my-2">
-                <h4>{product.name} (A pack of 5)</h4>
-                <span className="favourite">
-                  <i className="fa fa-heart"></i>
-                </span>
+              <li className={style.productname}>
+                <p>{product.name}</p>
+                <i className="far fa-heart"></i>
                 <p>{product.price}</p>
               </li>
-              <li className="d-flex my-2">
-                <span className={`${style.productIcon} mr-3`}>
-                  <i className="fa fa-map-marker"></i>
-                </span>
+              <li className={style.productIcon}>
+                <i className="fa fa-map-marker"></i>
                 <p>{product.vendor}</p>
               </li>
-              <li className="d-flex my-2">
-                <span className={`${style.productIcon}  mr-3`}>
-                  <i className="fa fa-star"></i>
-                </span>
+              <li className={style.productRating}>
+                <i className="fa fa-star"></i>
                 <p>{product.rating}</p>
               </li>
-              <li className="d-flex justify-content-between my-2">
+              <li className={style.productDuration}>
                 <p>Time to Prepare</p>
                 <p>{product.duration}</p>
               </li>
-              <li className="my-2">
+              <li className={style.productDescription}>
                 <p>{product.description}</p>
               </li>
             </ul>

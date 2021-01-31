@@ -10,12 +10,20 @@ const Category = ({ deals }) => {
 
   const viewOrder = () => showOrders(true);
   const closeOrder = () => showOrders(false);
-  const handleOpen = (deals) => {
-    console.log('selected id', deals);
 
-    // const deal = deals[productId];
+  const showModal = product => {
+    console.log('product', product);
+    return (
+      <OrderModal
+        product={product}
+        modalState={modal}
+        closeModal={handleClose}
+      />
+    );
+  };
+  const handleOpen = deals => {
+    console.log('deals', deals);
     setModal(true);
-    // console.log('selected deal', deal);
   };
   const handleClose = () => setModal(false);
 
@@ -26,7 +34,7 @@ const Category = ({ deals }) => {
           (deal, index) =>
             (
               <div key={deal.id} className={style.product}>
-                <span onClick={() => handleOpen(index)}>
+                <span onClick={() => handleOpen(deal)}>
                   {(
                     <img
                       className={style.productImage}
@@ -37,7 +45,7 @@ const Category = ({ deals }) => {
                   <span className={style.duration}>
                     <h6>{deal.duration} </h6>
                     <p>min</p>
-                  </span>                  
+                  </span>
                 </span>
                 <div className={style.details}>
                   <div className={style.row1}>
@@ -59,16 +67,12 @@ const Category = ({ deals }) => {
                     onClick={viewOrder}
                     text="Order"
                   />
-                  <OrderModal
-                    product={deal}
-                    modalState={modal}
-                    closeModal={handleClose}
-                  />
                 </div>
               </div>
             ) || <Skeleton duration={2} />
         )}
       </OverflowWrapper>
+      {modal ? showModal(deals) : null}
       {orders ? <OrderProduct closeOrderMenu={closeOrder} /> : null}
     </section>
   );

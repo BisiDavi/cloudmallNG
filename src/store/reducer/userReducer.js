@@ -1,7 +1,8 @@
 import {
-  USER_PREFERRED_ADDRESS_ENTERED,
   USER_PREFERRED_ADDRESS_SUCCESS,
-  USER_PREFERRED_ADDRESS_ERROR
+  USER_PREFERRED_ADDRESS_ERROR,
+  SHOW_PRODUCT_MODAL,
+  SHOW_PRODUCT_MODAL_ERROR
 } from '../constant';
 import { axiosInstance } from '../../axios';
 
@@ -25,14 +26,23 @@ const submitUserAddress = userAddressArray => {
 };
 export const UserPreferredAddressReducer = (state = {}, action) => {
   switch (action.type) {
-    case USER_PREFERRED_ADDRESS_ENTERED:
-      return { loading: true };
     case USER_PREFERRED_ADDRESS_SUCCESS:
       const location = action.payload;
       const userAddressArray = location.split(',');
       submitUserAddress(userAddressArray);
     case USER_PREFERRED_ADDRESS_ERROR:
       return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const ShowProductModalReducer = (state = {}, action) => {
+  switch (action.type) {
+    case SHOW_PRODUCT_MODAL:
+      return;
+    case SHOW_PRODUCT_MODAL_ERROR:
+      return;
     default:
       return state;
   }

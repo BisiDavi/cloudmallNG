@@ -1,3 +1,5 @@
+import  Link from 'next/link';
+
 export const OrangeButton = ({ btnMargin, text, onClick, icon, className }) => {
   return (
     <>
@@ -43,21 +45,25 @@ export const OrangeButton = ({ btnMargin, text, onClick, icon, className }) => {
   );
 };
 
-export const ButtonLink = ({ text }) => {
+export const ButtonLink = ({ text, linkTo }) => {
   return (
     <>
-      <button className="link_button">{text}</button>
+      <Link href={`/${linkTo}`}>
+        <a>
+        <button className="link_button">{text}</button>
+        </a>
+      </Link>
       <style jsx>
         {`
           .link_button {
-            color: #f29100 !important;
-            font-family: Roboto;
-            background: none;
+            color: white;
+            font-family: 'Roboto';
+            background: #f29100;
             border: none;
-            font-family: Roboto;
             font-style: normal;
             font-weight: 500;
             font-size: 14px;
+            text-align: center;
             line-height: 16px;
           }
         `}

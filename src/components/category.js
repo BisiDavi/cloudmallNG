@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import OverflowWrapper from 'react-overflow-wrapper';
-import { OrderModal, starIcon, OrderProduct, OrangeButton } from '../imports';
+import { OrderModal, starIcon, OrderProduct, ButtonLink } from '../imports';
 import style from '../styles/category.module.css';
 
 const Category = ({ deals }) => {
@@ -10,7 +10,14 @@ const Category = ({ deals }) => {
 
   const viewOrder = () => showOrders(true);
   const closeOrder = () => showOrders(false);
-  const handleOpen = () => setModal(true);
+  const handleOpen = (e, deals) => {
+    const productId = e.target.id;
+    console.log('selected id', productId);
+
+    const deal = deals[productId];
+    setModal(true);
+    console.log('selected deal', deal);
+  };
   const handleClose = () => setModal(false);
 
   return (
@@ -20,7 +27,7 @@ const Category = ({ deals }) => {
           deal =>
             (
               <div key={deal.id} className={style.product}>
-                <span onClick={handleOpen}>
+                <span onClick={handleOpen(deal)}>
                   {(
                     <img
                       className={style.productImage}
@@ -32,6 +39,11 @@ const Category = ({ deals }) => {
                     <h6>{deal.duration} </h6>
                     <p>min</p>
                   </span>
+                  <OrderModal
+                    product={deal}
+                    modalState={modal}
+                    closeModal={handleClose}
+                  />
                 </span>
                 <div className={style.details}>
                   <div className={style.row1}>
@@ -48,16 +60,8 @@ const Category = ({ deals }) => {
                     </div>
                     <p className={style.open}>{deal.status}</p>
                   </div>
-                  <OrangeButton
-                    onClick={viewOrder}
-                    text="Order"
-                    className="justify-content-center"
-                  />
-                  <OrderModal
-                    product={deal}
-                    modalState={modal}
-                    closeModal={handleClose}
-                  />
+
+                  <ButtonLink linkTo="orders" text="Order" />
                 </div>
               </div>
             ) || <Skeleton duration={2} />

@@ -7,31 +7,49 @@ import style from '../styles/category.module.css';
 const Category = ({ deals }) => {
   const [modal, setModal] = useState(false);
   const [orders, showOrders] = useState(false);
+  const [tobeOrdered, setTobeOrdered] = useState({});
 
   const viewOrder = () => showOrders(true);
   const closeOrder = () => showOrders(false);
 
-  const showModal = product => {
+  const preferredProduct = product => {
     console.log('product', product);
+    setTobeOrdered({ ...product });
+    console.log('tobeOrdered', tobeOrdered);
+  };
+
+  console.log('tobeOrdered', tobeOrdered);
+  const ProductModal = () => {
     return (
       <OrderModal
-        product={product}
+        product={tobeOrdered}
         modalState={modal}
         closeModal={handleClose}
       />
     );
   };
-  const handleOpen = deals => {
-    console.log('deals', deals);
-    setModal(true);
+  let productsEntries = Object.entries(tobeOrdered);
+  const productsLength = productsEntries.length;
+
+  const orderNotEmpty = productsLength !== 0;
+
+  const displayProductModal = () => {
+    const displayCondition = modal && orderNotEmpty;
+    return displayCondition ? ProductModal() : null;
   };
+
+  const handleOpen = deals => {
+    setModal(true);
+    preferredProduct(deals);
+  };
+
   const handleClose = () => setModal(false);
 
   return (
     <section className={style.category}>
       <OverflowWrapper className={style.overflowWrapper}>
         {deals.map(
-          (deal, index) =>
+          deal =>
             (
               <div key={deal.id} className={style.product}>
                 <span onClick={() => handleOpen(deal)}>
@@ -47,6 +65,7 @@ const Category = ({ deals }) => {
                     <p>min</p>
                   </span>
                 </span>
+                {displayProductModal()}
                 <div className={style.details}>
                   <div className={style.row1}>
                     <h5>{deal.name}</h5>
@@ -72,7 +91,7 @@ const Category = ({ deals }) => {
             ) || <Skeleton duration={2} />
         )}
       </OverflowWrapper>
-      {modal ? showModal(deals) : null}
+
       {orders ? <OrderProduct closeOrderMenu={closeOrder} /> : null}
     </section>
   );

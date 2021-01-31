@@ -40,15 +40,13 @@ const Category = ({ deals }) => {
                   </div>
                   <div className={style.productDetails}>
                     <div className={style.vendor}>
-                    <p>{deal.vendor}</p>
-                    <div className="d-flex">
-                      <img src={starIcon} alt="rating" />
-                      <p>{deal.rating.substr(0, 3)}</p>
+                      <p>{deal.vendor}</p>
+                      <div className="d-flex">
+                        <img src={starIcon} alt="rating" />
+                        <p>{deal.rating.substr(0, 3)}</p>
+                      </div>
                     </div>
-                    </div>
-                    <p 
-                    className={style.open}
-                    >{deal.status}</p>
+                    <p className={style.open}>{deal.status}</p>
                   </div>
                   <OrangeButton
                     onClick={viewOrder}

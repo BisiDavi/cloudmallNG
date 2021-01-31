@@ -12,7 +12,7 @@ export const myFeaturedDeals = [
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'
   },
   {
-   id : 2,
+    id: 2,
     name: 'Oranges',
     price: 'N500',
     duration: '30 - 40',
@@ -35,7 +35,8 @@ export const myFeaturedDeals = [
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'
   },
-  {id: 4,
+  {
+    id: 4,
     name: 'Oranges',
     price: 'N500',
     duration: '30 - 40',
@@ -59,7 +60,7 @@ export const myFeaturedDeals = [
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'
   },
   {
-   id: 6,
+    id: 6,
     name: 'Oranges',
     price: 'N500',
     duration: '30 - 40',

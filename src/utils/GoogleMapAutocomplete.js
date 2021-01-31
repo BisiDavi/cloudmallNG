@@ -12,7 +12,7 @@ import {
 } from 'react-google-maps';
 import Geocode from 'react-geocode';
 import Autocomplete from 'react-google-autocomplete';
-import { Layout, PageSpinner, Pageheader } from '../imports';
+import {  PageSpinner, Pageheader } from '../imports';
 import { UserPreferredAddress } from '../store/action/userActions';
 import style from '../styles/Location.module.css';
 
@@ -192,17 +192,6 @@ class GoogleMapAutocomplete extends Component {
       map = (
         <Container className="location" fluid>
           <Pageheader title="Enter your Address" />
-          <Row className={style.header}>
-            <Col>
-              <div
-                className={style.arrow}
-                onClick={() => this.props.router.back()}
-              >
-                <ArrowBackIcon />
-              </div>
-              <h3 className="text-center">Enter your Address</h3>
-            </Col>
-          </Row>
           <Row>
             <Col lg={9} xs={12} className={`${style.mapContainer} 100vh px-0`}>
               <AsyncMap

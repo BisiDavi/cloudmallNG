@@ -140,6 +140,7 @@
   position: absolute;
   top: 0;
   font-size: 40px;
+  outline: none;
   font-weight: 350;
   z-index: 100;
 }
@@ -184,7 +185,7 @@
   line-height: 13px;
 }
 
-.productDuration{
+.productDuration {
   justify-content: space-between;
 }
 

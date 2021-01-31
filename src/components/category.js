@@ -37,12 +37,7 @@ const Category = ({ deals }) => {
                   <span className={style.duration}>
                     <h6>{deal.duration} </h6>
                     <p>min</p>
-                  </span>
-                  <OrderModal
-                    product={deal}
-                    modalState={modal}
-                    closeModal={handleClose}
-                  />
+                  </span>                  
                 </span>
                 <div className={style.details}>
                   <div className={style.row1}>
@@ -59,11 +54,15 @@ const Category = ({ deals }) => {
                     </div>
                     <p className={style.open}>{deal.status}</p>
                   </div>
-
                   <OrangeButton
                     className="justify-content-center"
                     onClick={viewOrder}
                     text="Order"
+                  />
+                  <OrderModal
+                    product={deal}
+                    modalState={modal}
+                    closeModal={handleClose}
                   />
                 </div>
               </div>

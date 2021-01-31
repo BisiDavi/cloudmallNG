@@ -6,7 +6,7 @@ export const myFeaturedDeals = [
     duration: '30 - 40',
     vendor: 'G.Mart',
     rating: '4.5(200)',
-    image: '/static/images/CocaCola.png',
+    image: '/static/images/cocaCola.png',
     status: 'open',
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'
@@ -30,7 +30,7 @@ export const myFeaturedDeals = [
     duration: '30 - 40',
     vendor: 'G.Mart',
     rating: '4.5(200)',
-    image: '/static/images/CocaCola.png',
+    image: '/static/images/cocaCola.png',
     status: 'open',
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'
@@ -54,7 +54,7 @@ export const myFeaturedDeals = [
     duration: '30 - 40',
     vendor: 'G.Mart',
     rating: '4.5(200)',
-    image: '/static/images/CocaCola.png',
+    image: '/static/images/cocaCola.png',
     status: 'open',
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'
@@ -228,7 +228,7 @@ export const freshOffers = [
     duration: '30 - 40',
     vendor: 'G.Mart',
     rating: '4.5(200)',
-    image: '/static/images/WhiteRiceStew.png',
+    image: '/static/images/whiteRiceStew.png',
     status: 'open',
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'
@@ -240,7 +240,7 @@ export const freshOffers = [
     duration: '30 - 40',
     vendor: 'G.Mart',
     rating: '4.5(200)',
-    image: '/static/images/WhiteRiceStew.png',
+    image: '/static/images/whiteRiceStew.png',
     status: 'open',
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'
@@ -252,7 +252,7 @@ export const freshOffers = [
     duration: '30 - 40',
     vendor: 'G.Mart',
     rating: '4.5(200)',
-    image: '/static/images/WhiteRiceStew.png',
+    image: '/static/images/whiteRiceStew.png',
     status: 'open',
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'
@@ -264,7 +264,7 @@ export const freshOffers = [
     duration: '30 - 40',
     vendor: 'G.Mart',
     rating: '4.5(200)',
-    image: '/static/images/WhiteRiceStew.png',
+    image: '/static/images/whiteRiceStew.png',
     status: 'open',
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'
@@ -276,7 +276,7 @@ export const freshOffers = [
     duration: '30 - 40',
     vendor: 'G.Mart',
     rating: '4.5(200)',
-    image: '/static/images/WhiteRiceStew.png',
+    image: '/static/images/whiteRiceStew.png',
     status: 'open',
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'
@@ -288,7 +288,7 @@ export const freshOffers = [
     duration: '30 - 40',
     vendor: 'G.Mart',
     rating: '4.5(200)',
-    image: '/static/images/WhiteRiceStew.png',
+    image: '/static/images/whiteRiceStew.png',
     status: 'open',
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit. cursus eget nisl orci lectus ut id consectetur. vitae, arcu duis pretium, pulvinar pharetra.'

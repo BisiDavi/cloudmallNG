@@ -7,37 +7,31 @@ const storeCategories = [
     id: "1",
     name: "Bookshop",
     description: "Personal care and needs",
-    image: "static/images/Rectangle1.png"
+    image: "static/images/bookshop.png"
   },
   {
     id: "2",
     name: "Pharmacy",
     description: "Personal care and needs",
-    image: "static/images/Rectangle1.png"
+    image: "static/images/pharmacy.png"
   },
   {
     id: "3",
     name: "Restaurant",
     description: "Personal care and needs",
-    image: "static/images/Rectangle1.png"
+    image: "static/images/restaurant.png"
   },
   {
     id: "4",
-    name: "Groceries",
+    name: "Raw Food",
     description: "Personal care and needs",
-    image: "static/images/Rectangle1.png"
+    image: "static/images/rawfood.png"
   },
   {
     id: "5",
-    name: "Raw Food",
-    description: "Personal care and needs",
-    image: "static/images/Rectangle1.png"
-  },
-  {
-    id: "6",
     name: "Spa",
     description: "Personal care and needs",
-    image: "static/images/Rectangle1.png"
+    image: "static/images/supermarket.png"
   }
 ];
 

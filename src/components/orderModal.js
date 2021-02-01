@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { ShowOrdersModal, closeOrderModal } from '../store/action/userActions';
-import { OrderProduct,OrangeButton, PageSpinner } from '../imports';
+import { OrderProduct, OrangeButton, PageSpinner } from '../imports';
 import style from '../styles/Home.module.css';
 
 const OrderModal = ({ product, modalState, closeModal }) => {
@@ -17,12 +17,12 @@ const OrderModal = ({ product, modalState, closeModal }) => {
     {
       loadingOrdersModal ? (
         <PageSpinner />
-      ) : (
+      ) : ordersModal ? (
         <OrderProduct
           modalState={ordersModal}
           closeOrderMenu={closeModalOrder}
         />
-      );
+      ) : null;
     }
   };
   return (
@@ -75,7 +75,7 @@ const OrderModal = ({ product, modalState, closeModal }) => {
           />
         </Modal.Footer>
       </Modal>
-      {displayProduct()}
+      {/* {displayProduct()} */}
     </div>
   );
 };

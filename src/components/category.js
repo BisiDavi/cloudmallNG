@@ -78,7 +78,7 @@ const Category = ({ deals }) => {
                     <p>min</p>
                   </span>
                 </span>
-                {displayProductModal()}
+                {/* {displayProductModal()} */}
                 <div className={style.details}>
                   <div className={style.row1}>
                     <h5>{deal.name}</h5>
@@ -103,24 +103,24 @@ const Category = ({ deals }) => {
               </div>
             ) || <Skeleton duration={2} />
         )}
-        {showLoadingProducts ? (
-          <PageSpinner />
-        ) : productModal ? (
-          <OrderModal
-            product={product}
-            modalState={productModal}
-            closeModal={handleClose}
-          />
-        ) : null}
-        {showLoadingOrders ? (
-          <PageSpinner />
-        ) : ordersModal ? (
-          <OrderProduct
-            modalState={ordersModal}
-            closeOrderMenu={closeModalOrder}
-          />
-        ) : null}
       </OverflowWrapper>
+      {showLoadingProducts ? (
+        <PageSpinner />
+      ) : productModal ? (
+        <OrderModal
+          product={product}
+          modalState={productModal}
+          closeModal={handleClose}
+        />
+      ) : null}
+      {showLoadingOrders ? (
+        <PageSpinner />
+      ) : ordersModal ? (
+        <OrderProduct
+          modalState={ordersModal}
+          closeOrderMenu={closeModalOrder}
+        />
+      ) : null}
     </section>
   );
 };

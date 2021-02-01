@@ -7,7 +7,7 @@ import {
   SHOW_ORDERS_MODAL_REQUEST,
   SHOW_ORDERS_MODAL_SUCCESSFUL,
   SHOW_ORDERS_MODAL_ERROR,
-  CLOSE_PRODUCT_MODAL 
+  CLOSE_PRODUCT_MODAL
 } from '../constant';
 
 export const UserPreferredAddress = (location, router) => dispatch => {
@@ -57,6 +57,27 @@ export const closeProductModal = () => dispatch => {
     });
   } catch (error) {
     dispatch({
+      type: SHOW_PRODUCT_MODAL_ERROR,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message
+    });
+  }
+};
+export const ShowOrdersModal = () => dispatch => {
+  try {
+    dispatch({
+      type: CLOSE_PRODUCT_MODAL
+    });
+    dispatch({
+      type: SHOW_ORDERS_MODAL_REQUEST
+    });
+    dispatch({
+      type: SHOW_ORDERS_MODAL_SUCCESSFUL
+    });
+  } catch (error) {
+    dispatch({
       type: SHOW_ORDERS_MODAL_ERROR,
       payload:
         error.response && error.response.data.message
@@ -64,15 +85,12 @@ export const closeProductModal = () => dispatch => {
           : error.message
     });
   }
-}
-export const ShowOrdersModal = orders => dispatch => {
+};
+
+export const closeOrderModal = () => dispatch => {
   try {
     dispatch({
-      type: SHOW_ORDERS_MODAL_REQUEST
-    });
-    dispatch({
-      type: SHOW_ORDERS_MODAL_SUCCESSFUL,
-      payload: orders
+      type: CLOSE_ORDERS_MODAL
     });
   } catch (error) {
     dispatch({

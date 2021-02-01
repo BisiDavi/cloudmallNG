@@ -4,37 +4,44 @@ import { useDispatch, useSelector } from 'react-redux';
 import OverflowWrapper from 'react-overflow-wrapper';
 import {
   ShowProductModal,
-  closeProductModal
+  ShowOrdersModal,
+  closeProductModal,
+  closeOrderModal
 } from '../store/action/userActions';
-import { OrderModal, starIcon, OrderProduct, OrangeButton , PageSpinner} from '../imports';
+import {
+  OrderModal,
+  starIcon,
+  OrderProduct,
+  OrangeButton,
+  PageSpinner
+} from '../imports';
 import style from '../styles/category.module.css';
 
 const Category = ({ deals }) => {
-  const [orders, showOrders] = useState(false);
-
   const dispatch = useDispatch();
-
   const { productModal, product, loading } = useSelector(
     state => state.onClickedProduct
   );
+  const { ordersModal, orderLoading: loading } = useSelector(
+    state => state.makeOrders
+  );
 
-  const viewOrder = () => showOrders(true);
-  const closeOrder = () => showOrders(false);
+  const viewOrder = () => dispatch(ShowOrdersModal());
+  const closeOrder = () => dispatch(closeOrderModal());
 
-  console.log('productModal', productModal);
-
-  console.log('product', product);
   const ProductModal = () => {
-    const modal = loading 
-        ?<PageSpinner /> 
-        : <OrderModal
+    const modal = loading ? (
+      <PageSpinner />
+    ) : (
+      <OrderModal
         product={product}
         modalState={productModal}
         closeModal={handleClose}
-      />;
-      return modal;
+      />
+    );
+    return modal;
   };
-  
+
   const displayProductModal = () => {
     let productsEntries = Object.entries(product);
     const productsLength = productsEntries.length;
@@ -46,7 +53,6 @@ const Category = ({ deals }) => {
   const handleOpen = deals => {
     dispatch(ShowProductModal(deals));
   };
-
   const handleClose = () => dispatch(closeProductModal());
 
   return (
@@ -96,7 +102,7 @@ const Category = ({ deals }) => {
         )}
       </OverflowWrapper>
 
-      {orders ? <OrderProduct closeOrderMenu={closeOrder} /> : null}
+      {ordersModal ? <OrderProduct closeOrderMenu={closeOrder} /> : null}
     </section>
   );
 };

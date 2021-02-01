@@ -54,25 +54,26 @@ export const ProductModalReducer = (
     case SHOW_PRODUCT_MODAL_SUCCESSFUL:
       return { loading: false, product: { ...payload }, productModal: true };
     case CLOSE_PRODUCT_MODAL:
-      return { loading: false, product:{...state.product}, productModal: false };
+      return {
+        loading: false,
+        product: { ...state.product },
+        productModal: false
+      };
     case SHOW_PRODUCT_MODAL_ERROR:
       return { loading: false, error: payload };
     default:
       return state;
   }
 };
-export const OrdersModalReducer = (
-  state = { orders: [], ordersModal: false },
-  action
-) => {
+export const OrdersModalReducer = (state = { ordersModal: false }, action) => {
   const { type, payload } = action;
   switch (type) {
     case SHOW_ORDERS_MODAL_REQUEST:
-      return { loading: true, ordersModal: true };
+      return { loading: true };
     case SHOW_ORDERS_MODAL_SUCCESSFUL:
-      return { loading: true, ordersModal: true };
+      return { loading: false, ordersModal: true };
     case CLOSE_ORDERS_MODAL:
-      return { loading: false, error: payload };
+      return { loading: false, ordersModal: false };
     case SHOW_ORDERS_MODAL_ERROR:
       return { loading: false, error: payload };
     default:

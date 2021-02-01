@@ -7,7 +7,8 @@ import {
   SHOW_ORDERS_MODAL_REQUEST,
   SHOW_ORDERS_MODAL_SUCCESSFUL,
   SHOW_ORDERS_MODAL_ERROR,
-  CLOSE_PRODUCT_MODAL
+  CLOSE_PRODUCT_MODAL,
+  CLOSE_ORDERS_MODAL
 } from '../constant';
 
 export const UserPreferredAddress = (location, router) => dispatch => {
@@ -67,9 +68,9 @@ export const closeProductModal = () => dispatch => {
 };
 export const ShowOrdersModal = () => dispatch => {
   try {
-    dispatch({
+   /*  dispatch({
       type: CLOSE_PRODUCT_MODAL
-    });
+    }); */
     dispatch({
       type: SHOW_ORDERS_MODAL_REQUEST
     });

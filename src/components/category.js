@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useDispatch, useSelector } from 'react-redux';
 import OverflowWrapper from 'react-overflow-wrapper';
@@ -19,35 +19,38 @@ import style from '../styles/category.module.css';
 
 const Category = ({ deals }) => {
   const dispatch = useDispatch();
-  const { productModal, product, loading } = useSelector(
+  const { productModal, product, showLoadingProducts } = useSelector(
     state => state.onClickedProduct
   );
-  const { ordersModal, orderLoading: loading } = useSelector(
+  const { ordersModal, showLoadingOrders } = useSelector(
     state => state.makeOrders
   );
 
-  const viewOrder = () => dispatch(ShowOrdersModal());
-  const closeOrder = () => dispatch(closeOrderModal());
+  const viewOrderModal = () => dispatch(ShowOrdersModal());
+  const closeModalOrder = () => dispatch(closeOrderModal());
 
   const ProductModal = () => {
-    const modal = loading ? (
-      <PageSpinner />
-    ) : (
-      <OrderModal
-        product={product}
-        modalState={productModal}
-        closeModal={handleClose}
-      />
-    );
-    return modal;
+    if (showLoadingProducts) {
+      return <PageSpinner />;
+    } else if (productModal) {
+      return (
+        <OrderModal
+          product={product}
+          modalState={productModal}
+          closeModal={handleClose}
+        />
+      );
+    } else {
+      return null;
+    }
   };
 
   const displayProductModal = () => {
     let productsEntries = Object.entries(product);
     const productsLength = productsEntries.length;
-    const orderNotEmpty = productsLength !== 0;
+    const orderNotEmpty = productsLength > 0;
     const displayCondition = productModal && orderNotEmpty;
-    return displayCondition ? ProductModal() : null;
+    return displayCondition ? null : ProductModal();
   };
 
   const handleOpen = deals => {
@@ -93,16 +96,31 @@ const Category = ({ deals }) => {
                   </div>
                   <OrangeButton
                     className="justify-content-center"
-                    onClick={viewOrder}
+                    onClick={viewOrderModal}
                     text="Order"
                   />
                 </div>
               </div>
             ) || <Skeleton duration={2} />
         )}
+        {showLoadingProducts ? (
+          <PageSpinner />
+        ) : productModal ? (
+          <OrderModal
+            product={product}
+            modalState={productModal}
+            closeModal={handleClose}
+          />
+        ) : null}
+        {showLoadingOrders ? (
+          <PageSpinner />
+        ) : ordersModal ? (
+          <OrderProduct
+            modalState={ordersModal}
+            closeOrderMenu={closeModalOrder}
+          />
+        ) : null}
       </OverflowWrapper>
-
-      {ordersModal ? <OrderProduct closeOrderMenu={closeOrder} /> : null}
     </section>
   );
 };

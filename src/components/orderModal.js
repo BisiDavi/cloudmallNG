@@ -1,9 +1,30 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import Link from 'next/link';
+import { useDispatch, useSelector } from 'react-redux';
+import { ShowOrdersModal, closeOrderModal } from '../store/action/userActions';
+import { OrderProduct,OrangeButton, PageSpinner } from '../imports';
 import style from '../styles/Home.module.css';
 
 const OrderModal = ({ product, modalState, closeModal }) => {
+  const dispatch = useDispatch();
+  const { ordersModal, loadingOrdersModal } = useSelector(
+    state => state.makeOrders
+  );
+
+  const viewOrderModal = () => dispatch(ShowOrdersModal());
+  const closeModalOrder = () => dispatch(closeOrderModal());
+  const displayProduct = () => {
+    {
+      loadingOrdersModal ? (
+        <PageSpinner />
+      ) : (
+        <OrderProduct
+          modalState={ordersModal}
+          closeOrderMenu={closeModalOrder}
+        />
+      );
+    }
+  };
   return (
     <div className="orderModal">
       <Modal
@@ -47,11 +68,14 @@ const OrderModal = ({ product, modalState, closeModal }) => {
           </div>
         </Modal.Body>
         <Modal.Footer className={style.modalButton}>
-          <Link href="/cart">
-            <a className="font-weight-bold btn btn-light">Order</a>
-          </Link>
+          <OrangeButton
+            className="justify-content-center"
+            onClick={viewOrderModal}
+            text="Order"
+          />
         </Modal.Footer>
       </Modal>
+      {displayProduct()}
     </div>
   );
 };

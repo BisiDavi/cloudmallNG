@@ -44,7 +44,6 @@ const Category = ({ deals }) => {
   };
 
   const handleOpen = deals => {
-    setModal(true);
     dispatch(ShowProductModal(deals));
   };
 

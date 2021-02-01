@@ -19,7 +19,7 @@ export default function Home() {
   // const handleOpen = () => {
   //   setTimeout(() => {
   //     setModal(true);
-  //   }, 1000);
+//   }, 1000);
   // };
   const handleClose = () => setModal(false);
 

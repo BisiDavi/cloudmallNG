@@ -29,7 +29,7 @@ const Category = ({ deals }) => {
   const viewOrderModal = () => dispatch(ShowOrdersModal());
   const closeModalOrder = () => dispatch(closeOrderModal());
 
-  const ProductModal = () => {
+  /* const ProductModal = () => {
     if (showLoadingProducts) {
       return <PageSpinner />;
     } else if (productModal) {
@@ -43,15 +43,15 @@ const Category = ({ deals }) => {
     } else {
       return null;
     }
-  };
+  }; */
 
-  const displayProductModal = () => {
+  /* const displayProductModal = () => {
     let productsEntries = Object.entries(product);
     const productsLength = productsEntries.length;
     const orderNotEmpty = productsLength > 0;
     const displayCondition = productModal && orderNotEmpty;
     return displayCondition ? null : ProductModal();
-  };
+  }; */
 
   const handleOpen = deals => {
     dispatch(ShowProductModal(deals));

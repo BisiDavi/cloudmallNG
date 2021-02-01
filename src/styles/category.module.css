@@ -167,3 +167,33 @@
 .vendor p {
   margin: 0px;
 }
+
+/* deals category */
+@media (max-width: 768px) {
+  .details {
+    font-size: 12px;
+  }
+
+  .vendor p {
+    margin: 2px 0px;
+  }
+
+  .category button {
+    font-size: 15px;
+  }
+
+  .category {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 20px;
+  }
+  .product {
+    width: 100%;
+    margin: 20px 0px;
+  }
+  .product img.productImage {
+    width: 100%;
+  }
+}

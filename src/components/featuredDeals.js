@@ -1,17 +1,19 @@
 import React from 'react';
-import { Category } from '../imports';
-import { myfeaturedDeals } from '../components/temp';
+import { Container, Row, Col } from 'react-bootstrap';
+import { DealsCategory } from '../imports';
 
-const StoreFeaturedDeals = () => {
+import { myFeaturedDeals } from '../components/temp';
+
+const FeaturedDeals = () => {
   return (
     <Container>
       <Row>
         <Col lg={6} sm={6}>
-          <Category deals={myfeaturedDeals} />
+          <DealsCategory deals={myFeaturedDeals} />
         </Col>
       </Row>
     </Container>
   );
 };
 
-export default StoreFeaturedDeals;
+export default FeaturedDeals;

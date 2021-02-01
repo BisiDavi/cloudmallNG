@@ -35,10 +35,12 @@ export { default as arrowLeft } from '../../public/static/images/arrowLeft.svg';
 
 /* Components */
 export { default as Layout } from '../components/layout';
+export { default as ProductLayout } from '../components/productLayout';
 export { default as Header } from '../components/header';
 export { default as Footer } from '../components/footer';
 export { default as Searchbar } from '../components/searchbar';
 export { default as Category } from '../components/category';
+export { default as DealsCategory } from '../components/dealsCategory';
 export { default as CategoryTitle } from '../components/categoryTitle';
 export { default as HomepageSlider } from '../components/slider';
 export { default as PageSpinner } from '../components/spinner';
@@ -46,8 +48,8 @@ export { default as OrderModal } from '../components/orderModal';
 export { default as OrderProduct } from '../components/orderProduct';
 export { default as SidebarDrawer } from '../components/sidebarDrawer';
 export { default as Pageheader } from '../components/Pageheader';
-export { default as FastDeliveries } from '../components/Pageheader';
-export { default as FreshOffers } from '../components/Pageheader';
-export { default as StoreFeaturedDeals } from '../components/Pageheader';
+export { default as FastDeliveries } from '../components/fastDeliveries';
+export { default as FreshOffers } from '../components/freshOffers';
+export { default as FeaturedDeals } from '../components/featuredDeals';
 
 export { OrangeButton, ButtonLink } from '../components/buttonComponent';

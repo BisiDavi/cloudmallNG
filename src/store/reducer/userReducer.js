@@ -1,8 +1,14 @@
 import {
   USER_PREFERRED_ADDRESS_SUCCESS,
   USER_PREFERRED_ADDRESS_ERROR,
-  SHOW_PRODUCT_MODAL,
-  SHOW_PRODUCT_MODAL_ERROR
+  SHOW_PRODUCT_MODAL_REQUEST,
+  SHOW_PRODUCT_MODAL_SUCCESSFUL,
+  SHOW_PRODUCT_MODAL_ERROR,
+  CLOSE_PRODUCT_MODAL,
+  SHOW_ORDERS_MODAL_REQUEST,
+  SHOW_ORDERS_MODAL_SUCCESSFUL,
+  CLOSE_ORDERS_MODAL,
+  SHOW_ORDERS_MODAL_ERROR
 } from '../constant';
 import { axiosInstance } from '../../axios';
 
@@ -37,12 +43,38 @@ export const UserPreferredAddressReducer = (state = {}, action) => {
   }
 };
 
-export const ShowProductModalReducer = (state = {}, action) => {
-  switch (action.type) {
-    case SHOW_PRODUCT_MODAL:
-      return;
+export const ProductModalReducer = (
+  state = { product: {}, productModal: false },
+  action
+) => {
+  const { type, payload } = action;
+  switch (type) {
+    case SHOW_PRODUCT_MODAL_REQUEST:
+      return { loading: true };
+    case SHOW_PRODUCT_MODAL_SUCCESSFUL:
+      return { loading: false, product: { ...payload }, productModal: true };
+    case CLOSE_PRODUCT_MODAL:
+      return { loading: false, product:{...state.product}, productModal: false };
     case SHOW_PRODUCT_MODAL_ERROR:
-      return;
+      return { loading: false, error: payload };
+    default:
+      return state;
+  }
+};
+export const OrdersModalReducer = (
+  state = { orders: [], ordersModal: false },
+  action
+) => {
+  const { type, payload } = action;
+  switch (type) {
+    case SHOW_ORDERS_MODAL_REQUEST:
+      return { loading: true, ordersModal: true };
+    case SHOW_ORDERS_MODAL_SUCCESSFUL:
+      return { loading: true, ordersModal: true };
+    case CLOSE_ORDERS_MODAL:
+      return { loading: false, error: payload };
+    case SHOW_ORDERS_MODAL_ERROR:
+      return { loading: false, error: payload };
     default:
       return state;
   }

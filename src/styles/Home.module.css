@@ -15,29 +15,31 @@
 }
 
 .locationmodal {
-  top: 40px !important;
-  margin-top: 40px !important;
-  width: 80% !important;
-  left: 10% !important;
-  padding: 5px 10px !important;
+  top: 40px;
+    margin: 40px auto;
+    width: 100%;
+    left: unset;
+    height: 100%;
+    padding: 5px 20px;
 }
 
 .modaltitle {
-  font-size: 14px !important;
-  padding: 5px 10px !important;
+  font-size: 14px;
+  padding: 5px 10px;
 }
 
 .modalbody p {
-  font-size: 12px !important;
-  padding: 10px !important;
+   font-size: 12px;
+    padding: 10px;
 }
 
-.modalButton,
-.modalFooter {
+.modalButton{
   display: flex;
-  justify-content: space-between;
-  padding: 5px 10px;
-  border: none;
+    justify-content: space-between;
+    padding: 0px 10px;
+    border: none;
+    margin-top: -30px;
+    margin-bottom: 0px;
 }
 
 .modalButton a {
@@ -71,7 +73,10 @@
 }
 
 .productImg {
-  width: 100%;
+   border-top-left-radius: 10px;
+    width: 100%;
+    padding: 0px;
+    border-top-right-radius: 10px;
 }
 
 .modalButton a {
@@ -147,6 +152,9 @@
 
 .modalbody {
   margin-top: -45px;
+    margin-bottom: 0px !important;
+    height: 430px;
+    padding: 0px;
 }
 
 .modalbody p {
@@ -164,6 +172,8 @@
 
 .productname p {
   font-weight: bold;
+    padding: 0px;
+    margin: 0px;
 }
 
 .productIcon svg {
@@ -199,6 +209,11 @@
 
 .productDescription p {
   font-weight: 300;
-  text-align: center;
-  color: #3e4044;
+    text-align: left;
+    color: #3e4044;
+    line-height: 20px;
+    height: 75px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

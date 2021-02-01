@@ -1,8 +1,14 @@
 import { combineReducers } from 'redux';
 import { GetLandingPageProductsReducer } from './productReducer';
-import { UserPreferredAddressReducer } from './userReducer';
+import {
+  UserPreferredAddressReducer,
+  ProductModalReducer,
+  OrdersModalReducer
+} from './userReducer';
 
 export const rootReducer = combineReducers({
   location: UserPreferredAddressReducer,
-  landingPageProducts: GetLandingPageProductsReducer
+  landingPageProducts: GetLandingPageProductsReducer,
+  onClickedProduct: ProductModalReducer,
+  makeOrders: OrdersModalReducer
 });

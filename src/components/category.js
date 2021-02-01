@@ -1,49 +1,54 @@
 import React, { useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
+import { useDispatch, useSelector } from 'react-redux';
 import OverflowWrapper from 'react-overflow-wrapper';
-import { OrderModal, starIcon, OrderProduct, OrangeButton } from '../imports';
+import {
+  ShowProductModal,
+  closeProductModal
+} from '../store/action/userActions';
+import { OrderModal, starIcon, OrderProduct, OrangeButton , PageSpinner} from '../imports';
 import style from '../styles/category.module.css';
 
 const Category = ({ deals }) => {
-  const [modal, setModal] = useState(false);
   const [orders, showOrders] = useState(false);
-  const [tobeOrdered, setTobeOrdered] = useState({});
+
+  const dispatch = useDispatch();
+
+  const { productModal, product, loading } = useSelector(
+    state => state.onClickedProduct
+  );
 
   const viewOrder = () => showOrders(true);
   const closeOrder = () => showOrders(false);
 
-  const preferredProduct = product => {
-    console.log('product', product);
-    setTobeOrdered({ ...product });
-    console.log('tobeOrdered', tobeOrdered);
-  };
+  console.log('productModal', productModal);
 
-  console.log('tobeOrdered', tobeOrdered);
+  console.log('product', product);
   const ProductModal = () => {
-    return (
-      <OrderModal
-        product={tobeOrdered}
-        modalState={modal}
+    const modal = loading 
+        ?<PageSpinner /> 
+        : <OrderModal
+        product={product}
+        modalState={productModal}
         closeModal={handleClose}
-      />
-    );
+      />;
+      return modal;
   };
-  let productsEntries = Object.entries(tobeOrdered);
-  const productsLength = productsEntries.length;
-
-  const orderNotEmpty = productsLength !== 0;
-
+  
   const displayProductModal = () => {
-    const displayCondition = modal && orderNotEmpty;
+    let productsEntries = Object.entries(product);
+    const productsLength = productsEntries.length;
+    const orderNotEmpty = productsLength !== 0;
+    const displayCondition = productModal && orderNotEmpty;
     return displayCondition ? ProductModal() : null;
   };
 
   const handleOpen = deals => {
     setModal(true);
-    preferredProduct(deals);
+    dispatch(ShowProductModal(deals));
   };
 
-  const handleClose = () => setModal(false);
+  const handleClose = () => dispatch(closeProductModal());
 
   return (
     <section className={style.category}>

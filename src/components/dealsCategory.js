@@ -34,67 +34,69 @@ const DealsCategory = ({ deals }) => {
   const handleClose = () => dispatch(closeProductModal());
 
   return (
-    <section className={style.category}>
-      {deals.map(
-        deal =>
-          (
-            <div key={deal.id} className={style.product}>
-              <span onClick={() => handleOpen(deal)}>
-                {(
-                  <img
-                    className={style.productImage}
-                    src={deal.image}
-                    alt={deal.name}
-                  />
-                ) || <Skeleton duration={2} />}
-                <span className={style.duration}>
-                  <h6>{deal.duration} </h6>
-                  <p>min</p>
+    <div className={style.dealsCategory}>
+      <section className={style.category}>
+        {deals.map(
+          deal =>
+            (
+              <div key={deal.id} className={style.product}>
+                <span onClick={() => handleOpen(deal)}>
+                  {(
+                    <img
+                      className={style.productImage}
+                      src={deal.image}
+                      alt={deal.name}
+                    />
+                  ) || <Skeleton duration={2} />}
+                  <span className={style.duration}>
+                    <h6>{deal.duration} </h6>
+                    <p>min</p>
+                  </span>
                 </span>
-              </span>
-              {/* {displayProductModal()} */}
-              <div className={style.details}>
-                <div className={style.row1}>
-                  <h5>{deal.name}</h5>
-                  <h3 className={style.price}>{deal.price}</h3>
-                </div>
-                <div className={style.productDetails}>
-                  <div className={style.vendor}>
-                    <p>{deal.vendor}</p>
-                    <div className="d-flex">
-                      <img src={starIcon} alt="rating" />
-                      <p>{deal.rating.substr(0, 3)}</p>
-                    </div>
+                {/* {displayProductModal()} */}
+                <div className={style.details}>
+                  <div className={style.row1}>
+                    <h5>{deal.name}</h5>
+                    <h3 className={style.price}>{deal.price}</h3>
                   </div>
-                  <p className={style.open}>{deal.status}</p>
+                  <div className={style.productDetails}>
+                    <div className={style.vendor}>
+                      <p>{deal.vendor}</p>
+                      <div className="d-flex">
+                        <img src={starIcon} alt="rating" />
+                        <p>{deal.rating.substr(0, 3)}</p>
+                      </div>
+                    </div>
+                    <p className={style.open}>{deal.status}</p>
+                  </div>
+                  <OrangeButton
+                    className="justify-content-center"
+                    onClick={viewOrderModal}
+                    text="Order"
+                  />
                 </div>
-                <OrangeButton
-                  className="justify-content-center"
-                  onClick={viewOrderModal}
-                  text="Order"
-                />
               </div>
-            </div>
-          ) || <Skeleton duration={2} />
-      )}
-      {showLoadingProducts ? (
-        <PageSpinner />
-      ) : productModal ? (
-        <OrderModal
-          product={product}
-          modalState={productModal}
-          closeModal={handleClose}
-        />
-      ) : null}
-      {showLoadingOrders ? (
-        <PageSpinner />
-      ) : ordersModal ? (
-        <OrderProduct
-          modalState={ordersModal}
-          closeOrderMenu={closeModalOrder}
-        />
-      ) : null}
-    </section>
+            ) || <Skeleton duration={2} />
+        )}
+        {showLoadingProducts ? (
+          <PageSpinner />
+        ) : productModal ? (
+          <OrderModal
+            product={product}
+            modalState={productModal}
+            closeModal={handleClose}
+          />
+        ) : null}
+        {showLoadingOrders ? (
+          <PageSpinner />
+        ) : ordersModal ? (
+          <OrderProduct
+            modalState={ordersModal}
+            closeOrderMenu={closeModalOrder}
+          />
+        ) : null}
+      </section>
+    </div>
   );
 };
 

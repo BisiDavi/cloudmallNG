@@ -168,21 +168,22 @@
   margin: 0px;
 }
 
+
 /* deals category */
 @media (max-width: 768px) {
-  .details {
+  .dealsCategory .details {
     font-size: 12px;
   }
 
-  .vendor p {
+  .dealsCategory .vendor p {
     margin: 2px 0px;
   }
 
-  .category button {
+  .dealsCategory .category button {
     font-size: 15px;
   }
 
-  .category {
+  .dealsCategory .category {
     margin-top: 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -191,11 +192,12 @@
     grid-row-gap: 10px;
     margin-bottom: 80px;
   }
-  .product {
+ .dealsCategory  .product {
     width: 100%;
     margin: 20px 0px;
   }
-  .product img.productImage {
+  .dealsCategory .product img.productImage {
     width: 100%;
   }
 }
+

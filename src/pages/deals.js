@@ -1,21 +1,37 @@
 import React from 'react';
-import { ProductLayout, FeaturedDeals } from '../imports';
-
-const tabLinks = [
-  { id: 1, tabName: 'Featured deals' },
-  { id: 2, tabName: 'Featured deliveries' },
-  { id: 2, tabName: 'Fresh offers' }
-];
+import { Tabs, Tab } from 'react-bootstrap';
+import { FeaturedDeals, FreshOffers, FastDeliveries } from '../imports';
+import styles from '../styles/deals.module.css';
 
 const Deals = () => {
   return (
-    <ProductLayout
-      headerTitle="Featured Deals"
-      showHeader={true}
-      showFooter={true}
+    <Tabs
+      className={styles.tabs}
+      defaultActiveKey="featuredDeals"
+      id="deals-tab"
     >
-      <FeaturedDeals />
-    </ProductLayout>
+      <Tab
+        tabClassName={styles.tab}
+        eventKey="featuredDeals"
+        title="Featured deals"
+      >
+        <FeaturedDeals />
+      </Tab>
+      <Tab
+        tabClassName={styles.tab}
+        eventKey="fastdeliveries"
+        title="Fast deliveries"
+      >
+        <FastDeliveries />
+      </Tab>
+      <Tab
+        tabClassName={styles.tab}
+        eventKey="freshOffers"
+        title="Fresh Offers"
+      >
+        <FreshOffers />
+      </Tab>
+    </Tabs>
   );
 };
 

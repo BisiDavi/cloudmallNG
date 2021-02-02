@@ -1,20 +1,23 @@
-;
-
-
 import React from 'react';
-import { Category } from '../imports';
+import { Container, Row, Col } from 'react-bootstrap';
+import { DealsCategory, ProductLayout } from '../imports';
 import { fastDeliveries } from '../components/temp';
-
 
 const FastDeliveries = () => {
   return (
-    <Container>
-      <Row>
-        <Col lg={6} sm={6}>
-          <Category deals={fastDeliveries} />
-        </Col>
-      </Row>
-    </Container>
+    <ProductLayout
+      headerTitle="Fast Deliveries"
+      showHeader={true}
+      showFooter={true}
+    >
+      <Container>
+        <Row>
+          <Col lg={6} sm={6}>
+            <DealsCategory deals={fastDeliveries} />
+          </Col>
+        </Row>
+      </Container>
+    </ProductLayout>
   );
 };
 

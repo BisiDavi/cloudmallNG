@@ -183,11 +183,12 @@
   }
 
   .category {
-    margin-top: 80px;
+    margin-top: 0px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     grid-column-gap: 20px;
+    grid-row-gap: 10px;
   }
   .product {
     width: 100%;

@@ -29,6 +29,6 @@ input.pac-target-input {
 /* active deals style */
 #dealspage nav a.active {
   background: #f29100;
-  color: white !important;
-  border-radius: 10px;
+  color: white;
+  border-radius: 5px;
 }

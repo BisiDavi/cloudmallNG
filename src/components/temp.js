@@ -235,7 +235,7 @@ export const freshOffers = [
   },
   {
     id: 2,
-    name: 'WhiteRiceStews',
+    name: 'Rice and Turkey',
     price: 'N700',
     duration: '30 - 40',
     vendor: 'G.Mart',

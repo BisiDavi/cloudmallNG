@@ -5,33 +5,42 @@ import styles from '../styles/deals.module.css';
 
 const Deals = () => {
   return (
-    <Tabs
-      className={styles.tabs}
-      defaultActiveKey="featuredDeals"
-      id="deals-tab"
-    >
-      <Tab
-        tabClassName={styles.tab}
-        eventKey="featuredDeals"
-        title="Featured deals"
+    <div id="dealspage">
+      <Tabs
+        className={styles.tabs}
+        defaultActiveKey="featuredDeals"
+        id="deals-tab"
       >
-        <FeaturedDeals />
-      </Tab>
-      <Tab
-        tabClassName={styles.tab}
-        eventKey="fastdeliveries"
-        title="Fast deliveries"
-      >
-        <FastDeliveries />
-      </Tab>
-      <Tab
-        tabClassName={styles.tab}
-        eventKey="freshOffers"
-        title="Fresh Offers"
-      >
-        <FreshOffers />
-      </Tab>
-    </Tabs>
+        <Tab
+          tabClassName={styles.tab}
+          eventKey="featuredDeals"
+          title="Featured deals"
+        >
+          <FeaturedDeals />
+        </Tab>
+        <Tab
+          tabClassName={styles.tab}
+          eventKey="fastdeliveries"
+          title="Fast deliveries"
+        >
+          <FastDeliveries />
+        </Tab>
+        <Tab
+          tabClassName={styles.tab}
+          eventKey="freshOffers"
+          title="Fresh Offers"
+        >
+          <FreshOffers />
+        </Tab>
+        <Tab
+          tabClassName={styles.tab}
+          eventKey="awesomeDeals"
+          title="Awesome deals"
+        >
+          <FeaturedDeals />
+        </Tab>
+      </Tabs>
+    </div>
   );
 };
 

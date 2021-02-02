@@ -1,13 +1,18 @@
 .tabs {
-  margin-top: 50px;
+  height: 45px;
+  margin-top: 40px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.14);
-  padding: 0px 15px;
-  justify-content: center;
+  padding: 5px 15px;
+  flex-direction: column;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  width: 100%;
+  overflow-x: scroll;
 }
 
 .tab {
   font-size: 12px;
-  color: #f29100 !important;
+  color: #080808 !important;
   background: none;
   outline: none;
   height: 25px;
@@ -15,11 +20,10 @@
   justify-content: center;
   display: flex;
   margin: 5px 10px;
-  border: none;
+  border: none !important;
   align-items: center;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: normal;
-  font-size: 11px;
   line-height: 13px;
 }

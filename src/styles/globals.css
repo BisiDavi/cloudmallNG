@@ -27,8 +27,8 @@ input.pac-target-input {
   margin: 20px auto !important;
 }
 /* active deals style */
-#deals-tab a.active{
+#dealspage nav a.active {
   background: #f29100;
-  color: white;
+  color: white !important;
   border-radius: 10px;
 }

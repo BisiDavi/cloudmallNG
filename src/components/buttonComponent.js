@@ -1,4 +1,5 @@
-import  Link from 'next/link';
+import Link from 'next/link';
+import styles from '../styles/buttons.module.css'
 
 export const OrangeButton = ({ btnMargin, text, onClick, icon, className }) => {
   return (
@@ -50,7 +51,7 @@ export const ButtonLink = ({ text, linkTo }) => {
     <>
       <Link href={`/${linkTo}`}>
         <a>
-        <button className="link_button">{text}</button>
+          <button className="link_button">{text}</button>
         </a>
       </Link>
       <style jsx>
@@ -69,5 +70,46 @@ export const ButtonLink = ({ text, linkTo }) => {
         `}
       </style>
     </>
+  );
+};
+
+export const OutlineButton = ({ text, onClick }) => {
+  return (
+    <button className="outlineBtn" onClick={onClick}>
+      {text}
+      <style jsx>
+        {`
+          .outlineBtn {
+            border: 1px solid #f29100;
+            color: #f29100;
+            text-align: center;
+            padding: 8px 16px;
+          }
+        `}
+      </style>
+    </button>
+  );
+};
+
+export const RadioButton = ({ value, label }) => {
+  return (
+    <Form.Check
+      type="radio"
+      value={value}
+      className={styles.formRadioButton}
+      id={value}
+      label={label}
+    />
+  );
+};
+export const CheckButton = ({ value, label }) => {
+  return (
+    <Form.Check
+      type="checkbox"
+      value={value}
+      className={styles.CheckButton}
+      id={value}
+      label={label}
+    />
   );
 };

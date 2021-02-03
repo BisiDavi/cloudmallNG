@@ -66,6 +66,7 @@
   position: absolute;
   height: 30px;
   right: 0px;
+  display: none;
   bottom: 76px;
   border: none;
   font-weight: bold;
@@ -104,6 +105,9 @@
   font-size: 13px;
   background: white;
   border: none;
+  padding: 10px 0px 0px 0px;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 .eyeicon img {
   display: flex;
@@ -168,7 +172,6 @@
   margin: 0px;
 }
 
-
 /* deals category */
 @media (max-width: 768px) {
   .dealsCategory .details {
@@ -192,7 +195,7 @@
     grid-row-gap: 10px;
     margin-bottom: 80px;
   }
- .dealsCategory  .product {
+  .dealsCategory .product {
     width: 100%;
     margin: 20px 0px;
   }
@@ -200,4 +203,3 @@
     width: 100%;
   }
 }
-

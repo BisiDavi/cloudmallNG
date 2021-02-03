@@ -66,15 +66,21 @@ const Homepage = () => {
           </div>
           <Searchbar />
           <div className="categories">
-            <CategoryTitle title="Featured Deals" />
+            <CategoryTitle
+              title="Featured Deals"
+              linkTo="deals#featuredDeals"
+            />
             {FeaturedDeals()}
           </div>
           <div className="categories">
-            <CategoryTitle title="Fast Deliveries" />
+            <CategoryTitle
+              title="Fast Deliveries"
+              linkTo="deals#fastdeliveries"
+            />
             {FastDeliveries()}
           </div>
           <div className="categories">
-            <CategoryTitle title="Fresh Offers" />
+            <CategoryTitle title="Fresh Offers" linkTo="deals#freshOffers" />
             {FreshOffers()}
           </div>
         </div>

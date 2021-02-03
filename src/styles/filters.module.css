@@ -1,0 +1,13 @@
+.btnGroup {
+  display: flex;
+  justify-content: space-around;
+}
+
+.category {
+  background: rgba(243, 243, 243, 0.71);
+  border: 1px solid rgba(62, 64, 68, 0.25);
+}
+
+.category h3 {
+  text-align: center;
+}

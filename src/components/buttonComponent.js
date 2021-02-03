@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import styles from '../styles/buttons.module.css'
+import { Form } from 'react-bootstrap';
+import styles from '../styles/buttons.module.css';
 
 export const OrangeButton = ({ btnMargin, text, onClick, icon, className }) => {
   return (
@@ -81,9 +82,11 @@ export const OutlineButton = ({ text, onClick }) => {
         {`
           .outlineBtn {
             border: 1px solid #f29100;
+            background: white;
             color: #f29100;
             text-align: center;
             padding: 8px 16px;
+            border-radius: 5px;
           }
         `}
       </style>

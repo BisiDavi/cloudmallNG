@@ -24,7 +24,7 @@ const Filters = () => {
   return (
     <Container fluid>
       <Pageheader title="Filters" />
-      <Row>
+      <Row className="position-relative">
         <Col sm={12}>
           <ul>
             {filtersConditions.map(filterCondition => (
@@ -39,19 +39,62 @@ const Filters = () => {
           <h3>Categories</h3>
         </Col>
         <Col sm={12}>
-          <Form>
+          <Form className={styles.form}>
             {filterCategories.map(category => (
-              <Form.Group controlId="formBasicCheckbox">
-                <CheckButton value={category} label={category} />
-              </Form.Group>
+              <span className="categorylist">
+                <p>{category}</p>
+                <CheckButton value="category" />
+              </span>
             ))}
+            <Col className={styles.btnGroup} sm={12}>
+              <OutlineButton text="Clear All" />
+              <OrangeButton className="justify-content-center" text="Apply" />
+            </Col>
           </Form>
         </Col>
-        <Col className={styles.btnGroup} sm={12}>
-          <OutlineButton text="Clear All" />
-          <OrangeButton text="Apply" className="justify-center" />
-        </Col>
+        <hr className="buttonBorder" />
       </Row>
+      <style jsx>
+        {`
+          li {
+            list-style: none;
+            display: flex;
+            height: 30px;
+            align-items: center;
+            margin: 5px 10px;
+          }
+          li img {
+            margin: 0px 20px 0px 0px;
+          }
+          .categorylist {
+            display: flex;
+            justify-content: space-between;
+            height: 30px;
+            align-items: center;
+            padding: 0px 10px;
+          }
+          p,
+          h3 {
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 16px;
+            color: #3e4044;
+            margin: 0px;
+          }
+          h3 {
+            font-weight: bold;
+          }
+          .buttonBorder {
+            border: 1px solid rgba(62, 64, 68, 0.25);
+            position: absolute;
+            bottom: 90px;
+            width: 100%;
+            margin: 0px;
+          }
+        `}
+      </style>
     </Container>
   );
 };

@@ -1,13 +1,33 @@
+.form {
+  margin-top: 30px;
+  position: relative;
+  height: 65vh;
+}
+
 .btnGroup {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+}
+
+.btnGroup button {
+  width: 150px !important;
+  justify-content: center;
 }
 
 .category {
   background: rgba(243, 243, 243, 0.71);
   border: 1px solid rgba(62, 64, 68, 0.25);
+  border-left: none;
+  border-right: none;
+  height: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .category h3 {
-  text-align: center;
+  text-align: left;
+  margin-left: 10px !important;
 }

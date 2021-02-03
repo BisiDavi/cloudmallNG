@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { profileIcon, ProfileImg, walletIcon, inviteIcon } from '../imports';
 
-const SidebarDrawer = props => {
+const SidebarDrawer = ({onClose}) => {
   const menuLink = [
     {
       id: 1,
@@ -86,7 +86,7 @@ const SidebarDrawer = props => {
           </ul>
         </div>
       </div>
-      <div className="overlay" onClick={props.onClose}></div>
+      <div className="overlay" onClick={onClose}></div>
       <style jsx>
         {`
           ul span a:hover {

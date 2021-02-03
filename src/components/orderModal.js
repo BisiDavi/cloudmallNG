@@ -13,18 +13,6 @@ const OrderModal = ({ product, modalState, closeModal }) => {
 
   const viewOrderModal = () => dispatch(ShowOrdersModal());
   const closeModalOrder = () => dispatch(closeOrderModal());
-  /* const displayProduct = () => {
-    {
-      loadingOrdersModal ? (
-        <PageSpinner />
-      ) : ordersModal ? (
-        <OrderProduct
-          modalState={ordersModal}
-          closeOrderMenu={closeModalOrder}
-        />
-      ) : null;
-    }
-  } */;
   return (
     <div className="orderModal">
       <Modal
@@ -75,7 +63,6 @@ const OrderModal = ({ product, modalState, closeModal }) => {
           />
         </Modal.Footer>
       </Modal>
-      {/* {displayProduct()} */}
     </div>
   );
 };

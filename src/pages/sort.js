@@ -9,18 +9,49 @@ const SortPage = () => {
     'Sort by Store'
   ];
   return (
-    <Container fluid>
+    <Container className="position-relative" fluid>
       <Pageheader title="Sort" />
       <Row>
         <Col>
           <Form>
             {sortConditions.map(condition => (
-              <RadioButton value={condition} label={condition} />
+              <span className="sortlist" key={condition}>
+                <p>{condition}</p>
+                <RadioButton value={condition} />
+              </span>
             ))}
-            <OrangeButton text="Apply" className="justify-center" />
+            <span className="button">
+              <OrangeButton text="Apply" className="justify-content-center" />
+            </span>
           </Form>
         </Col>
       </Row>
+      <style jsx>
+        {`
+          form {
+            position: relative;
+            height: 100vh;
+          }
+          .sortlist {
+            display: flex;
+            height: 40px;
+            justify-content: space-between;
+            margin: 10px;
+          }
+          .button {
+            position: absolute;
+            bottom: 120px;
+            justify-content: center;
+            width: 100%;
+            padding: 0px 30px;
+            left: 0;
+          }
+          .button button {
+            justify-content: center;
+            margin: auto;
+          }
+        `}
+      </style>
     </Container>
   );
 };

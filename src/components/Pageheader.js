@@ -25,11 +25,11 @@ const Pageheader = ({ title }) => {
               top: 0px;
               left: 0px;
               z-index: 1000;
-            }            
+            }
             .authheader {
               display: flex !important;
               background-color: #ffce85;
-              height: 45px;
+              height: 50px;
               align-items: center;
             }
             .arrow {

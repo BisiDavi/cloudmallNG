@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
 import { googleIcon, mailIcon, Pageheader } from '../../imports';
 import { AuthButton } from '../../components/authComponent';
 
@@ -32,6 +35,7 @@ const SignupPage = () => {
                 color="white"
               >
                 <i className="far fa-envelope mr-4"></i>
+                {/* <FontAwesomeIcon icon={faEye} /> */}
                 Continue with Email
               </AuthButton>
             </a>

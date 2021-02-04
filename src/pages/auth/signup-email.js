@@ -17,7 +17,7 @@ const SignupEmail = () => {
           label="Password"
           placeholder="************"
           type="password"
-          fieldVisible={true}
+          eyeIcon={true}
         />
         <Input label="Password" placeholder="************" type="password" />
         <span className="button">

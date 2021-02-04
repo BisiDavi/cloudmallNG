@@ -1,32 +1,41 @@
-export const Input = ({ label, type, placeholder, fieldVisible }) => {
-  const handleChange = isVisible => {
-    let visibility = !isVisible;
-    if (visibility === true) {
-      type = 'text';
-      return type;
-    } else {
-      type = 'password';
-    }
-    console.log('visibility', visibility);
-    console.log('type', type);
-    return visibility;
+import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+export const Input = ({ label, type, placeholder, eyeIcon }) => {
+  const [passwordType, setPasswordType] = useState(type);
+
+  const ShowPassword = () => {
+    setPasswordType('text');
+  };
+  const HidePassword = () => {
+    setPasswordType('password');
   };
 
-  const showPassword = () => {
+  const Password = () => {
     return (
-      <div
-        onClick={() => handleChange(fieldVisible)}
-        className="inputAdornment"
-      >
-        {fieldVisible ? (
-          <span className="eyeIcon open">
-            <i className="fas fa-eye"></i>
+      <div className="inputAdornment">
+        {passwordType === 'password' ? (
+          <span onClick={() => ShowPassword()} className="eyeIcon open">
+            <FontAwesomeIcon icon={faEye} />
           </span>
-        ) : (
-          <span className="eyeIcon closed">
-            <i className="fas fa-eye-slash"></i>
+        ) : passwordType === 'text' ? (
+          <span onClick={() => HidePassword()} className="eyeIcon closed">
+            <FontAwesomeIcon icon={faEyeSlash} />
           </span>
-        )}
+        ) : null}
+        <style jsx>
+          {`
+            .inputAdornment {
+              position: absolute;
+              bottom: 10px;
+              right: 15px;
+            }
+            .eyeIcon {
+              color: #f29100;
+              font-size: 15px;
+            }
+          `}
+        </style>
       </div>
     );
   };
@@ -34,9 +43,9 @@ export const Input = ({ label, type, placeholder, fieldVisible }) => {
   return (
     <div className="formInput">
       <label>{label}</label>
-      <input type={type} placeholder={placeholder} required />
+      <input type={passwordType} placeholder={placeholder} required />
 
-      {typeof fieldVisible === 'undefined' ? null : showPassword()}
+      {typeof eyeIcon === 'undefined' ? null : Password()}
 
       <style jsx>
         {`
@@ -62,15 +71,7 @@ export const Input = ({ label, type, placeholder, fieldVisible }) => {
             border-radius: 5px;
             margin: 0px;
           }
-          .inputAdornment {
-            position: absolute;
-            bottom: 10px;
-            right: 15px;
-          }
-          .eyeIcon {
-            color: #f29100;
-            font-size: 15px;
-          }
+
           label {
             margin: 0px;
             font-family: 'Roboto';

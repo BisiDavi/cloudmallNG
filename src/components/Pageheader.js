@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { arrowLeft } from '../imports';
 import Head from 'next/head';
 

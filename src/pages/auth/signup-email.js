@@ -1,7 +1,39 @@
-import { Pageheader, Input, OrangeButton } from '../../imports';
+import { useState } from 'react';
 import { Container, Spinner } from 'react-bootstrap';
+import { Pageheader, Input, OrangeButton } from '../../imports';
 
 const SignupEmail = () => {
+  const [referralCode, setReferralCode] = useState(false);
+
+  const showReferralInput = () => setReferralCode(true);
+  const hideReferralInput = () => setReferralCode(false);
+  const ReferralCode = () => {
+    return (
+      <div className="referral">
+        {referralCode ? (
+          <>
+            <p onClick={hideReferralInput}>I don't have a Referral Code</p>
+            <Input
+              label="Referral Code"
+              placeholder="************"
+              type="text"
+            />
+          </>
+        ) : (
+          <p onClick={showReferralInput}>I have a Referral Code</p>
+        )}
+        <style jsx>
+          {`
+            .referral p {
+              color: #f29100;
+              margin-top: 15px;
+            }
+          `}
+        </style>
+      </div>
+    );
+  };
+
   return (
     <Container className="signupemail bg-white" fluid>
       <Pageheader title="Continue with Email" />
@@ -27,19 +59,19 @@ const SignupEmail = () => {
             text="Sign Up"
           />
         </span>
+        <div className="referralcode_section">{ReferralCode()}</div>
       </form>
       <style jsx>
         {`
+          .referralcode_section p {
+            color: #f29100;
+            margin-top: 15px;
+          }
           form {
             margin-top: 70px;
             position: relative;
             height: 85vh;
             padding: 0px 15px;
-          }
-          input[type='text'],
-          input[type='password'],
-          input[type='email'] {
-            padding-left: 10px;
           }
           form .button {
             position: absolute;

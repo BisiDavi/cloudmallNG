@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+
+
 export const Input = ({ label, type, placeholder, eyeIcon }) => {
   const [passwordType, setPasswordType] = useState(type);
 
@@ -71,7 +73,15 @@ export const Input = ({ label, type, placeholder, eyeIcon }) => {
             border-radius: 5px;
             margin: 0px;
           }
-
+          input[type='text'] {
+            padding-left: 10px;
+          }
+          input[type='email'] {
+            padding-left: 10px;
+          }
+          input[type='password'] {
+            padding-left: 10px;
+          }
           label {
             margin: 0px;
             font-family: 'Roboto';

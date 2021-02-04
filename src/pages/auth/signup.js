@@ -1,7 +1,7 @@
-import Link from "next/link";
-import { Container, Row, Col, Button } from "react-bootstrap";
-import { googleIcon, mailIcon, Pageheader } from "../../imports";
-import { AuthButton } from "../../components/authComponent";
+import Link from 'next/link';
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import { googleIcon, mailIcon, Pageheader } from '../../imports';
+import { AuthButton } from '../../components/authComponent';
 
 const SignupPage = () => {
   return (
@@ -11,7 +11,7 @@ const SignupPage = () => {
         <Col xs={12} className="mt-4 d-flex flex-column">
           <Link href="/auth/googlesignup">
             <a className="mx-auto w-75 text-decoration-none mb-2">
-              <AuthButton>
+              <AuthButton borderColor="rgba(62,64,68,1)">
                 <img
                   src={googleIcon}
                   className="mr-3"
@@ -26,22 +26,32 @@ const SignupPage = () => {
         <Col xs={12} className="d-flex flex-column">
           <Link href="/auth/signup-email">
             <a className="mx-auto w-75 text-decoration-none">
-              <AuthButton>
-                <img
-                  src={mailIcon}
-                  className="mr-3 mt-1"
-                  alt="sign up with email"
-                />
+              <AuthButton
+                borderColor="none"
+                backgroundColor="#f29100"
+                color="white"
+              >
+                <i className="far fa-envelope mr-4"></i>
                 Continue with Email
               </AuthButton>
             </a>
           </Link>
-          <p className="text-mute text-center m-5">
+          <p>
             By Clicking "Continue with Google/Email", I agree with the terms and
             conditions, you can also check our privacy policy
           </p>
         </Col>
       </Row>
+      <style jsx>
+        {`
+        p{
+          font-size: 14px;
+          font-family: 'Roboto', sans-serif;
+          text-align:left;
+          padding: 0px 35px;
+          margin-top:40px;
+        `}
+      </style>
     </Container>
   );
 };

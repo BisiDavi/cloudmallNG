@@ -89,33 +89,65 @@
 .categoryview {
   border: 1px solid black !important;
   border-bottom: none !important;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #3e4044;
 }
 .view {
   border-bottom: 1px solid black !important;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.store_address .rating span {
+  justify-content: space-between;
+  align-items: center;
+  width: 78px;
+}
+
+.address p {
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left;
+  color: #3e4044;
+}
+
+.title h3 {
+  font-weight: bold;
+}
+
+.address svg {
+  color: #ff3d00;
+}
 
 .thumbnail {
   height: 90px;
   width: 100px;
-  margin: 6px auto !important;
-  background: gray;
+  margin: 6px auto;
+  background: #0156df;
+  color: white;
 }
 .title {
   justify-content: space-between;
+  display: flex;
 }
 
-.categoryview a{
+.categoryview a {
   text-decoration: none;
 }
 
-
 .subscriberStatus p {
-  background: gray;
-  font-weight: bold;
-  color: white;
-  border-radius: 15%;
-  padding: 1px 5px !important;
+  font-family: 'Ambit';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #56ac55;
+  padding: 5px 10px;
 }
 
 .rating {

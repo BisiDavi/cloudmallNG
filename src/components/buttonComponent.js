@@ -2,10 +2,10 @@ import Link from 'next/link';
 import { Form } from 'react-bootstrap';
 import styles from '../styles/buttons.module.css';
 
-export const OrangeButton = ({ btnMargin, text, onClick, icon, className }) => {
+export const OrangeButton = ({ btnMargin, type, text, onClick, icon, className }) => {
   return (
     <>
-      <button onClick={onClick} className="rounded">
+      <button onClick={onClick} type={type} className="rounded">
         <span className={className}>
           {text}
           <i className={icon}></i>

@@ -29,8 +29,7 @@ export const AuthButton = props => {
   return (
     <Button
       type="button"
-      fullWidth
-      variant="contained"
+      fullWidth      
       className={classes.button}
     >
       {props.children}

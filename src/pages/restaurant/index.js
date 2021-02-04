@@ -1,5 +1,5 @@
-import { Layout, Searchbar } from "../../imports";
-import { StoreHeader, CategoryView } from "../../components/storeComponents";
+import { Layout, Searchbar, Pageheader } from "../../imports";
+import {  CategoryView } from "../../components/storeComponents";
 import { Container, Row } from "react-bootstrap";
 import { RestaurantOffers } from "../../components/temp";
 import style from "../../styles/storeComponent.module.css";
@@ -10,7 +10,7 @@ const Restaurant = () => {
       <section>
         <Container>
           <Row>
-            <StoreHeader storeName="Restaurant" />
+            <Pageheader name="Restaurant" />
           </Row>
           <Row>
             <Searchbar />

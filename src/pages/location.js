@@ -1,4 +1,4 @@
-import GoogeMapAutocomplete from '../utils/GoogleMapAutocomplete';
+import GoogleMapAutocomplete from '../utils/GoogleMapAutocomplete';
 
 const Location = props => {
   return (

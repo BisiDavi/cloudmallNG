@@ -59,3 +59,5 @@ export {
   RadioButton,
   CheckButton
 } from '../components/buttonComponent';
+
+export { Input } from '../forms/formInput';

@@ -1,7 +1,7 @@
-import { Container, Row, Col } from "react-bootstrap";
-import Link from "next/link";
-import {Pageheader} from "../../imports";
-import { AuthButton } from "../../components/authComponent";
+import { Container, Row, Col } from 'react-bootstrap';
+import Link from 'next/link';
+import { Pageheader } from '../../imports';
+import { AuthButton } from '../../components/authComponent';
 
 const Auth = () => {
   return (
@@ -11,9 +11,10 @@ const Auth = () => {
         <Col xs={12} className="mt-4 d-flex flex-column">
           <Link href="/auth/signup">
             <a className="mx-auto w-75 text-decoration-none">
-              <AuthButton 
-              backgroundColor="#f29100" 
-              color="white"
+              <AuthButton
+                borderColor="none"
+                backgroundColor="#f29100"
+                color="white"
               >
                 Sign Up
               </AuthButton>
@@ -37,6 +38,13 @@ const Auth = () => {
             Signup or Login to complete your transaction
           </p>
         </Col>
+        <style jsx>
+          {`
+        p{
+          font-size: 14px;
+          font-family: 'Roboto', sans-serif;
+        `}
+        </style>
       </Row>
     </Container>
   );

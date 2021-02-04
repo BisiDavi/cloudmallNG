@@ -1,4 +1,4 @@
-import ArrowBackIcon from "@material-ui/icons/ArrowBack";
+import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import {
   Container,
   InputGroup,
@@ -7,15 +7,15 @@ import {
   Form,
   Button,
   FormControl
-} from "react-bootstrap";
-import { useForm } from "react-hook-form";
-import { searchIcon, eyeIcon } from "../imports";
-import Skeleton from "react-loading-skeleton";
-import RoomOutlinedIcon from "@material-ui/icons/RoomOutlined";
-import StarOutlinedIcon from "@material-ui/icons/StarOutlined";
-import styles from "../styles/category.module.css";
-import Link from "next/link";
-import style from "../styles/storeComponent.module.css";
+} from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
+import { searchIcon, eyeIcon } from '../imports';
+import Skeleton from 'react-loading-skeleton';
+import RoomOutlinedIcon from '@material-ui/icons/RoomOutlined';
+import StarOutlinedIcon from '@material-ui/icons/StarOutlined';
+import styles from '../styles/category.module.css';
+import Link from 'next/link';
+import style from '../styles/storeComponent.module.css';
 
 export const StoreHeader = props => {
   return (
@@ -112,9 +112,7 @@ export const DisplayOffers = ({ offers, linkName }) => {
             />
           ) || <Skeleton duration={2} />}
 
-          <span className={styles.duration}>
-            {offer.duration}
-          </span>
+          <span className={styles.duration}>{offer.duration}</span>
           <Container className={styles.details}>
             <Row>
               <Col xs={8}>
@@ -126,14 +124,12 @@ export const DisplayOffers = ({ offers, linkName }) => {
             </Row>
             <Row>
               <Col xs={12}>
-                <Button variant="outline-success">
-                  Order
-                </Button>
+                <Button variant="outline-success">Order</Button>
               </Col>
             </Row>
           </Container>
         </div>
-        ))}
+      ))}
       <div className={style.moreView}>
         <Link href={`/restaurant/${linkName}`}>
           <a>{offers.length - 4} more</a>
@@ -179,44 +175,49 @@ export const SeeMore = ({ moreOffers }) => {
   });
 };
 
-export const CategoryView = ({ availableSubscribers,storeLink, vendor }) => {
+const getVendorInitials = name => {
+  const nameArray = name.split('');
+  const nameInitials = nameArray[0];
+  return nameInitials;
+};
+
+export const CategoryView = ({ availableSubscribers, storeLink, vendor }) => {
   return (
     <Container className={style.categoryview} fluid>
       {availableSubscribers.map(subscriber => (
         <Link key={subscriber.id} href={storeLink}>
           <a>
-        <Container  className={style.view} fluid>
-          <Row>
-            <Col xs={4} className="p-2">
-              <div className={`${style.thumbnail} img-thumbnail`}></div>
-            </Col>
-            <Col xs={8} className={`${style.store_address} d-flex p-2`}>
-              <div className={`${style.title} d-flex`}>
-                <h3>{vendor}</h3>
-                <p className="mr-0">{subscriber.duration}</p>
-              </div>
-              <div className={`${style.address} d-flex`}>
-                <span className="icon mr-2">
-                  <RoomOutlinedIcon />
-                </span>
-                <p>Behind Energy Filling station Ibadan Road.</p>
-              </div>
-              <div className={style.rating}>
-                <span className="icon mr-2 d-flex">
-                  <StarOutlinedIcon />
-                  <p>{subscriber.rating}</p>
-                </span>
-                <div className={style.subscriberStatus}>
-                  <p>{subscriber.status}</p>
+            <Row className={style.view}>
+              <Col xs={4} className="p-2">
+                <div className={style.thumbnail}>
+                  {getVendorInitials(vendor)}
                 </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </a>
+              </Col>
+              <Col xs={8} className={style.store_address}>
+                <div className={style.title}>
+                  <h3>{vendor}</h3>
+                  <div className={style.subscriberStatus}>
+                    <p>{subscriber.status}</p>
+                  </div>
+                </div>
+                <div className={`${style.address} d-flex`}>
+                  <span className="icon mr-2">
+                    <RoomOutlinedIcon />
+                  </span>
+                  <p>Behind Energy Filling station Ibadan Road.</p>
+                </div>
+                <div className={style.rating}>
+                  <span className="icon mr-2 d-flex">
+                    <StarOutlinedIcon />
+                    <p>{subscriber.rating}</p>
+                  </span>
+                  <p className={style.duration}>{subscriber.duration}</p>
+                </div>
+              </Col>
+            </Row>
+          </a>
         </Link>
-      ))
-      }
+      ))}
     </Container>
   );
 };

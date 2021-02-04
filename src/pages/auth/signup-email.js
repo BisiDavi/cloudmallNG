@@ -36,6 +36,11 @@ const SignupEmail = () => {
             height: 85vh;
             padding: 0px 15px;
           }
+          input[type='text'],
+          input[type='password'],
+          input[type='email'] {
+            padding-left: 10px;
+          }
           form .button {
             position: absolute;
             bottom: 30px;

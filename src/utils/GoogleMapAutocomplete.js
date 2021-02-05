@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { withRouter } from 'next/router';
 import { connect } from 'react-redux';
 import { Form, Button, Container, Row, Col, Spinner } from 'react-bootstrap';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import {
   withGoogleMap,
   GoogleMap,
@@ -12,7 +11,7 @@ import {
 } from 'react-google-maps';
 import Geocode from 'react-geocode';
 import Autocomplete from 'react-google-autocomplete';
-import {  PageSpinner, Pageheader } from '../imports';
+import { PageSpinner, Pageheader } from '../imports';
 import { UserPreferredAddress } from '../store/action/userActions';
 import style from '../styles/Location.module.css';
 
@@ -50,13 +49,7 @@ class GoogleMapAutocomplete extends Component {
       }
     );
   }
-  /* 
-  @param nextProps
-  @param nextState
-  @return {boolean} 
-*/
-
-  shouldComponentUpdate(nextProps, nextState) {
+    shouldComponentUpdate(nextProps, nextState) {
     if (
       this.state.markerPosition.lat !== this.props.center.lat ||
       this.state.address !== nextState.address

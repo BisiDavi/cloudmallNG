@@ -17,4 +17,3 @@ const useGetProducts = path => {
 };
 
 export default useGetProducts;
-

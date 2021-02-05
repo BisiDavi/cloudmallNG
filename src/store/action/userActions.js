@@ -11,15 +11,13 @@ import {
   CLOSE_ORDERS_MODAL
 } from '../constant';
 
-export const UserPreferredAddress = (location, router) => dispatch => {
+export const UserPreferredAddress = location => dispatch => {
   try {
     console.log('location', location);
     dispatch({
       type: USER_PREFERRED_ADDRESS_SUCCESS,
       payload: location
     });
-
-    router.push('/home');
   } catch (error) {
     dispatch({
       type: USER_PREFERRED_ADDRESS_ERROR,
@@ -68,7 +66,7 @@ export const closeProductModal = () => dispatch => {
 };
 export const ShowOrdersModal = () => dispatch => {
   try {
-   /*  dispatch({
+    /*  dispatch({
       type: CLOSE_PRODUCT_MODAL
     }); */
     dispatch({

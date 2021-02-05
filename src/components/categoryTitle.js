@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import style from '../styles/category.module.css';
 
 const CategoryTitle = ({ linkTo, title }) => {
@@ -11,7 +13,7 @@ const CategoryTitle = ({ linkTo, title }) => {
         <div className={`${style.arrowIcon} float-right `}>
           <Link href={`/${linkTo}`}>
             <a>
-              <i className="fas fa-arrow-right"></i>
+              <FontAwesomeIcon icon={faArrowRight} />
             </a>
           </Link>
         </div>

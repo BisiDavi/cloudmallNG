@@ -17,7 +17,7 @@ const submitUserAddress = userAddressArray => {
     const userLocation = userAddressArray[0];
     const LGA = userAddressArray[1];
     const userState = userAddressArray[2];
-
+    console.log(userAddressArray, 'userAddressArray');
     axiosInstance
       .post('/app/landing', { userLocation, LGA, userState })
       .then(result => {
@@ -31,20 +31,27 @@ const submitUserAddress = userAddressArray => {
   }
 };
 export const UserPreferredAddressReducer = (state = {}, action) => {
-  switch (action.type) {
+  const { type, payload } = action;
+  switch (type) {
     case USER_PREFERRED_ADDRESS_SUCCESS:
-      const location = action.payload;
+      const location = payload.location;
       const userAddressArray = location.split(',');
       submitUserAddress(userAddressArray);
+      return {
+        loading: false,
+        location: payload.location,
+      };
     case USER_PREFERRED_ADDRESS_ERROR:
-      return { loading: false, error: action.payload };
+      return {
+        loading: false,
+        error: payload.error,
+      };
     default:
       return state;
   }
 };
-
 export const ProductModalReducer = (
-  state = { product: {},productModal: false, showLoadingProducts: false },
+  state = { product: {}, productModal: false, showLoadingProducts: false },
   action
 ) => {
   const { type, payload } = action;
@@ -69,7 +76,10 @@ export const ProductModalReducer = (
       return state;
   }
 };
-export const OrdersModalReducer = (state = { showLoadingOrders: false }, action) => {
+export const OrdersModalReducer = (
+  state = { showLoadingOrders: false },
+  action
+) => {
   const { type, payload } = action;
   switch (type) {
     case SHOW_ORDERS_MODAL_REQUEST:

@@ -13,6 +13,7 @@ import {
 
 export const UserPreferredAddress = location => dispatch => {
   try {
+    console.log('paylod', location);
     dispatch({
       type: USER_PREFERRED_ADDRESS_SUCCESS,
       payload: location

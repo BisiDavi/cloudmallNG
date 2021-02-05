@@ -4,22 +4,23 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { logo, pattern, Layout, PageSpinner } from '../imports';
 import { storeUserLocation } from '../utils/UserLocation';
-import { UserPreferredAddress } from '../store/action/UserActions';
+import { UserPreferredAddress } from '../store/action/userActions';
 import style from '../styles/Home.module.css';
 
 const Index = () => {
   const [spinner, setSpinner] = useState(false);
-  const [address, setAddress] = useState({});
   const router = useRouter();
   const dispatch = useDispatch();
 
+  let userData = {};
   useEffect(() => {
     setSpinner(true);
-    getLocation(router);
-    dispatch(UserPreferredAddress(address));
-  }, [address]);
+    console.log('loaded - useEffect');
+    getLocation(router);    
+  }, []);
 
   const getLocation = router => {
+    console.log('loaded - getLocation');
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         position => trackUserPosition(position, router),
@@ -30,11 +31,15 @@ const Index = () => {
     }
   };
 
+  console.log('userData', userData);
+
   const storeAddress = result => {
     const { results } = result;
     const resultObj = results[0];
-    const userAddress = resultObj.formatted_address;
-    setAddress(userAddress);
+    const location = resultObj.formatted_address;
+    userData = { ...userData, location };
+    dispatch(UserPreferredAddress(userData));
+    console.log('userData', userData);
   };
 
   const coordinatesToAddress = (lat, long) => {
@@ -46,8 +51,10 @@ const Index = () => {
   };
 
   const trackUserPosition = (position, router) => {
+    console.log('trackUserPosition');
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
+    userData = { ...userData, latitude, longitude };
     storeUserLocation(position);
     coordinatesToAddress(latitude, longitude);
     console.log('position', position);

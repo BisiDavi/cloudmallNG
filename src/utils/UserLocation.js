@@ -12,10 +12,11 @@ const getLocation = router => {
   }
 };
 
-const storeUserLocation = position => {
+export const storeUserLocation = position => {
   localStorage.setItem('latitude', position.coords.latitude);
   localStorage.setItem('longitude', position.coords.longitude);
 };
+
 let address = '';
 const storeAddress = result => {
   const { results } = result;

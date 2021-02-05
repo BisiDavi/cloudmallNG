@@ -14,9 +14,9 @@ import homeStyle from '../styles/Home.module.css';
 const Header = ({ isLoggedIn }) => {
   const [openMenu, setOpenMenu] = useState(false);
   const userCurrentAddress = useSelector(state => state.location);
-  const { address } = userCurrentAddress;
+  const { location } = userCurrentAddress;
 
-  console.log('address', address);
+  console.log('address', location);
 
   const openHamburgerMenu = () => setOpenMenu(!openMenu);
 
@@ -45,7 +45,7 @@ const Header = ({ isLoggedIn }) => {
             </div>
           </Col>
           <Col xs={6} className={`${homeStyle.userAddress} mr-2`}>
-            <span>{address}</span>
+            <span>{location}</span>
           </Col>
           <Col xs={1} className="mr-3">
             {isUserLoggedIn()}

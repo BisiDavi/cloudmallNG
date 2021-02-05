@@ -14,19 +14,12 @@ import { axiosInstance } from '../../axios';
 
 const submitUserAddress = userAddressArray => {
   if (userAddressArray.length > 2) {
-    const userLocation = userAddressArray[0];
-    const LGA = userAddressArray[1];
-    const userState = userAddressArray[2];
+    const lga = userAddressArray[1];
+    const state = userAddressArray[2];
     console.log(userAddressArray, 'userAddressArray');
     axiosInstance
-      .post('/app/landing', { userLocation, LGA, userState })
-      .then(result => {
-        loading: false;
-        address: userLocation;
-        console.log(result, 'successful');
-        console.log(loading, 'submitUserAddress loading');
-        console.log(address, 'submitUserAddress address');
-      })
+      .post('/app/landing', {  lga, state })
+      .then(result => console.log('result', result))
       .catch(err => console.log(err));
   }
 };
@@ -34,17 +27,18 @@ export const UserPreferredAddressReducer = (state = {}, action) => {
   const { type, payload } = action;
   switch (type) {
     case USER_PREFERRED_ADDRESS_SUCCESS:
-      const location = payload.location;
+      const location = payload;
+      console.log('location payload'.payload);
       const userAddressArray = location.split(',');
       submitUserAddress(userAddressArray);
       return {
         loading: false,
-        location: payload.location,
+        location: payload
       };
     case USER_PREFERRED_ADDRESS_ERROR:
       return {
         loading: false,
-        error: payload.error,
+        error: payload
       };
     default:
       return state;

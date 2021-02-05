@@ -10,7 +10,7 @@ const storeAddress = result => {
   return address;
 };
 
-const storeLocationToStorage = (lat, long) => {
+export const storeLocationToStorage = (lat, long) => {
   localStorage.setItem('latitude', lat);
   localStorage.setItem('longitude', long);
 };

@@ -7,7 +7,10 @@ import styles from '../../styles/googlesignup.module.css';
 
 const GoogleSignup = () => {
   const [otp, setOtp] = useState('');
-  const handleChange = () => setOtp(otp);
+  const handleChange = () => {
+    console.log('otp',otp);
+    setOtp(otp);
+  };
   return (
     <Container>
       <Pageheader title="Verify your account" />
@@ -25,6 +28,7 @@ const GoogleSignup = () => {
               <OtpInput
                 containerStyle={styles.containerStyle}
                 value={otp}
+                focusStyle={styles.focusStyle}
                 inputStyle={styles.inputStyle}
                 onChange={handleChange}
                 numInputs={6}
@@ -65,7 +69,7 @@ const GoogleSignup = () => {
             line-height: 14px;
           }
           form p {
-            margin-top: 35px;
+            margin: 15px 0px 30px 0px;
           }
           p.text-center {
             margin: 40px auto 20px auto;
@@ -84,13 +88,14 @@ const GoogleSignup = () => {
           .right p {
             font-style: italic;
             margin-right: 8px;
-            margin-top: 15px;
+            margin-bottom: 0px;
+            margin-top: 0px;
           }
           .right {
             justify-content: flex-end;
             margin: 10px 0px;
             display: flex;
-            height:20px;
+            height: 20px;
             align-items: center;
           }
         `}

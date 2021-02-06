@@ -22,7 +22,7 @@ const Header = ({ isLoggedIn }) => {
 
   const closeHamburgerMenu = () => setOpenMenu(false);
 
-  const userAddress = localStorage.getItem('user_default_address')
+  const userAddress = window.localStorage.getItem('user_default_address')
   const currentAddress = location ? location : userAddress
   const isUserLoggedIn = () =>
     isLoggedIn ? (

@@ -48,10 +48,10 @@ const submitUserDefaultAddress = payload => {
 const saveAddressToStorage = (payload) => {
   if(payload.address){
   const {address} = payload;
-  localStorage.setItem('user_default_address', address);
+  window.localStorage.setItem('user_default_address', address);
 }else if(payload.location){
 const {location} = payload;
-  localStorage.setItem('user_default_address', location);
+  window.localStorage.setItem('user_default_address', location);
 }
 }
 export const UserAddressReducer = (state = {}, action) => {

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faBars,
-  faSignInAlt,
-  faHeart
+import {  
+  faHeart,
+  faAngleDown
 } from '@fortawesome/free-solid-svg-icons';
-import { man, SidebarDrawer } from '../imports';
-import { SaveToStorage } from '../store/action/savetoStorageActions';
+import { man, SidebarDrawer, hamburger, loginIcon } from '../imports';
 import Link from 'next/link';
 import homeStyle from '../styles/Home.module.css';
 
@@ -20,7 +18,7 @@ const Header = ({ isLoggedIn }) => {
 
   useEffect(() => {
     getAddressFromStorage();
-  }, []);
+  }, [userAddress]);
 
   console.log('location', location);
   console.log('address', userAddress);
@@ -33,16 +31,15 @@ const Header = ({ isLoggedIn }) => {
     let address = window.localStorage.getItem('user_address');
     setAddress(address);
   };
-  // const currentAddress = location ? location : userAddress;
 
   const isUserLoggedIn = () =>
     isLoggedIn ? (
-      <img src={man} alt="user icon" />
+      <img src={man} className={homeStyle.headerIcon} alt="user icon" />
     ) : (
       <Link href="/auth">
         <a>
           <span className="signin">
-            <FontAwesomeIcon icon={faSignInAlt} size="2x" />
+            <img className={homeStyle.headerIcon} src={loginIcon} alt="login" />
           </span>
         </a>
       </Link>
@@ -54,11 +51,18 @@ const Header = ({ isLoggedIn }) => {
         <Row>
           <Col xs={1} className="ml-3 mr-1">
             <div onClick={openHamburgerMenu} className="menu-hamburger">
-              <FontAwesomeIcon icon={faBars} size="2x" />
+              <img src={hamburger} alt="login" />
             </div>
           </Col>
           <Col xs={6} className={`${homeStyle.userAddress} mr-2`}>
-            <span>{userAddress}</span>
+            <span className="userAddress">
+              <p>Now</p>
+              <div className="location">
+                <p>{userAddress}</p>
+                <FontAwesomeIcon icon={faAngleDown} size="2x" />
+              </div>
+            </span>
+            <span></span>
           </Col>
           <Col xs={1} className="mr-3">
             {isUserLoggedIn()}
@@ -83,8 +87,40 @@ const Header = ({ isLoggedIn }) => {
           .heart {
             cursor: pointer;
           }
+          .userAddress{
+            display:flex;
+            flex-direction:column;
+            color: #3E4044;
+            font-family: 'Roboto', sans-serif
+            font-size:12px;
+          }
+          .userAddress p{
+            font-weight: 100;
+            margin: 0px;
+            margin-left: 10px;
+          }
+          .location p{
+            font-weight:500;
+            margin: 0px;
+            text-overflow: ellipsis;
+            overflow: auto;
+            white-space: nowrap;
+            width: 150px;
+            height: 50px;
+            margin-left: 10px;
+          }
+          .location{
+            display: flex;
+            align-items: center;
+          }
+          .location svg {
+          margin-top: -25px;
+          margin-left: 10px;
+        }
           .heart svg {
-            color: #d12e2e !important;
+            color: #d12e2e;
+            margin-left: 15px;
+            margin-top: 15px;
           }
         `}
       </style>

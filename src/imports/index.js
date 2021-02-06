@@ -8,6 +8,7 @@ export { default as list } from '../../public/static/images/list.svg';
 export { default as man } from '../../public/static/images/man.svg';
 export { default as shop } from '../../public/static/images/shop.svg';
 export { default as hamburger } from '../../public/static/images/hamburger.svg';
+export { default as loginIcon } from '../../public/static/images/loginIcon.svg';
 export { default as eyeIcon } from '../../public/static/images/eye.svg';
 export { default as filterIcon } from '../../public/static/images/filterIcon.png';
 export { default as rightArrowIcon } from '../../public/static/images/rightArrow.svg';

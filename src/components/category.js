@@ -57,10 +57,22 @@ const Category = ({ deals }) => {
     dispatch(ShowProductModal(deals));
   };
   const handleClose = () => dispatch(closeProductModal());
-
+const IconStyle = {
+  left: {
+    backgroundImage:
+      'linear-gradient(to right, rgba(0, 0, 0,0.5) 1%, rgba(0, 0, 0, 0.1))'
+  },
+  right: {
+    backgroundImage:
+      'linear-gradient(to right, rgba(0, 0, 0,0.5) 1%, rgba(0, 0, 0, 0.1))'
+  }
+};
   return (
     <section className={style.category}>
-      <OverflowWrapper className={style.overflowWrapper}>
+      <OverflowWrapper
+        iconWrapStyle={IconStyle}
+        className={style.overflowWrapper}
+      >
         {deals.map(
           deal =>
             (

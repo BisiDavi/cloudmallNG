@@ -22,6 +22,8 @@ const Header = ({ isLoggedIn }) => {
 
   const closeHamburgerMenu = () => setOpenMenu(false);
 
+  const userAddress = localStorage.getItem('user_default_address')
+  const currentAddress = location ? location : userAddress
   const isUserLoggedIn = () =>
     isLoggedIn ? (
       <img src={man} alt="user icon" />
@@ -45,7 +47,7 @@ const Header = ({ isLoggedIn }) => {
             </div>
           </Col>
           <Col xs={6} className={`${homeStyle.userAddress} mr-2`}>
-            <span>{location}</span>
+            <span>{currentAddress}</span>
           </Col>
           <Col xs={1} className="mr-3">
             {isUserLoggedIn()}

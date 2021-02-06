@@ -43,6 +43,16 @@ const submitUserDefaultAddress = payload => {
     .then(result => console.log('result', result))
     .catch(err => console.log(err));
 };
+
+const saveAddressToStorage = (payload) => {
+  if(payload.address){
+  const {address} = payload;
+  localStorage.setItem('user_default_address', address);
+}else if(payload.location){
+const {location} = payload;
+  localStorage.setItem('user_default_address', location);
+}
+}
 export const UserAddressReducer = (state = {}, action) => {
   const { type, payload } = action;
   switch (type) {
@@ -57,6 +67,14 @@ export const UserAddressReducer = (state = {}, action) => {
       };
     case USER_DEFAULT_ADDRESS_SUCCESS:
       submitUserDefaultAddress(payload);
+      return {
+        loading: false,
+        location: payload.address,
+        latitude: payload.mapPosition.lat,
+        longitude: payload.mapPosition.lng
+      };
+    case SAVE_TO_LOCALSTORAGE:
+      saveAddressToStorage(payload);
       return {
         loading: false,
         location: payload.address,

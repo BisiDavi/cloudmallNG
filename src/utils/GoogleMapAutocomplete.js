@@ -103,12 +103,12 @@ class GoogleMapAutocomplete extends Component {
     this.props.redirectUser('/home');
     const { route } = this.props.redirectRoute;
     console.log('route', route);
-    if (route) {
+    /* if (route) {
       this.props.router.push(route);
-    }
-    /* if (this.state.address.length > 0) {
-      this.props.router.push('/home');
     } */
+    if (this.state.address.length > 0) {
+      this.props.router.push('/home');
+    }
   };
   onPlaceSelected = place => {
     console.log('state', this.state);

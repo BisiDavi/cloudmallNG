@@ -81,13 +81,14 @@ const Index = () => {
     }
   };
 
-  const appBackground = spinner ? '#B26D06' : '#f29100';
+  const appBackground = spinner ? '#b26D06' : '#f29100';
   return (
-    <Layout
-      style={{ backgroundColor: `${appBackground}` }}
-      headerTitle="Welcome"
-    >
-      <Container className={style.container} fluid>
+    <Layout headerTitle="Welcome">
+      <Container
+        style={{ backgroundColor: `${appBackground}` }}
+        className={style.container}
+        fluid
+      >
         <div className="wrapper">
           <div className="splashtop"></div>
           {spinner ? <PageSpinner /> : null}

@@ -1,6 +1,8 @@
 import {
   USER_PREFERRED_ADDRESS_ERROR,
   USER_PREFERRED_ADDRESS_SUCCESS,
+USER_DEFAULT_ADDRESS_SUCCESS,
+USER_DEFAULT_ADDRESS_ERROR,
   SHOW_PRODUCT_MODAL_REQUEST,
   SHOW_PRODUCT_MODAL_SUCCESSFUL,
   SHOW_PRODUCT_MODAL_ERROR,
@@ -11,6 +13,23 @@ import {
   CLOSE_ORDERS_MODAL
 } from '../constant';
 
+export const UserDefaultAddress = location => dispatch => {
+  try {
+    console.log('payload UserDefaultAddress', location);
+    dispatch({
+      type: USER_DEFAULT_ADDRESS_SUCCESS,
+      payload: location
+    });
+  } catch (error) {
+    dispatch({
+      type: USER_DEFAULT_ADDRESS_ERROR,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message
+    });
+  }
+};
 export const UserPreferredAddress = location => dispatch => {
   try {
     console.log('paylod', location);

@@ -12,7 +12,7 @@ import {
 import Geocode from 'react-geocode';
 import Autocomplete from 'react-google-autocomplete';
 import { PageSpinner, Pageheader } from '../imports';
-import { UserPreferredAddress } from '../store/action/userActions';
+import { UserDefaultAddress } from '../store/action/userActions';
 import { RedirectUser } from '../store/action/redirectActions';
 import style from '../styles/Location.module.css';
 
@@ -97,12 +97,12 @@ class GoogleMapAutocomplete extends Component {
   };
 
   handleFormSubmit = e => {
-    const { route } = this.props.redirectTo;
-    console.log('route', route);
     e.preventDefault();
     console.log('i was clicked');
-    this.props.userPreferredAddress(this.state.address);
+    this.props.userDefaultAddress(this.state);
     this.props.redirectUser('/home');
+    const { route } = this.props.redirectRoute;
+    console.log('route', route);
     if (route) {
       this.props.router.push(route);
     }
@@ -132,7 +132,7 @@ class GoogleMapAutocomplete extends Component {
   };
 
   render() {
-    const { loading, route } = this.props.redirectTo;
+    const { loading } = this.props.redirectRoute;
 
     console.log('loading', loading);
 
@@ -252,12 +252,13 @@ class GoogleMapAutocomplete extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  redirectTo: state.redirect
-});
+function mapStateToProps(state) {
+  const { redirect } = state;
+  return { redirectRoute: redirect };
+}
 
 const mapDispatchToProps = dispatch => ({
-  userPreferredAddress: address => dispatch(UserPreferredAddress(address)),
+  userDefaultAddress: address => dispatch(UserDefaultAddress(address)),
   redirectUser: route => dispatch(RedirectUser(route))
 });
 

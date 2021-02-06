@@ -1,6 +1,8 @@
 import {
   USER_PREFERRED_ADDRESS_SUCCESS,
   USER_PREFERRED_ADDRESS_ERROR,
+  USER_DEFAULT_ADDRESS_SUCCESS,
+  USER_DEFAULT_ADDRESS_ERROR,
   SHOW_PRODUCT_MODAL_REQUEST,
   SHOW_PRODUCT_MODAL_SUCCESSFUL,
   SHOW_PRODUCT_MODAL_ERROR,
@@ -12,7 +14,7 @@ import {
 } from '../constant';
 import { axiosInstance } from '../../axios';
 
-const submitUserAddress = payload => {
+const submitUserPreferredAddress = payload => {
   const location = payload.location;
   const locationArray = location.split(',');
   const latitude = payload.latitude;
@@ -25,19 +27,48 @@ const submitUserAddress = payload => {
     .then(result => console.log('result', result))
     .catch(err => console.log(err));
 };
-export const UserPreferredAddressReducer = (state = {}, action) => {
+const submitUserDefaultAddress = payload => {
+  const location = payload.address;
+  const locationArray = location.split(',');
+  const { lat, lng } = payload.mapPosition;
+  const latitude = lat;
+  const longitude = lng;
+  const lga = locationArray[1];
+  const state = locationArray[2];
+  console.log(locationArray, 'locationArray');
+  console.log(lat, 'lat');
+  console.log(lng, 'lng');
+  axiosInstance
+    .post('/app/landing', { lga, state, latitude, longitude })
+    .then(result => console.log('result', result))
+    .catch(err => console.log(err));
+};
+export const UserAddressReducer = (state = {}, action) => {
   const { type, payload } = action;
   switch (type) {
     case USER_PREFERRED_ADDRESS_SUCCESS:
-      console.log('location payload',payload);
-      submitUserAddress(payload);
+      submitUserPreferredAddress(payload);
       return {
         loading: false,
         location: payload.location,
         latitude: payload.latitude,
         longitude: payload.longitude
+        
+      };
+    case USER_DEFAULT_ADDRESS_SUCCESS:
+      submitUserDefaultAddress(payload);
+      return {
+        loading: false,
+        location: payload.address,
+        latitude: payload.mapPosition.lat,
+        longitude: payload.mapPosition.lng
       };
     case USER_PREFERRED_ADDRESS_ERROR:
+      return {
+        loading: false,
+        error: payload
+      };
+    case USER_DEFAULT_ADDRESS_ERROR:
       return {
         loading: false,
         error: payload

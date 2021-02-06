@@ -59,7 +59,7 @@ const Header = ({ isLoggedIn }) => {
               <p>Now</p>
               <div className="location">
                 <p>{userAddress}</p>
-                <FontAwesomeIcon icon={faAngleDown} size="2x" />
+                <FontAwesomeIcon className={homeStyle.caretdown} icon={faAngleDown} size="2x" />
               </div>
             </span>
             <span></span>

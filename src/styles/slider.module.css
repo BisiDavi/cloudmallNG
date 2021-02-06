@@ -3,8 +3,10 @@
 }
 
 .legend {
+  font-size: 12px;
   font-weight: bold;
   font-style: italic;
   color: white;
-  left: 5% !important;
+  text-align: center;
+  padding-top: 10px;
 }

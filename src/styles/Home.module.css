@@ -119,6 +119,11 @@
   text-overflow: ellipsis;
 }
 
+.caretdown {
+  margin-top: -20px;
+  margin-left: 5px;
+}
+
 .header img {
   height: 25px;
   width: 25px;

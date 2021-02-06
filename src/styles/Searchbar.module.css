@@ -1,33 +1,54 @@
 .searchform {
-  margin-left: 10% !important;
+  margin-left: 0px;
   width: 100%;
-  background-color: #faf5ed !important;
+  border-radius: 5px;
+  background-color: #faf5ed;
 }
 .searchIcon {
   width: 30px;
   height: 30px;
-  background-color: #faf5ed !important;
+  background-color: #faf5ed;
 }
 .filterIcon {
   width: 30px;
   height: 30px;
-  margin-left: 35px !important;
-  margin-top: 5px !important;
+  margin-left: 0px;
+  margin-top: 5px;
 }
 
-.inputprepend{
+.inputprepend {
   background-color: #faf5ed !important;
   border: 0px !important;
 }
-.inputprepend span{
+.inputprepend span {
   background-color: #faf5ed !important;
   border: 0px !important;
+  padding: 0px 0px 0px 5px;
+}
+.searchform input:focus {
+  box-shadow: none;
+  background: #faf5ed;
+}
+
+.searchform input {
+  background: #faf5ed;
+  border-radius: 5px;
+  border: none;
+}
+.searchIcon {
+  color: #ffce85;
+  height: 20px;
+  width: 20px;
 }
 
 .searchform input::placeholder {
-  padding-left: 10px !important;
+  font-size: 16px;
+  text-align: left;
+  margin: left;
+  justify-content: flex-end;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px;
   color: #ffce85;
-  font-family: Roboto;
-  background-color: #faf5ed !important;
-  font-weight: 400;
 }

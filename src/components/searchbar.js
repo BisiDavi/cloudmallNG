@@ -7,7 +7,9 @@ import {
   FormControl
 } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { searchIcon, filterIcon } from "../imports";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import {  filterIcon } from "../imports";
 import style from "../styles/Searchbar.module.css";
 
 const Searchbar = () => {
@@ -18,16 +20,19 @@ const Searchbar = () => {
   return (
     <Container className="Home mx-auto">
       <Row>
-        <Col className="mr-2" xs={9}>
+        <Col className="pr-0" xs={10}>
           <Form
-            className={`${style.searchform} m-auto`}
+            className={style.searchform}
             onSubmit={handleSubmit(onSubmit)}
           >
             <InputGroup className="searchbar">
               <InputGroup.Prepend className={style.inputprepend}>
                 <InputGroup.Text id="user-search">
-                  <span className="glyphicon glyphicon-search"></span>
-                  {/* <i className="fa-search fa-2x"></i> */}
+                  <FontAwesomeIcon
+                    className={style.searchIcon}
+                    icon={faSearch}
+                    size="2x"
+                  />
                 </InputGroup.Text>
               </InputGroup.Prepend>
               <FormControl
@@ -36,7 +41,7 @@ const Searchbar = () => {
                 placeholder="Search for products or store"
                 aria-label="search"
                 aria-describedby="user-search "
-              />              
+              />
             </InputGroup>
           </Form>
           {errors.search && <span>Not Available</span>}

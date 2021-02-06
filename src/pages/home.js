@@ -6,9 +6,7 @@ import {
   Searchbar,
   Category,
   CategoryTitle,
-  PageSpinner
 } from '../imports';
-import useGetProducts from '../utils/GetProducts';
 import {
   myFeaturedDeals,
   freshOffers,
@@ -18,7 +16,6 @@ import { AppNavbar } from '../components/homeComponents';
 import style from '../styles/Home.module.css';
 
 const Homepage = () => {
-  // const { result, error, loading } = useGetProducts('/app/landing');
   const FeaturedDeals = () => {
     return <Category deals={myFeaturedDeals} />;
   };
@@ -27,18 +24,7 @@ const Homepage = () => {
   };
   const FastDeliveries = () => {
     return <Category deals={fastDeliveries} />;
-  };
-  // if (error) {
-  //   return (
-  //     <div>
-  //       An error occured, can't fetch products from the store, <b> {error}</b>
-  //     </div>
-  //   );
-  // }
-  // if (loading) <PageSpinner />;
-
-  // console.log('results from cloudmall store', result);
-
+  };  
   return (
     <Layout
       headerTitle="Home"

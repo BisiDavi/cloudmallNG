@@ -138,6 +138,16 @@
   height: 25px;
 }
 
+.categoryname h5 {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  margin-left: 10px;
+  color: #3e4044;
+}
+
 .category {
   padding-left: 15px;
   padding-right: 15px;

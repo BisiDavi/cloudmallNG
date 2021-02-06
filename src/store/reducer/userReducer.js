@@ -10,7 +10,8 @@ import {
   SHOW_ORDERS_MODAL_REQUEST,
   SHOW_ORDERS_MODAL_SUCCESSFUL,
   CLOSE_ORDERS_MODAL,
-  SHOW_ORDERS_MODAL_ERROR
+  SHOW_ORDERS_MODAL_ERROR,
+  SAVE_TO_LOCALSTORAGE
 } from '../constant';
 import { axiosInstance } from '../../axios';
 

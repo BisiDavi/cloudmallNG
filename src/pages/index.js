@@ -47,7 +47,7 @@ const Index = () => {
     const location = resultObj.formatted_address;
     userData = { ...userData, location };
     dispatch(UserPreferredAddress(userData));
-    dispatch(SaveToStorage('user_default_address', location));
+    dispatch(SaveToStorage('user_address', location));
     console.log('userData', userData);
   };
 

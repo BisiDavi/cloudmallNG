@@ -12,6 +12,7 @@ import {
 } from '../imports';
 import { storeUserLocation } from '../utils/UserLocation';
 import { UserPreferredAddress } from '../store/action/userActions';
+import { SaveToStorage } from '../store/action/savetoStorageActions';
 import style from '../styles/Home.module.css';
 
 const Index = () => {
@@ -46,6 +47,7 @@ const Index = () => {
     const location = resultObj.formatted_address;
     userData = { ...userData, location };
     dispatch(UserPreferredAddress(userData));
+    dispatch(SaveToStorage('user_default_address', location));
     console.log('userData', userData);
   };
 

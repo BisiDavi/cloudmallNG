@@ -12,7 +12,12 @@ const getLocation = router => {
   }
 };
 
+export const storeUserAddress = address => {
+  console.log('position', address);
+  localStorage.setItem('user_address', address);
+};
 export const storeUserLocation = position => {
+  console.log('position', position);
   localStorage.setItem('latitude', position.coords.latitude);
   localStorage.setItem('longitude', position.coords.longitude);
 };

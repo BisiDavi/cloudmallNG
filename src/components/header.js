@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -8,24 +8,33 @@ import {
   faHeart
 } from '@fortawesome/free-solid-svg-icons';
 import { man, SidebarDrawer } from '../imports';
+import { SaveToStorage } from '../store/action/savetoStorageActions';
 import Link from 'next/link';
 import homeStyle from '../styles/Home.module.css';
 
 const Header = ({ isLoggedIn }) => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [userAddress, setAddress] = useState('');
   const userCurrentAddress = useSelector(state => state.location);
   const { location } = userCurrentAddress;
 
-  console.log('address', location);
+  useEffect(() => {
+    getAddressFromStorage();
+  }, []);
+
+  console.log('location', location);
+  console.log('address', userAddress);
 
   const openHamburgerMenu = () => setOpenMenu(!openMenu);
 
   const closeHamburgerMenu = () => setOpenMenu(false);
-  if (typeof window !== 'undefined') {
-    const userAddress = window.localStorage.getItem('user_default_address');
-    return userAddress;
-  }
-  const currentAddress = location ? location : userAddress;
+
+  const getAddressFromStorage = () => {
+    let address = window.localStorage.getItem('user_address');
+    setAddress(address);
+  };
+  // const currentAddress = location ? location : userAddress;
+
   const isUserLoggedIn = () =>
     isLoggedIn ? (
       <img src={man} alt="user icon" />
@@ -49,7 +58,7 @@ const Header = ({ isLoggedIn }) => {
             </div>
           </Col>
           <Col xs={6} className={`${homeStyle.userAddress} mr-2`}>
-            <span>{currentAddress}</span>
+            <span>{userAddress}</span>
           </Col>
           <Col xs={1} className="mr-3">
             {isUserLoggedIn()}

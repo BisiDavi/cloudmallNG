@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { GetLandingPageProductsReducer } from './productReducer';
 import { LocationReducer } from './locationReducer';
 import { RedirectUserReducer } from './redirectReducer';
+import { SaveToStorageReducer } from './savetoStorageReducer';
 import {
   UserAddressReducer,
   ProductModalReducer,
@@ -14,5 +15,6 @@ export const rootReducer = combineReducers({
   onClickedProduct: ProductModalReducer,
   makeOrders: OrdersModalReducer,
   redirect: RedirectUserReducer,
-  getLocation: LocationReducer
+  getLocation: LocationReducer,
+  saveToLocalStorage: SaveToStorageReducer
 });

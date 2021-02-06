@@ -10,8 +10,7 @@ import {
   SHOW_ORDERS_MODAL_REQUEST,
   SHOW_ORDERS_MODAL_SUCCESSFUL,
   CLOSE_ORDERS_MODAL,
-  SHOW_ORDERS_MODAL_ERROR,
-  SAVE_TO_LOCALSTORAGE
+  SHOW_ORDERS_MODAL_ERROR
 } from '../constant';
 import { axiosInstance } from '../../axios';
 
@@ -45,17 +44,6 @@ const submitUserDefaultAddress = payload => {
     .catch(err => console.log(err));
 };
 
-if (typeof window !== 'undefined') {
-  const saveAddressToStorage = payload => {
-    if (payload.address) {
-      const { address } = payload;
-      window.localStorage.setItem('user_default_address', address);
-    } else if (payload.location) {
-      const { location } = payload;
-      window.localStorage.setItem('user_default_address', location);
-    }
-  };
-}
 export const UserAddressReducer = (state = {}, action) => {
   const { type, payload } = action;
   switch (type) {
@@ -69,14 +57,6 @@ export const UserAddressReducer = (state = {}, action) => {
       };
     case USER_DEFAULT_ADDRESS_SUCCESS:
       submitUserDefaultAddress(payload);
-      return {
-        loading: false,
-        location: payload.address,
-        latitude: payload.mapPosition.lat,
-        longitude: payload.mapPosition.lng
-      };
-    case SAVE_TO_LOCALSTORAGE:
-      saveAddressToStorage(payload);
       return {
         loading: false,
         location: payload.address,

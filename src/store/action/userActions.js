@@ -10,8 +10,7 @@ import {
   SHOW_ORDERS_MODAL_SUCCESSFUL,
   SHOW_ORDERS_MODAL_ERROR,
   CLOSE_PRODUCT_MODAL,
-  CLOSE_ORDERS_MODAL,
-  SAVE_TO_LOCALSTORAGE
+  CLOSE_ORDERS_MODAL
 } from '../constant';
 
 export const UserDefaultAddress = location => dispatch => {
@@ -19,10 +18,6 @@ export const UserDefaultAddress = location => dispatch => {
     console.log('payload UserDefaultAddress', location);
     dispatch({
       type: USER_DEFAULT_ADDRESS_SUCCESS,
-      payload: location
-    });
-    dispatch({
-      type:SAVE_TO_LOCALSTORAGE,
       payload: location
     });
   } catch (error) {
@@ -40,10 +35,6 @@ export const UserPreferredAddress = location => dispatch => {
     console.log('paylod', location);
     dispatch({
       type: USER_PREFERRED_ADDRESS_SUCCESS,
-      payload: location
-    });
-    dispatch({
-      type: SAVE_TO_LOCALSTORAGE,
       payload: location
     });
   } catch (error) {

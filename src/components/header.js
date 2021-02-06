@@ -21,9 +21,11 @@ const Header = ({ isLoggedIn }) => {
   const openHamburgerMenu = () => setOpenMenu(!openMenu);
 
   const closeHamburgerMenu = () => setOpenMenu(false);
-
-  const userAddress = window.localStorage.getItem('user_default_address')
-  const currentAddress = location ? location : userAddress
+  if (typeof window !== 'undefined') {
+    const userAddress = window.localStorage.getItem('user_default_address');
+    return userAddress;
+  }
+  const currentAddress = location ? location : userAddress;
   const isUserLoggedIn = () =>
     isLoggedIn ? (
       <img src={man} alt="user icon" />

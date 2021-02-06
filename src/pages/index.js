@@ -2,7 +2,14 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { logo, pattern, Layout, PageSpinner } from '../imports';
+import { Container } from 'react-bootstrap';
+import {
+  logo,
+  homeBottomPattern,
+  homeTopPattern,
+  Layout,
+  PageSpinner
+} from '../imports';
 import { storeUserLocation } from '../utils/UserLocation';
 import { UserPreferredAddress } from '../store/action/userActions';
 import style from '../styles/Home.module.css';
@@ -14,13 +21,13 @@ const Index = () => {
 
   let userData = {};
   useEffect(() => {
-    setSpinner(true);
     console.log('loaded - useEffect');
-    getLocation(router);    
+    getLocation(router);
   }, []);
 
   const getLocation = router => {
     console.log('loaded - getLocation');
+    setSpinner(true);
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         position => trackUserPosition(position, router),
@@ -74,39 +81,42 @@ const Index = () => {
     }
   };
 
+  const appBackground = spinner ? '#B26D06' : '#f29100';
   return (
-    <Layout headerTitle="Welcome">
-      <div className={style.container}>
-        <div className="splashtop"></div>
-        {spinner ? <PageSpinner /> : null}
-        <div className={style.logo}>
-          <img src={logo} alt="cloudmall logo" />
+    <Layout
+      style={{ backgroundColor: `${appBackground}` }}
+      headerTitle="Welcome"
+    >
+      <Container className={style.container} fluid>
+        <div className="wrapper">
+          <div className="splashtop"></div>
+          {spinner ? <PageSpinner /> : null}
+          <div className={style.logo}>
+            <img src={logo} alt="cloudmall logo" />
+          </div>
+          <div className="splashfooter"></div>
         </div>
-        <div className="splashfooter"></div>
         <style jsx>
           {`
+            .wrapper {
+              height: 100vh;
+              width: 100%;
+            }
             .splashtop {
-              background: url(${pattern}) no-repeat;
-              height: 200px !important;
-              position: absolute;
+              background: url(${homeTopPattern}) no-repeat;
+              height: 20vh;
               background-size: cover;
-              width: 100% !important;
-              top: -40px;
+              width: 100%;
             }
             .splashfooter {
-              background: url(${pattern}) no-repeat;
-              position: absolute;
+              background: url(${homeBottomPattern}) no-repeat;
               background-size: cover;
-              bottom: 0px;
-              width: 100% !important;
-              height: 200px;
-            }
-            .modal-content {
-              padding: 5px 10px !important;
+              width: 100%;
+              height: 20vh;
             }
           `}
         </style>
-      </div>
+      </Container>
     </Layout>
   );
 };

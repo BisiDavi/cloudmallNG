@@ -1,6 +1,7 @@
 /* Images */
 export { default as logo } from '../../public/static/images/logo.png';
-export { default as pattern } from '../../public/static/images/pattern.png';
+export { default as homeBottomPattern } from '../../public/static/images/homeBottomPattern.png';
+export { default as homeTopPattern } from '../../public/static/images/homeTopPattern.png';
 export { default as heart } from '../../public/static/images/heart.svg';
 export { default as home } from '../../public/static/images/home.svg';
 export { default as list } from '../../public/static/images/list.svg';

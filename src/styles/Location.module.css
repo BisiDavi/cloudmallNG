@@ -23,7 +23,7 @@
 .mapContainer {
   height: 70vh !important;
   width: 100%;
-  padding: 10px 20px;
+  padding: 0px 20px;
 }
 .map {
   height: 450px !important;

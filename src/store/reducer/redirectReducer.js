@@ -8,14 +8,14 @@ export const RedirectUserReducer = (state = {}, action) => {
   switch (type) {
     case REDIRECT_USER_REQUEST:
       return {
-        redirectTo: payload.route,
+        route: payload,
         loading: true
       };
     case REDIRECT_USER_SUCCESSFUL:
-      if (window.location.href.includes(payload.route)) {
-        return { loading: false };
+      if (window.location.href.includes(payload)) {
+        return { loading: false, route: payload };
       } else {
-        return { loading: true };
+        return { loading: true, route: payload };
       }
     case REDIRECT_USER_ERROR:
       return { loading: false };

@@ -1,7 +1,7 @@
 .container {
-  background: #f29100;
-  height: 100vh !important;
-  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 0px;
 }
 
 .logo {
@@ -10,8 +10,7 @@
 }
 
 .logo img {
-  height: 500px !important;
-  margin-top: 20%;
+  height: 60vh;
 }
 
 .locationmodal {
@@ -122,8 +121,7 @@
 
 @media (max-width: 768px) {
   .logo img {
-    width: 100% !important;
-    margin-top: 25% !important;
+    width: 100%;
   }
   .nav {
     display: none;

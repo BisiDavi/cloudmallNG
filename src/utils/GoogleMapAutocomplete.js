@@ -13,6 +13,7 @@ import Geocode from 'react-geocode';
 import Autocomplete from 'react-google-autocomplete';
 import { PageSpinner, Pageheader } from '../imports';
 import { UserPreferredAddress } from '../store/action/userActions';
+import { RedirectUser } from '../store/action/redirectActions';
 import style from '../styles/Location.module.css';
 
 Geocode.setApiKey(process.env.API_KEY);
@@ -49,7 +50,7 @@ class GoogleMapAutocomplete extends Component {
       }
     );
   }
-    shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate(nextProps, nextState) {
     if (
       this.state.markerPosition.lat !== this.props.center.lat ||
       this.state.address !== nextState.address
@@ -96,11 +97,19 @@ class GoogleMapAutocomplete extends Component {
   };
 
   handleFormSubmit = e => {
+    const { route } = this.props.redirectTo;
+    console.log('route', route);
     e.preventDefault();
     console.log('i was clicked');
-    this.props.userPreferredAddress(this.state.address, this.props.router);
+    this.props.userPreferredAddress(this.state.address);
+    this.props.redirectUser('/home');
+    if (route) {
+      this.props.router.push(route);
+    }
+    /* if (this.state.address.length > 0) {
+      this.props.router.push('/home');
+    } */
   };
-
   onPlaceSelected = place => {
     console.log('state', this.state);
     const address = place.formatted_address,
@@ -123,7 +132,7 @@ class GoogleMapAutocomplete extends Component {
   };
 
   render() {
-    const { loading } = this.props.userLocation;
+    const { loading, route } = this.props.redirectTo;
 
     console.log('loading', loading);
 
@@ -244,12 +253,12 @@ class GoogleMapAutocomplete extends Component {
 }
 
 const mapStateToProps = state => ({
-  userLocation: state.location
+  redirectTo: state.redirect
 });
 
 const mapDispatchToProps = dispatch => ({
-  userPreferredAddress: (address, router) =>
-    dispatch(UserPreferredAddress(address, router))
+  userPreferredAddress: address => dispatch(UserPreferredAddress(address)),
+  redirectUser: route => dispatch(RedirectUser(route))
 });
 
 export default withRouter(

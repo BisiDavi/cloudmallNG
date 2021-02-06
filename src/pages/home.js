@@ -5,7 +5,7 @@ import {
   HomepageSlider,
   Searchbar,
   Category,
-  CategoryTitle,
+  CategoryTitle
 } from '../imports';
 import {
   myFeaturedDeals,
@@ -24,7 +24,7 @@ const Homepage = () => {
   };
   const FastDeliveries = () => {
     return <Category deals={fastDeliveries} />;
-  };  
+  };
   return (
     <Layout
       headerTitle="Home"
@@ -51,30 +51,36 @@ const Homepage = () => {
             />
           </div>
           <Searchbar />
-          <div className="categories">
-            <CategoryTitle
-              title="Featured Deals"
-              linkTo="deals#featuredDeals"
-            />
-            {FeaturedDeals()}
-          </div>
-          <div className="categories">
-            <CategoryTitle
-              title="Fast Deliveries"
-              linkTo="deals#fastdeliveries"
-            />
-            {FastDeliveries()}
-          </div>
-          <div className="categories">
-            <CategoryTitle title="Fresh Offers" linkTo="deals#freshOffers" />
-            {FreshOffers()}
+          <div className="product_categories">
+            <div className="categories">
+              <CategoryTitle
+                title="Featured Deals"
+                linkTo="deals#featuredDeals"
+              />
+              {FeaturedDeals()}
+            </div>
+            <div className="categories">
+              <CategoryTitle
+                title="Fast Deliveries"
+                linkTo="deals#fastdeliveries"
+              />
+              {FastDeliveries()}
+            </div>
+            <div className="categories">
+              <CategoryTitle title="Fresh Offers" linkTo="deals#freshOffers" />
+              {FreshOffers()}
+            </div>
           </div>
         </div>
       </div>
       <style jsx>
         {`
+          .product_categories {
+            padding: 0px 10px;
+            margin-bottom: 60px;
+          }
           .categories {
-            margin: 15px 10px !important;
+            margin: 15px 0px;
           }
           a,
           p,
@@ -84,7 +90,7 @@ const Homepage = () => {
           h4,
           h5,
           h6 {
-            font-family: Roboto;
+            font-family: 'Roboto';
           }
         `}
       </style>

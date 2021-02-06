@@ -57,16 +57,16 @@ const Category = ({ deals }) => {
     dispatch(ShowProductModal(deals));
   };
   const handleClose = () => dispatch(closeProductModal());
-const IconStyle = {
-  left: {
-    backgroundImage:
-      'linear-gradient(to right, rgba(0, 0, 0,0.5) 1%, rgba(0, 0, 0, 0.1))'
-  },
-  right: {
-    backgroundImage:
-      'linear-gradient(to right, rgba(0, 0, 0,0.5) 1%, rgba(0, 0, 0, 0.1))'
-  }
-};
+  const IconStyle = {
+    left: {
+      backgroundImage:
+        'linear-gradient(to right, rgba(0, 0, 0,0.5) 1%, rgba(0, 0, 0, 0.1))'
+    },
+    right: {
+      backgroundImage:
+        'linear-gradient(to right, rgba(0, 0, 0,0.5) 1%, rgba(0, 0, 0, 0.1))'
+    }
+  };
   return (
     <section className={style.category}>
       <OverflowWrapper
@@ -92,19 +92,21 @@ const IconStyle = {
                 </span>
                 {/* {displayProductModal()} */}
                 <div className={style.details}>
-                  <div className={style.row1}>
-                    <h5>{deal.name}</h5>
-                    <h3 className={style.price}>{deal.price}</h3>
-                  </div>
-                  <div className={style.productDetails}>
-                    <div className={style.vendor}>
-                      <p>{deal.vendor}</p>
-                      <div className="d-flex">
-                        <img src={starIcon} alt="rating" />
-                        <p>{deal.rating.substr(0, 3)}</p>
-                      </div>
+                  <div className={style.content}>
+                    <div className={style.row1}>
+                      <h5>{deal.name}</h5>
+                      <h3 className={style.price}>{deal.price}</h3>
                     </div>
-                    <p className={style.open}>{deal.status}</p>
+                    <div className={style.productDetails}>
+                      <div className={style.vendor}>
+                        <p>{deal.vendor}</p>
+                        <div className="d-flex">
+                          <img src={starIcon} alt="rating" />
+                          <p>{deal.rating.substr(0, 3)}</p>
+                        </div>
+                      </div>
+                      <p className={style.open}>{deal.status}</p>
+                    </div>
                   </div>
                   <OrangeButton
                     className="justify-content-center"

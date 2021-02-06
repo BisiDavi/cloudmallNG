@@ -1,22 +1,16 @@
 import React from 'react';
 import { InputGroup, Container, Row, Col, FormControl } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import styles from '../styles/Searchbar.module.css';
+import styles from '../styles/layout.module.css';
 
 const SearchForm = () => {
   return (
     <Container className={`${styles.Searchform} Searchform`} fluid>
       <Row>
         <Col>
-          <InputGroup>
+          <InputGroup className="">
             <InputGroup.Prepend>
-              <InputGroup.Text className={styles.inputText}>
-                <FontAwesomeIcon
-                  className={style.searchIcon}
-                  icon={faSearch}
-                  size="2x"
-                />
+              <InputGroup.Text id="basic-addon1" className={styles.inputText}>
+                <i className="fas fa-search"></i>
               </InputGroup.Text>
             </InputGroup.Prepend>
             <FormControl

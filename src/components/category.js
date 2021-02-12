@@ -1,7 +1,6 @@
 import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useDispatch, useSelector } from 'react-redux';
-import OverflowWrapper from 'react-overflow-wrapper';
 import {
   ShowProductModal,
   ShowOrdersModal,
@@ -69,10 +68,7 @@ const Category = ({ deals }) => {
   };
   return (
     <section className={style.category}>
-      <OverflowWrapper
-        iconWrapStyle={IconStyle}
-        className={style.overflowWrapper}
-      >
+      <div className={style.categorycontent}>
         {deals.map(
           deal =>
             (
@@ -117,7 +113,7 @@ const Category = ({ deals }) => {
               </div>
             ) || <Skeleton duration={2} />
         )}
-      </OverflowWrapper>
+      </div>
       {showLoadingProducts ? (
         <PageSpinner />
       ) : productModal ? (

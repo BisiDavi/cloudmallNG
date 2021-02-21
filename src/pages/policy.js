@@ -10,8 +10,6 @@ const displayPolicy = () => {
     PolicyArray.push(`Policy ${i + 1}.`);
   }
 
-  console.log('PolicyArray', PolicyArray);
-
   return PolicyArray.map((policy, index) =>
     index === 4 ? (
       <Col  key={policy} lg={12} sm={12}>
@@ -32,7 +30,7 @@ const PrivacyPolicy = () => {
   return (
     <Container className="privacyPolicy">
       <Pageheader title=" Privacy Policy" />
-      <Row className="pt-3">{displayPolicy()}</Row>
+      <Row className="p-3">{displayPolicy()}</Row>
     </Container>
   );
 };

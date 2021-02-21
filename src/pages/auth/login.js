@@ -4,10 +4,10 @@ import { googleIcon, Input, OrangeButton, Pageheader } from '../../imports';
 
 const Login = () => {
   return (
-    <Container className="signupemail">
+    <Container className="signupemail px-4">
       <Pageheader title="Login" />
       <Row className="loginText d-flex flex-column">
-        <Col className="withGoogle mt-2">
+        <Col className="withGoogle mt-2 px-4">
           <Link href="/auth/googlesignup">
             <a className="mx-auto w-75 mt-3 text-decoration-none">
               <button className="googleButton">
@@ -26,16 +26,23 @@ const Login = () => {
       </Row>
       <Row>
         <Col className="px-4">
-          <form>
+          <form className="pb-5">
             <Input label="Email" type="email" />
             <Input label="Password" type="password" eyeIcon={true} />
-
-            <OrangeButton
-              type="submit"
-              text="Login"
-              className="justify-content-center"
-            />
+            <p className="forgotPassword">
+              <span className="text">Forgot Password</span>
+            </p>
+            <span className="button">
+              <OrangeButton
+                type="submit"
+                text="Login"
+                className="justify-content-center"
+              />
+            </span>
           </form>
+          <p className="signup text-center mt-5">
+            Don't have an account <span className="text">Signup</span>
+          </p>
         </Col>
       </Row>
       <style jsx>
@@ -48,6 +55,29 @@ const Login = () => {
             display: flex;
             font-weight: bold;
             border-radius: 5px;
+            width: 100%;
+            justify-content: center;
+          }
+          .forgotPassword {
+            text-align: right;
+          }
+          .text {
+            line-height: 14px;
+            letter-spacing: 0.01em;
+            color: #f29100;
+          }
+          form span.button {
+            margin-top: 50px;
+          }
+          p {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 16px;
+          }
+          .signup {
+            font-weight: 700;
           }
         `}
       </style>

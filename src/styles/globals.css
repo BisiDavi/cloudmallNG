@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+ul.slider li.slide {
+  background: none;
+}
+
 .authHeader + div {
   position: relative;
   top: 50px;

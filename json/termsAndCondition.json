@@ -1,0 +1,20 @@
+{
+  "terms": [
+    {
+      "id": 1,
+      "title": "General",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus bibendum aenean diam amet, viverra. Purus auctor malesuada feugiat pharetra. Nec pulvinar orci, ut id nunc. In iaculis volutpat tortor phasellus sed viverra. At eget ullamcorper arcu, pellentesque accumsan diam. Neque, nec consectetur tristique rhoncus. Venenatis sed ipsum varius morbi in. Ut vitae pulvinar libero, tristique arcu, ipsum sodales consequat morbi."
+    },
+    {
+      "id": 2,
+      "title": "Term 2",
+      "content": "A. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget in urna est quis ipsum purus eu. Malesuada aliquam, odio vestibulum senectus donec id diam. Lectus diam dolor quis in. Eget sit est, lectus auctor at aliquet sed rhoncus, id",
+      "content2": "B. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget in urna est quis ipsum purus eu. Malesuada aliquam, odio vestibulum senectus donec id diam. Lectus diam dolor quis in. Eget sit est, lectus auctor at aliquet sed rhoncus, id"
+    },
+    {
+      "id": 3,
+      "title": "Term 3",
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lacus bibendum aenean diam amet, viverra. Purus auctor malesuada feugiat pharetra. Nec pulvinar orci, ut id nunc. In iaculis volutpat tortor phasellus sed viverra. At eget ullamcorper arcu, pellentesque accumsan diam. Neque, nec consectetur tristique rhoncus. Venenatis sed ipsum varius morbi in. Ut vitae pulvinar libero, tristique arcu, ipsum sodales consequat morbi."
+    }
+  ]
+}

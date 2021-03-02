@@ -1,12 +1,12 @@
-import { Pageheader, OrangeButton } from '../imports';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Pageheader, OrangeButton } from "../imports";
+import { Container, Row, Col } from "react-bootstrap";
 
 const AddressBook = () => {
   const userInfo = [
-    { id: 1, title: 'Home', address: '9, Omole Estate, Mayfair' },
-    { id: 2, title: 'Work', address: '9, Omole Estate, Mayfair' },
-    { id: 3, title: 'School', address: '9, Omole Estate, Mayfair' },
-    { id: 4, title: 'Others', address: '9, Omole Estate, Mayfair' }
+    { id: 1, title: "Home", address: "9, Omole Estate, Mayfair" },
+    { id: 2, title: "Work", address: "9, Omole Estate, Mayfair" },
+    { id: 3, title: "School", address: "9, Omole Estate, Mayfair" },
+    { id: 4, title: "Others", address: "9, Omole Estate, Mayfair" },
   ];
   return (
     <Container className="user_address_book" fluid>
@@ -15,7 +15,7 @@ const AddressBook = () => {
         <Col sm={12} className="py-2 px-3">
           <h5 className="my-2">Saved Address</h5>
           <ul>
-            {userInfo.map(info => (
+            {userInfo.map((info) => (
               <li key={info.id}>
                 <span>
                   <h3>{info.title}</h3>
@@ -54,7 +54,7 @@ const AddressBook = () => {
           h5 {
             display: flex;
             flex-direction: column;
-            font-family: 'Roboto', sans-serif;
+            font-family: "Roboto", sans-serif;
             font-style: normal;
             font-weight: normal;
           }

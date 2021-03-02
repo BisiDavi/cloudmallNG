@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
 import Link from "next/link";
 import HomeIcon from "../icons/HomeIcon";
@@ -8,7 +8,7 @@ import OrderIcon from "../icons/OrderIcon";
 import style from "../styles/Footer.module.css";
 
 export default function SimpleBottomNavigation() {
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = useState(0);
 
     return (
         <BottomNavigation

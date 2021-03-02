@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/images'
+import Image from 'next/image'
 
 const StoreIcon = () => {
     return (

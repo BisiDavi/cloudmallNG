@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { HomeIcon, StoreIcon, CartIcon, OrderIcon } from "../icons";
-import FooterLink from "./FooterLink";
 
 const useStyles = makeStyles({
     root: {

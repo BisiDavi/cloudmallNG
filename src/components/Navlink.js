@@ -3,11 +3,9 @@ import Link from "next/link";
 
 const Navlink = ({ linkTo, children }) => {
     return (
-        <div>
-            <Link href={linkTo}>
-                <a>{children}</a>
-            </Link>
-        </div>
+        <Link href={linkTo} passHref>
+            {children}
+        </Link>
     );
 };
 

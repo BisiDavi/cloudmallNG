@@ -1,14 +1,31 @@
 import React, { useState } from "react";
 import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
-import Link from "next/link";
+import { makeStyles } from "@material-ui/core/styles";
 import HomeIcon from "../icons/HomeIcon";
 import StoreIcon from "../icons/StoreIcon";
 import CartIcon from "../icons/CartIcon";
 import OrderIcon from "../icons/OrderIcon";
-import style from "../styles/Footer.module.css";
+// import style from "../styles/Footer.module.css";
+
+const useStyles = makeStyles({
+    root: {
+        width: "100%",
+    },
+    selected: {
+        color: "#F29100",
+        "& svg path": {
+            fill: "#F29100",
+        },
+    },
+});
 
 export default function SimpleBottomNavigation() {
+    const classes = useStyles();
     const [value, setValue] = useState(0);
+
+    onClickHandler = (link) => {
+        
+    }
 
     return (
         <BottomNavigation
@@ -17,44 +34,32 @@ export default function SimpleBottomNavigation() {
                 setValue(newValue);
             }}
             showLabels
-            className={`${style.BottomNav} fixed-bottom`}
+            className={`${classes.root} fixed-bottom`}
         >
-            <Link href="/home">
-                <a>
-                    <BottomNavigationAction
-                        label="Home"
-                        showLabel
-                        icon={<HomeIcon />}
-                    />
-                </a>
-            </Link>
-            <Link href="/stores">
-                <a>
-                    <BottomNavigationAction
-                        label="Stores"
-                        showLabel
-                        icon={<StoreIcon />}
-                    />
-                </a>
-            </Link>
-            <Link href="/cart">
-                <a>
-                    <BottomNavigationAction
-                        label="Cart"
-                        showLabel
-                        icon={<CartIcon />}
-                    />
-                </a>
-            </Link>
-            <Link href="/orders">
-                <a>
-                    <BottomNavigationAction
-                        label="Orders"
-                        showLabel
-                        icon={<OrderIcon />}
-                    />
-                </a>
-            </Link>
+            <BottomNavigationAction
+                label="Home"
+                showLabel
+                classes={{ selected: classes.selected }}
+                icon={<HomeIcon />}
+            />
+            <BottomNavigationAction
+                label="Stores"
+                classes={{ selected: classes.selected }}
+                showLabel
+                icon={<StoreIcon />}
+            />
+            <BottomNavigationAction
+                label="Cart"
+                showLabel
+                classes={{ selected: classes.selected }}
+                icon={<CartIcon />}
+            />
+            <BottomNavigationAction
+                label="Orders"
+                classes={{ selected: classes.selected }}
+                showLabel
+                icon={<OrderIcon />}
+            />
         </BottomNavigation>
     );
 }

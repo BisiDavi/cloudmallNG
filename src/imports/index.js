@@ -53,6 +53,7 @@ export { default as Pageheader } from '../components/Pageheader';
 export { default as FastDeliveries } from '../components/fastDeliveries';
 export { default as FreshOffers } from '../components/freshOffers';
 export { default as FeaturedDeals } from '../components/featuredDeals';
+export { default as Navlink } from '../components/Navlink';
 
 export {
   OrangeButton,
